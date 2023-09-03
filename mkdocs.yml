@@ -1,0 +1,58 @@
+site_name: Quann
+
+nav:
+  - 博客:
+      - blog/index.md
+      - Markdown基础教程: blog/Markdown基础教程.md
+  - 网站:
+      - site/index.md
+
+theme:
+  name: material
+  logo: logo/xianzi.png
+
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.indexes
+
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: white
+      accent: purple
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: purple
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+repo_url: https://github.com/ltq525/blog_site
+repo_name: ltq525/blog_site
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/
+    - icon: fontawesome/brands/chrome
+      link: https://chrome.com/
+    - icon: fontawesome/brands/zhihu
+      link: https://zhihu.com/
+    - icon: fontawesome/brands/docker
+      link: https://docker.com/
+    
+  homepage: https://github.com/
+
+  # 隐藏下栏商标
+  generator: false
+
+copyright: Copyright &copy; Hello World - 2023
