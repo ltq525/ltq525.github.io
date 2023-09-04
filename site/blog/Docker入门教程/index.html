@@ -9,8 +9,10 @@
       
       
       
+        <link rel="prev" href="../Vim%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/">
       
-        <link rel="next" href="../Markdown%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/">
+      
+        <link rel="next" href="../Tmux%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">
       
       
       <link rel="icon" href="../../logo/xianzi.png">
@@ -18,7 +20,7 @@
     
     
       
-        <title>项目搭建 - Quann</title>
+        <title>Docker入门教程 - Quann</title>
       
     
     
@@ -75,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#welcome-to-mkdocs" class="md-skip">
+        <a href="#docker" class="md-skip">
           跳转至
         </a>
       
@@ -108,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              项目搭建
+              Docker入门教程
             
           </span>
         </div>
@@ -217,13 +219,11 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/" class="md-tabs__link">
           
   
   简介
@@ -237,10 +237,12 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../Markdown%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/" class="md-tabs__link">
           
   
@@ -318,19 +320,19 @@
       
   
   
-    
-  
   
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
         
           <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
             
@@ -343,7 +345,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             简介
@@ -354,29 +356,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    项目搭建
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -385,40 +367,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
-    Commands
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#project-layout" class="md-nav__link">
-    Project layout
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -435,19 +383,19 @@
       
   
   
+    
+  
   
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
@@ -460,7 +408,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             博客
@@ -591,9 +539,29 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../Docker%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Docker入门教程
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -602,6 +570,123 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#docker_1" class="md-nav__link">
+    Docker安装教程：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-sudo" class="md-nav__link">
+    docker命令组 加sudo权限：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#id" class="md-nav__link">
+    更改容器id
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-pull" class="md-nav__link">
+    拉取镜像(docker pull)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-rmi" class="md-nav__link">
+    删除镜像(docker rmi)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-run" class="md-nav__link">
+    加载镜像(docker run)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    使用交互式容器
+  </a>
+  
+    <nav class="md-nav" aria-label="使用交互式容器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    启动容器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    进入容器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    关闭容器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    删除容器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    将容器打包成镜像
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    远程连接
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -784,15 +869,98 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
-    Commands
+  <a href="#docker_1" class="md-nav__link">
+    Docker安装教程：
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#project-layout" class="md-nav__link">
-    Project layout
+  <a href="#docker-sudo" class="md-nav__link">
+    docker命令组 加sudo权限：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#id" class="md-nav__link">
+    更改容器id
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-pull" class="md-nav__link">
+    拉取镜像(docker pull)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-rmi" class="md-nav__link">
+    删除镜像(docker rmi)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-run" class="md-nav__link">
+    加载镜像(docker run)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    使用交互式容器
+  </a>
+  
+    <nav class="md-nav" aria-label="使用交互式容器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    启动容器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    进入容器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    关闭容器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    删除容器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    将容器打包成镜像
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    远程连接
   </a>
   
 </li>
@@ -815,54 +983,59 @@
   
 
 
-<div class="language-cpp highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cm">/*</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="cm"> *</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="cm"> *                             _ooOoo_</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="cm"> *                            o8888888o</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="cm"> *                            88&quot; . &quot;88</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="cm"> *                            (| -_- |)</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="cm"> *                            O\  =  /O</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="cm"> *                         ____/`---&#39;\____</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="cm"> *                       .&#39;  \\|     |//  `.</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="cm"> *                      /  \\|||  :  |||//  \</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="cm"> *                     /  _||||| -:- |||||-  \</span>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="cm"> *                     |   | \\\  -  /// |   |</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="cm"> *                     | \_|  &#39;&#39;\---/&#39;&#39;  |   |</span>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="cm"> *                     \  .-\__  `-`  ___/-. /</span>
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="cm"> *                   ___`. .&#39;  /--.--\  `. . __</span>
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="cm"> *                .&quot;&quot; &#39;&lt;  `.___\_&lt;|&gt;_/___.&#39;  &gt;&#39;&quot;&quot;.</span>
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="cm"> *               | | :  `- \`.;`\ _ /`;.`/ - ` : | |</span>
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="cm"> *               \  \ `-.   \_ __\ /__ _/   .-` /  /</span>
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="cm"> *          ======`-.____`-.___\_____/___.-`____.-&#39;======</span>
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="cm"> *                             `=---=&#39;</span>
-</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="cm"> *          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span>
-</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="cm"> *                     佛祖保佑        永无BUG</span>
-</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="cm"> *            佛曰:</span>
-</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="cm"> *                   写字楼里写字间，写字间里程序员；</span>
-</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="cm"> *                   程序人员写程序，又拿程序换酒钱。</span>
-</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="cm"> *                   酒醒只在网上坐，酒醉还来网下眠；</span>
-</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="cm"> *                   酒醉酒醒日复日，网上网下年复年。</span>
-</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="cm"> *                   但愿老死电脑间，不愿鞠躬老板前；</span>
-</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="cm"> *                   奔驰宝马贵者趣，公交自行程序员。</span>
-</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="cm"> *                   别人笑我忒疯癫，我笑自己命太贱；</span>
-</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="cm"> *                   不见满街漂亮妹，哪个归得程序员？</span>
-</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="cm"> */</span>
-</span></code></pre></div>
-<h1 id="welcome-to-mkdocs">Welcome to MkDocs<a class="headerlink" href="#welcome-to-mkdocs" title="Permanent link">&para;</a></h1>
-<p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">&para;</a></h2>
+<h1 id="docker">Docker教程<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h1>
+<h2 id="docker_1">Docker安装教程：<a class="headerlink" href="#docker_1" title="Permanent link">&para;</a></h2>
+<p><a href="https://docs.docker.com/engine/install/ubuntu/">docker安装官网</a><br />
+Install Docker Engine on Ubuntu | Docker Documentation</p>
+<h2 id="docker-sudo">docker命令组 加sudo权限：<a class="headerlink" href="#docker-sudo" title="Permanent link">&para;</a></h2>
+<p><code>sudo usermod -aG docker username</code></p>
+<h2 id="id">更改容器id<a class="headerlink" href="#id" title="Permanent link">&para;</a></h2>
+<p>`docker rename 容器原来id 更改id``</p>
+<h2 id="docker-pull">拉取镜像(docker pull)<a class="headerlink" href="#docker-pull" title="Permanent link">&para;</a></h2>
+<p><code>docker image pull</code> 镜像id 或 <code>docker pull</code> 镜像id
+<code>docker pull ubuntu:20.04</code> 拉取ubuntu:20.04版本的镜像
+<code>docker pull django</code> 没设定tag版本号 默认下载先前版laster</p>
+<h2 id="docker-rmi">删除镜像(docker rmi)<a class="headerlink" href="#docker-rmi" title="Permanent link">&para;</a></h2>
+<p><code>docker image rm 镜像名或镜像ID</code> 或 <code>docker rmi 镜像名或镜像ID</code>
+例：<br />
+<code>docker image rm hello-world</code>
+<code>docker rmi 9e64176cd8a2</code></p>
+<h2 id="docker-run">加载镜像(docker run)<a class="headerlink" href="#docker-run" title="Permanent link">&para;</a></h2>
+<p>即创建容器</p>
+<blockquote>
+<p>docker run [可选参数] 镜像名 [向启动容器中传入的命令]</p>
+</blockquote>
+<p>例：<br />
+docker run -p 20000:22 --name xxx -idt ubuntu:20.04  #创建主机端口20000</p>
+<h2 id="_1">使用交互式容器<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p><code>docker ps</code> #查看正在运行的容器
+<code>docker ps -a</code> #查看所有容器</p>
+<h3 id="_2">启动容器<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p><code>docker start 容器名</code></p>
+<h3 id="_3">进入容器<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p><code>docker attach 容器名</code></p>
+<h3 id="_4">关闭容器<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p><code>docker stop 容器名</code>
+<code>docker kill 容器名</code> #强制关闭</p>
+<h3 id="_5">删除容器<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p><code>docker rm 容器名</code></p>
+<h3 id="_6">将容器打包成镜像<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<ol>
+<li><code>docker commit 容器名 新起镜像名称</code></li>
+<li>镜像打包成.tar(打包备份的文件会自动存放在当前命令行的路径下,如果想让保存的文件可以打开,可以加.tar后缀) <br />
+<code>docker save -o 保存的文件名 镜像名</code> 
+save -o 可换成 export两区别在于数据的完整性前者更详细  </li>
+<li><code>docker save -o django.tar django_lesson:1.0</code>  </li>
+<li>镜像解压 </li>
+<li><code>docker load -i 文件路径/备份文件</code>  <br />
+load -i 可换成 import 区别同上</li>
+<li><code>docker import xxx.tar imageName:tag</code></li>
+</ol>
+<h2 id="_7">远程连接<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs -h</code> - Print help message and exit.</li>
+<li><code>docker login</code>远程登陆</li>
+<li><code>docker logout</code>退出</li>
 </ul>
-<h2 id="project-layout">Project layout<a class="headerlink" href="#project-layout" title="Permanent link">&para;</a></h2>
-<div class="language-text highlight"><pre><span></span><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
-</code></pre></div>
 
 
 

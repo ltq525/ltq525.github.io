@@ -39,13 +39,38 @@ __粗体文本__
 ___粗斜体文本___
 ```
 
-效果:
+效果:  
 *斜体文本*  
 _斜体文本_  
 **粗体文本**  
 __粗体文本__  
 ***粗斜体文本***  
 ___粗斜体文本___  
+
+### 突显 
+
+```
+==This was marked==
+^^This was inserted^^
+~~This was deleted~~
+```
+效果：  
+- ==This was marked==  
+- ^^This was inserted^^  
+- ~~This was deleted~~  
+
+---
+### 上下标
+```
+H~2~O
+A^T^A
+```
+
+效果：  
+
+- H~2~O
+- A^T^A
+
 
 ---
 ### 分割线
@@ -85,9 +110,9 @@ ___粗斜体文本___
 <u>下划线</u>
 
 ---
-#### 列表
+### 列表
 
-##### 有序列表：
+#### 有序列表：
 ```
 1. 第一项  
 2. 第二项  
@@ -99,7 +124,7 @@ ___粗斜体文本___
 2. 第二项  
 3. 第三项  
 
-##### 无序列表:
+#### 无序列表:
 
 ```
 * 第一项
@@ -245,7 +270,10 @@ echo "hello world"
 ```
 效果:  
 使用 <kbd>Ctrl</kbd>+<kbd>C</kbd> 复制
-使用 <kbd>Ctrl</kbd>+<kbd>V</kbd> 复制
+使用 <kbd>Ctrl</kbd>+<kbd>V</kbd> 复制  
+++ctrl+alt+delete++  
+++enter++
+
 
 #### 转义
 ```
@@ -257,7 +285,7 @@ echo "hello world"
 \*\* 正常显示星号 \*\*
 
 支持:
-```
+``` 
 \   反斜线
 `   反引号
 *   星号
@@ -270,7 +298,12 @@ _   下划线
 -   减号
 .   英文句点
 !   感叹号
-```
+``` 
 
 #### 数学公式
-具体使用可配合[LaTeX在线工具](https://www.latexlive.com/)现学现用
+具体使用可配合[LaTeX在线工具](https://www.latexlive.com/)现学现用  
+
+$$
+\operatorname{ker} f = \{g\in G:f(g)=e_{H}\}{\mbox{.}}
+$$
+

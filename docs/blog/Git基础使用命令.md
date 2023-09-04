@@ -46,7 +46,7 @@
 `git branch -d branch_name`：删除本地仓库的branch_name分支  
 `git push --set-upstream origin branch_name`：设置本地的branch_name分支对应远程仓库的branch_name分支  
 
-### 检索限制add的文件：
+## 检索限制add的文件：
 * `创建.gitignore文件` 
 * `编辑添加*/xxx, add时过滤xxx文件`
 
