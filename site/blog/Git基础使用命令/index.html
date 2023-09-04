@@ -7,12 +7,12 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
       
-        <meta name="author" content="权">
       
       
-        <link rel="canonical" href="https://github.com/ltq525/blog_site/blog/page-2/">
+        <link rel="prev" href="../Markdown%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/">
       
       
+        <link rel="next" href="../../site/">
       
       
       <link rel="icon" href="../../logo/xianzi.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>你好 - Quann</title>
+        <title>Git基础使用命令 - Quann</title>
       
     
     
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#git" class="md-skip">
           跳转至
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              你好
+              Git基础使用命令
             
           </span>
         </div>
@@ -235,10 +235,12 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../Markdown%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/" class="md-tabs__link">
           
   
@@ -379,19 +381,19 @@
       
   
   
+    
+  
   
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
@@ -404,7 +406,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             博客
@@ -426,6 +428,148 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Git基础使用命令
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Git基础使用命令
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    初始化：
+  </a>
+  
+    <nav class="md-nav" aria-label="初始化：">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git_1" class="md-nav__link">
+    设置Git命名
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git_2" class="md-nav__link">
+    设置Git邮箱
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initgit" class="md-nav__link">
+    init生成.git文件夹
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    暂存区：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    版本回退：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    远程连接：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    分支：
+  </a>
+  
+    <nav class="md-nav" aria-label="分支：">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    分支合并冲突时 手动修改冲突文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add" class="md-nav__link">
+    检索限制add的文件：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -528,9 +672,84 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#hello-world" class="md-nav__link">
-    hello world
+  <a href="#_1" class="md-nav__link">
+    初始化：
   </a>
+  
+    <nav class="md-nav" aria-label="初始化：">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git_1" class="md-nav__link">
+    设置Git命名
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git_2" class="md-nav__link">
+    设置Git邮箱
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initgit" class="md-nav__link">
+    init生成.git文件夹
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    暂存区：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    版本回退：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    远程连接：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    分支：
+  </a>
+  
+    <nav class="md-nav" aria-label="分支：">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    分支合并冲突时 手动修改冲突文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add" class="md-nav__link">
+    检索限制add的文件：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -552,8 +771,50 @@
   
 
 
-<h1 id="_1">你好<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="hello-world">hello world<a class="headerlink" href="#hello-world" title="Permanent link">&para;</a></h2>
+<h1 id="git">Git教程<a class="headerlink" href="#git" title="Permanent link">&para;</a></h1>
+<h2 id="_1">初始化：<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="git_1">设置Git命名<a class="headerlink" href="#git_1" title="Permanent link">&para;</a></h3>
+<p><code>git config --global user.name xxx</code>:  设置全局用户名</p>
+<h3 id="git_2">设置Git邮箱<a class="headerlink" href="#git_2" title="Permanent link">&para;</a></h3>
+<p><code>git config --global user.email xxx@qq.com</code>: 设置全局邮箱地址<br />
+信息记录在~/.gitconfig文件中  </p>
+<h3 id="initgit">init生成.git文件夹<a class="headerlink" href="#initgit" title="Permanent link">&para;</a></h3>
+<p><code>git init</code>: 将当前目录配置成git仓库</p>
+<h2 id="_2">暂存区：<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><code>git status</code>：查看仓库状态<br />
+<code>git add XX</code>：将XX文件添加到暂存区<br />
+<code>git rm --cached XX</code>：删除暂存区文件<br />
+<code>git commit -m "命名"</code>：将暂存区的内容提交到当前分支  </p>
+<h2 id="_3">版本回退：<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p><code>git restore XX</code>：将工作区的文件恢复回暂存区的版本，git checkout 与此作用相同<br />
+<code>git restore --staged xx</code>：将HEAD所指版本库恢复到暂存区，即恢复到上一个版本库的文件<br />
+<code>git reset --hard HEAD~100</code>：往上回滚100个版本<br />
+<code>git reset --hard 版本号</code>：回滚到某一特定版本  </p>
+<h2 id="_4">远程连接：<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<ul>
+<li>第一步设置名字与邮箱</li>
+<li>第二步添加ssh公钥</li>
+<li>第三步创建readme.md文件 并生成版本库</li>
+</ul>
+<p><code>git remote add origin git@github.com:username/project_name.git</code>：将本地仓库关联到远程仓库xxx为远程仓库名称<br />
+<code>git clone git@github.com:ltq525/xxx.git</code>：将远程仓库XXX下载到当前目录下<br />
+<code>git push --set-upstream origin master</code>：首次使用时需执行<br />
+<code>git push -u</code>：(第一次需要-u以后不需要)将当前分支推送到远程仓库<br />
+<code>git push -u origin master -f</code>: 强制覆盖原项目</p>
+<h2 id="_5">分支：<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p><code>git branch</code>：查看所有分支和当前所处分支<br />
+<code>git branch branch_name</code>：创建新分支<br />
+<code>git checkout -b branch_name</code>： 创建并切换到branch_name这个分支<br />
+<code>git checkout branch_name</code>：切换到branch_name这个分支<br />
+<code>git merge branch_name</code>：将分支branch_name合并到当前分支上  </p>
+<h3 id="_6">分支合并冲突时 手动修改冲突文件<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p><code>git branch -d branch_name</code>：删除本地仓库的branch_name分支<br />
+<code>git push --set-upstream origin branch_name</code>：设置本地的branch_name分支对应远程仓库的branch_name分支  </p>
+<h3 id="add">检索限制add的文件：<a class="headerlink" href="#add" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>创建.gitignore文件</code> </li>
+<li><code>编辑添加*/xxx, add时过滤xxx文件</code></li>
+</ul>
 
 
 
