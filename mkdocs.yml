@@ -23,7 +23,7 @@ nav:
     - ubuntu中的ufw防火墙手册: blog/ubuntu中的ufw防火墙手册.md
     - Thrift微服务RPC框架: blog/Thrift微服务RPC框架.md
   - 项目:
-    - 球球小游戏: project/球球作战小游戏.md
+    - 球球作战小游戏: project/球球作战小游戏.md
 
 theme:
   name: material

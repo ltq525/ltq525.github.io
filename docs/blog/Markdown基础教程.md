@@ -265,14 +265,14 @@ echo "hello world"
 支持的 HTML 元素有：`<kbd> <b> <i> <em> <sup> <sub> <br>`等
 例:  
 ```
-使用 <kbd>Ctrl</kbd>+<kbd>C</kbd> 复制
-使用 <kbd>Ctrl</kbd>+<kbd>V</kbd> 复制
+使用 <kbd>Ctrl</kbd>+<kbd>C</kbd> 复制  
+使用 <kbd>Ctrl</kbd>+<kbd>V</kbd> 复制  
 ```
 效果:  
-使用 <kbd>Ctrl</kbd>+<kbd>C</kbd> 复制
+使用 <kbd>Ctrl</kbd>+<kbd>C</kbd> 复制  
 使用 <kbd>Ctrl</kbd>+<kbd>V</kbd> 复制  
 ++ctrl+alt+delete++  
-++enter++
+++enter++  
 
 
 #### 转义
