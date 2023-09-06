@@ -5,6 +5,7 @@ site_name: Quann
 
 repo_url: https://github.com/ltq525/blog_site
 repo_name: ltq525/blog_site
+copyright: Copyright &copy; hello world - 2023 Quann
 
 nav:
   - 简介:
