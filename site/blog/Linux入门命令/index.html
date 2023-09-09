@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../Vim%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/">
+        <link rel="prev" href="../Markdown%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/">
       
       
         <link rel="next" href="../Tmux%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Docker入门教程 - Quann</title>
+        <title>Linux入门命令 - Quann</title>
       
     
     
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#docker" class="md-skip">
+        <a href="#linux" class="md-skip">
           跳转至
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Docker入门教程
+              Linux入门命令
             
           </span>
         </div>
@@ -439,13 +439,189 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../Git%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Linux入门命令
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Git基础使用命令
+    Linux入门命令
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    用户切换
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    文件权限
+  </a>
+  
+    <nav class="md-nav" aria-label="文件权限">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    查询权限：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    修改权限：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    管道指令
+  </a>
+  
+    <nav class="md-nav" aria-label="管道指令">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    概念
+  </a>
+  
+    <nav class="md-nav" aria-label="概念">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xargs" class="md-nav__link">
+    xargs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wc" class="md-nav__link">
+    wc
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cut" class="md-nav__link">
+    cut
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sort" class="md-nav__link">
+    sort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tree" class="md-nav__link">
+    tree
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ag" class="md-nav__link">
+    ag
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#history" class="md-nav__link">
+    history
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    环境变量
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tmux%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tmux使用方法
   </span>
   
 
@@ -461,31 +637,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../SSH%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E6%95%99%E7%A8%8B/" class="md-nav__link">
+      <a href="../Vim%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    SSH远程登录教程
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Linux%E5%85%A5%E9%97%A8%E5%91%BD%E4%BB%A4%E6%95%99%E7%A8%8B/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Linux入门命令教程
+    Vim基本命令
   </span>
   
 
@@ -521,206 +677,15 @@
   
   
     <li class="md-nav__item">
-      <a href="../Vim%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+      <a href="../SSH%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Vim基本命令
+    SSH远程登录
   </span>
   
 
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Docker入门教程
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    Docker入门教程
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#docker_1" class="md-nav__link">
-    Docker的应用场景
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#docker_2" class="md-nav__link">
-    Docker 架构
-  </a>
-  
-    <nav class="md-nav" aria-label="Docker 架构">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#docker_3" class="md-nav__link">
-    Docker 包括三个基本概念:
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#docker_4" class="md-nav__link">
-    图解docker
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#docker_5" class="md-nav__link">
-    Docker安装教程：
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#docker-sudo" class="md-nav__link">
-    docker命令组 加sudo权限：
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#id" class="md-nav__link">
-    更改容器id
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#docker-pull" class="md-nav__link">
-    拉取镜像(docker pull)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#docker-rmi" class="md-nav__link">
-    删除镜像(docker rmi)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#docker-run" class="md-nav__link">
-    加载镜像(docker run)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    使用交互式容器
-  </a>
-  
-    <nav class="md-nav" aria-label="使用交互式容器">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    启动容器
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    进入容器
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    关闭容器
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    删除容器
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    将容器打包成镜像
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    远程连接
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -732,11 +697,51 @@
   
   
     <li class="md-nav__item">
-      <a href="../Tmux%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" class="md-nav__link">
+      <a href="../Git%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Tmux使用方法
+    Git基础使用命令
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Thrift%E5%BE%AE%E6%9C%8D%E5%8A%A1RPC%E6%A1%86%E6%9E%B6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thrift微服务RPC框架
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Docker%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker入门教程
   </span>
   
 
@@ -792,11 +797,31 @@
   
   
     <li class="md-nav__item">
-      <a href="../Thrift%E5%BE%AE%E6%9C%8D%E5%8A%A1RPC%E6%A1%86%E6%9E%B6/" class="md-nav__link">
+      <a href="../openwrt%E4%BA%91%E7%BC%96%E8%AF%91%E5%9B%BA%E4%BB%B6%E6%95%99%E7%A8%8B/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Thrift微服务RPC框架
+    openwrt云编译固件教程
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../openwrt_luci%E6%8F%92%E4%BB%B6%E8%A7%A3%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    openwrt_luci插件解析
   </span>
   
 
@@ -903,23 +928,30 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#docker_1" class="md-nav__link">
-    Docker的应用场景
+  <a href="#_1" class="md-nav__link">
+    用户切换
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#docker_2" class="md-nav__link">
-    Docker 架构
+  <a href="#_2" class="md-nav__link">
+    文件权限
   </a>
   
-    <nav class="md-nav" aria-label="Docker 架构">
+    <nav class="md-nav" aria-label="文件权限">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#docker_3" class="md-nav__link">
-    Docker 包括三个基本概念:
+  <a href="#_3" class="md-nav__link">
+    查询权限：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    修改权限：
   </a>
   
 </li>
@@ -930,94 +962,72 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#docker_4" class="md-nav__link">
-    图解docker
+  <a href="#_5" class="md-nav__link">
+    管道指令
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#docker_5" class="md-nav__link">
-    Docker安装教程：
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#docker-sudo" class="md-nav__link">
-    docker命令组 加sudo权限：
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#id" class="md-nav__link">
-    更改容器id
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#docker-pull" class="md-nav__link">
-    拉取镜像(docker pull)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#docker-rmi" class="md-nav__link">
-    删除镜像(docker rmi)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#docker-run" class="md-nav__link">
-    加载镜像(docker run)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    使用交互式容器
-  </a>
-  
-    <nav class="md-nav" aria-label="使用交互式容器">
+    <nav class="md-nav" aria-label="管道指令">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    启动容器
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    进入容器
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    关闭容器
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    删除容器
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
-    将容器打包成镜像
+    概念
   </a>
+  
+    <nav class="md-nav" aria-label="概念">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xargs" class="md-nav__link">
+    xargs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wc" class="md-nav__link">
+    wc
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cut" class="md-nav__link">
+    cut
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sort" class="md-nav__link">
+    sort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tree" class="md-nav__link">
+    tree
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ag" class="md-nav__link">
+    ag
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#history" class="md-nav__link">
+    history
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1028,7 +1038,7 @@
       
         <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
-    远程连接
+    环境变量
   </a>
   
 </li>
@@ -1051,76 +1061,73 @@
   
 
 
-<h1 id="docker">Docker教程<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h1>
-<h2 id="docker_1">Docker的应用场景<a class="headerlink" href="#docker_1" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Web 应用的自动化打包和发布。</li>
-<li>自动化测试和持续集成、发布。</li>
-<li>在服务型环境中部署和调整数据库或其他的后台应用。</li>
-<li>从头编译或者扩展现有的 OpenShift 或 Cloud Foundry 平台来搭建自己的 PaaS 环境。</li>
-</ul>
-<h2 id="docker_2">Docker 架构<a class="headerlink" href="#docker_2" title="Permanent link">&para;</a></h2>
-<h3 id="docker_3">Docker 包括三个基本概念:<a class="headerlink" href="#docker_3" title="Permanent link">&para;</a></h3>
-<ul>
-<li>镜像（Image）：Docker 镜像（Image），就相当于是一个 root 文件系统。比如官方镜像 ubuntu:16.04 就包含了完整的一套 Ubuntu16.04 最小系统的 root 文件系统。</li>
-<li>容器（Container）：镜像（Image）和容器（Container）的关系，就像是面向对象程序设计中的类和实例一样，镜像是静态的定义，容器是镜像运行时的实体。容器可以被创建、启动、停止、删除、暂停等。</li>
-<li>仓库（Repository）：仓库可看成一个代码控制中心，用来保存镜像。</li>
-</ul>
-<h2 id="docker_4">图解docker<a class="headerlink" href="#docker_4" title="Permanent link">&para;</a></h2>
-<p><img alt="docker" src="https://ltq525.github.io/site/picture/docker1.png" /></p>
-<h2 id="docker_5">Docker安装教程：<a class="headerlink" href="#docker_5" title="Permanent link">&para;</a></h2>
-<p><a href="https://docs.docker.com/engine/install/ubuntu/">docker安装官网</a>  <br />
-Install Docker Engine on Ubuntu | Docker Documentation  </p>
-<h2 id="docker-sudo">docker命令组 加sudo权限：<a class="headerlink" href="#docker-sudo" title="Permanent link">&para;</a></h2>
-<p><code>sudo usermod -aG docker username</code>    </p>
-<h2 id="id">更改容器id<a class="headerlink" href="#id" title="Permanent link">&para;</a></h2>
-<p>`docker rename 容器原来id 更改id``    </p>
-<h2 id="docker-pull">拉取镜像(docker pull)<a class="headerlink" href="#docker-pull" title="Permanent link">&para;</a></h2>
-<p><code>docker image pull</code> 镜像id 或 <code>docker pull</code> 镜像id  <br />
-<code>docker pull ubuntu:20.04</code> 拉取ubuntu:20.04版本的镜像  <br />
-<code>docker pull django</code> 没设定tag版本号 默认下载先前版laster    </p>
-<h2 id="docker-rmi">删除镜像(docker rmi)<a class="headerlink" href="#docker-rmi" title="Permanent link">&para;</a></h2>
-<p><code>docker image rm 镜像名或镜像ID</code> 或 <code>docker rmi 镜像名或镜像ID</code><br />
-例：  <br />
-<code>docker image rm hello-world</code><br />
-<code>docker rmi 9e64176cd8a2</code>  </p>
-<h2 id="docker-run">加载镜像(docker run)<a class="headerlink" href="#docker-run" title="Permanent link">&para;</a></h2>
-<p>即创建容器  </p>
-<blockquote>
-<p>docker run [可选参数] 镜像名 [向启动容器中传入的命令]  </p>
-</blockquote>
-<p><img alt="docker" src="https://ltq525.github.io/site/picture/docker2.png" /></p>
-<p>例：<br />
-docker run -p 20000:22 --name xxx -idt ubuntu:20.04  #创建主机端口20000  </p>
-<h2 id="_1">使用交互式容器<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p><code>docker ps</code> #查看正在运行的容器<br />
-<code>docker ps -a</code> #查看所有容器  </p>
-<h3 id="_2">启动容器<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p><code>docker start 容器名</code>  </p>
-<h3 id="_3">进入容器<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p><code>docker attach 容器名</code>  </p>
-<h3 id="_4">关闭容器<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p><code>docker stop 容器名</code><br />
-<code>docker kill 容器名</code> #强制关闭  </p>
-<h3 id="_5">删除容器<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p><code>docker rm 容器名</code>  </p>
-<h3 id="_6">将容器打包成镜像<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<ol>
-<li><code>docker commit 容器名 新起镜像名称</code>  </li>
-<li>镜像打包成.tar(打包备份的文件会自动存放在当前命令行的路径下,如果想让保存的文件可以打开,可以加.tar后缀)   <br />
-<code>docker save -o 保存的文件名 镜像名</code> <br />
-save -o 可换成 export两区别在于数据的完整性前者更详细    </li>
-<li><code>docker save -o django.tar django_lesson:1.0</code>    </li>
-<li>镜像解压   </li>
-<li><code>docker load -i 文件路径/备份文件</code>    <br />
-load -i 可换成 import 区别同上  </li>
-<li><code>docker import xxx.tar imageName:tag</code>  </li>
-</ol>
-<h2 id="_7">远程连接<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<ul>
-<li><code>docker login</code>远程登陆  </li>
-<li><code>docker logout</code>退出  </li>
-</ul>
+<h1 id="linux">Linux入门命令教程<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h1>
+<h2 id="_1">用户切换<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p><code>su</code>: 进入根用户<br />
+<code>adduser</code>: 新用户名: 添加新用户<br />
+<code>passwd work</code>: 修改新用户 work 的密码<br />
+<code>groupadd SSHD_USER</code>: 添加新的组 SSHD_USER<br />
+<code>usermod -G SSHD_USER work</code>: 将新用户 work 添加到 SSHD_USER 组  </p>
+<h2 id="_2">文件权限<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="_3">查询权限：<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p><code>ll</code>: 查询当前目录所有文件权限<br />
+<code>ls -l xxx</code>: 查看文件权限 依次代表所有者权限，同组用户权限，其它用户权限 <br />
+r 表示拥有读的权限<br />
+w 表示拥有写的权限<br />
+x 表示拥有可执行的权限<br />
+– 表示没有该权限<br />
+<code>d rwx rwx rwx</code>: "d"代表目录，"-"代表非目录。  </p>
+<h3 id="_4">修改权限：<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p><code>chmod o+w xxx.xxx</code>:    表示给其他人授予写xxx.xxx这个文件的权限<br />
+<code>chmod go-rw xxx.xxx</code>:  表示删除xxx.xxx中组群和其他人的读和写的权限<br />
+<code>chown xxx:xxx src</code>: 更改src文件权限拥有者  </p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>u 代表所有者（user）  
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>g 代表所有者所在的组群（group）  
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>o 代表其他人，但不是u和g （other）  
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>a 代表全部的人，也就是包括u，g和o  
+</span></code></pre></div>
+<p>r、w、x也有对应的数字：<br />
+<code>r—4 w—2 x—1</code> <br />
+<code>-rw------- (600)</code>:只有所有者才有读和写的权限<br />
+<code>-rw-r–r-- (644)</code>: 只有所有者才有读和写的权限，组群和其他人只有读的权限<br />
+<code>-rwx------ (700)</code>: 只有所有者才有读，写，执行的权限  </p>
+<h2 id="_5">管道指令<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="_6">概念<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>管道类似于文件重定向，可以将前一个命令的stdout重定向到下一个命令的stdin。</p>
+<h4 id="xargs">xargs<a class="headerlink" href="#xargs" title="Permanent link">&para;</a></h4>
+<p>将stdin中的数据用空格分割成命令行参数<br />
+<code>grep xxx</code>：从stdin中读入若干行数据，如果某行中包含xxx，则输出该行；否则忽略该行，类似字符串匹配<br />
+<code>ag xxx</code>：搜索当前目录下的所有文件，检索xxx字符串  </p>
+<h4 id="wc">wc<a class="headerlink" href="#wc" title="Permanent link">&para;</a></h4>
+<p>统计行数、单词数、字节数<br />
+既可以从stdin中直接读入内容；也可以在命令行参数中传入文件名列表<br />
+<code>wc -l</code>：统计行数<br />
+<code>wc -w</code>：统计单词数<br />
+<code>wc -c</code>：统计字节数  </p>
+<h4 id="cut">cut<a class="headerlink" href="#cut" title="Permanent link">&para;</a></h4>
+<p>分割一行内容<br />
+<code>echo $PATH | cut -d ':' -f 3,5</code>：输出PATH用:分割后第3、5列数据，类似java的根据字符切割<br />
+<code>echo $PATH | cut -c 3,5</code>：输出PATH的第3、5个字符<br />
+<code>echo $PATH | cut -c 3-5</code>：输出PATH的第3-5个字符  </p>
+<h4 id="sort">sort<a class="headerlink" href="#sort" title="Permanent link">&para;</a></h4>
+<p>将每行内容按字典序排序<br />
+可以从stdin中读取多行数据<br />
+可以从命令行参数中读取文件名列表  </p>
+<h4 id="tree">tree<a class="headerlink" href="#tree" title="Permanent link">&para;</a></h4>
+<p>展示当前目录的文件结构<br />
+<code>tree /path/to/directory/</code>：展示某个目录的文件结构<br />
+<code>tree .</code>：展示当前目录的文件结构<br />
+<code>tree -a</code>：展示隐藏文件  </p>
+<h4 id="ag">ag<a class="headerlink" href="#ag" title="Permanent link">&para;</a></h4>
+<p>ag：寻找字符串命令
+ag config</p>
+<h4 id="history">history<a class="headerlink" href="#history" title="Permanent link">&para;</a></h4>
+<p>历史命令查找, 展示当前用户的历史操作。内容存放在~/.bash_history中</p>
+<h2 id="_7">环境变量<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>列出当前环境下的所有环境变量：<br />
+<code>env</code>:  显示当前用户的变量<br />
+<code>set</code>:  显示当前shell的变量，包括当前用户的变量<br />
+<code>export</code>: 显示当前导出成用户变量的shell变量  </p>
 
 
 

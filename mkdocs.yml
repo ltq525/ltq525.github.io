@@ -12,18 +12,21 @@ nav:
     - blog/项目搭建.md
   - 博客:
     - Markdown基础教程: blog/Markdown基础教程.md
-    - Git基础使用命令: blog/Git基础使用命令.md
-    - SSH远程登录教程: blog/SSH远程登录教程.md
-    - Linux入门命令教程: blog/Linux入门命令教程.md
-    - Shell语法: blog/Shell语法.md
-    - Vim基本命令: blog/Vim基本命令.md
-    - Docker入门教程: blog/Docker入门教程.md
+    - Linux入门命令: blog/Linux入门命令.md
     - Tmux使用方法: blog/Tmux使用方法.md
+    - Vim基本命令: blog/Vim基本命令.md
+    - Shell语法: blog/Shell语法.md
+    - SSH远程登录: blog/SSH远程登录.md
+    - Git基础使用命令: blog/Git基础命令.md
+    - Thrift微服务RPC框架: blog/Thrift微服务RPC框架.md
+    - Docker入门教程: blog/Docker入门基础.md
     - wsl子系统使用: blog/wsl子系统使用.md
     - ubuntu中的ufw防火墙手册: blog/ubuntu中的ufw防火墙手册.md
-    - Thrift微服务RPC框架: blog/Thrift微服务RPC框架.md
+    - openwrt云编译固件教程: blog/openwrt云编译固件教程.md
+    - openwrt_luci插件解析: blog/openwrt_luci插件解析.md
   - 项目:
     - 球球作战小游戏: project/球球作战小游戏.md
+
 
 theme:
   name: material
@@ -32,7 +35,7 @@ theme:
   language: zh
   icon:
     repo: fontawesome/brands/github
-    edit: material/pencil 
+    edit: material/pencil
     view: material/eye
 
   features:

@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../Docker%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/">
+        <link rel="prev" href="../Thrift%E5%BE%AE%E6%9C%8D%E5%8A%A1RPC%E6%A1%86%E6%9E%B6/">
       
       
-        <link rel="next" href="../ubuntu%E4%B8%AD%E7%9A%84ufw%E9%98%B2%E7%81%AB%E5%A2%99%E6%89%8B%E5%86%8C/">
+        <link rel="next" href="../wsl%E5%AD%90%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8/">
       
       
       <link rel="icon" href="../../logo/xianzi.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>wsl子系统使用 - Quann</title>
+        <title>Docker入门教程 - Quann</title>
       
     
     
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#wsl" class="md-skip">
+        <a href="#docker" class="md-skip">
           跳转至
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              wsl子系统使用
+              Docker入门教程
             
           </span>
         </div>
@@ -579,26 +579,6 @@
                 
   
   
-  
-    <li class="md-nav__item">
-      <a href="../Docker%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Docker入门教程
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -614,7 +594,7 @@
           
   
   <span class="md-ellipsis">
-    wsl子系统使用
+    Docker入门教程
   </span>
   
 
@@ -625,7 +605,7 @@
         
   
   <span class="md-ellipsis">
-    wsl子系统使用
+    Docker入门教程
   </span>
   
 
@@ -647,64 +627,132 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#docker_1" class="md-nav__link">
+    Docker的应用场景
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker_2" class="md-nav__link">
+    Docker 架构
+  </a>
+  
+    <nav class="md-nav" aria-label="Docker 架构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker_3" class="md-nav__link">
+    Docker 包括三个基本概念:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker_4" class="md-nav__link">
+    图解docker
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker_5" class="md-nav__link">
+    Docker安装教程：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-sudo" class="md-nav__link">
+    docker命令组 加sudo权限：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#id" class="md-nav__link">
+    更改容器id
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-pull" class="md-nav__link">
+    拉取镜像(docker pull)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-rmi" class="md-nav__link">
+    删除镜像(docker rmi)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-run" class="md-nav__link">
+    加载镜像(docker run)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    查看状态
+    使用交互式容器
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="使用交互式容器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    设置默认系统
+    启动容器
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    设置默认版本
+    进入容器
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    停止子系统
+    关闭容器
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
-    打包子系统
+    删除容器
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
-    删除子系统
+    将容器打包成镜像
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
-    解压子系统
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    启动子系统
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#wsl_1" class="md-nav__link">
-    查看wsl内核版本
+    远程连接
   </a>
   
 </li>
@@ -713,6 +761,26 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wsl%E5%AD%90%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    wsl子系统使用
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -875,64 +943,132 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#docker_1" class="md-nav__link">
+    Docker的应用场景
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker_2" class="md-nav__link">
+    Docker 架构
+  </a>
+  
+    <nav class="md-nav" aria-label="Docker 架构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker_3" class="md-nav__link">
+    Docker 包括三个基本概念:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker_4" class="md-nav__link">
+    图解docker
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker_5" class="md-nav__link">
+    Docker安装教程：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-sudo" class="md-nav__link">
+    docker命令组 加sudo权限：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#id" class="md-nav__link">
+    更改容器id
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-pull" class="md-nav__link">
+    拉取镜像(docker pull)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-rmi" class="md-nav__link">
+    删除镜像(docker rmi)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-run" class="md-nav__link">
+    加载镜像(docker run)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    查看状态
+    使用交互式容器
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="使用交互式容器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    设置默认系统
+    启动容器
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    设置默认版本
+    进入容器
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    停止子系统
+    关闭容器
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
-    打包子系统
+    删除容器
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
-    删除子系统
+    将容器打包成镜像
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
-    解压子系统
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    启动子系统
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#wsl_1" class="md-nav__link">
-    查看wsl内核版本
+    远程连接
   </a>
   
 </li>
@@ -955,28 +1091,76 @@
   
 
 
-<h1 id="wsl">wsl简单的使用说明<a class="headerlink" href="#wsl" title="Permanent link">&para;</a></h1>
-<h2 id="_1">查看状态<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p><code>wsl -l -v</code></p>
-<h2 id="_2">设置默认系统<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p><code>wsl --set-default 系统名称</code></p>
-<h2 id="_3">设置默认版本<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p><code>wsl --set-default-version 2 版本号</code></p>
-<h2 id="_4">停止子系统<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p><code>wsl --shutdown</code>  </p>
-<h2 id="_5">打包子系统<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p><code>wsl --export 需打包子系统名 设置打包的文件名称及路径</code><br />
-<code>wsl --export Ubuntu-20.04 F:\Ubuntu-20.04\Ubuntu-20.04.tar</code>  </p>
-<h2 id="_6">删除子系统<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<p><code>wsl --unregister Ubuntu-20.04</code>  </p>
-<h2 id="_7">解压子系统<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<p><code>wsl --import 新建的系统名称 目的路径 解压文件的路径 --version 版本号</code><br />
-例：<br />
-<code>wsl --import Ubuntu-20.04 F:\Ubuntu-20.04\  F:\Ubuntu-20.04\Ubuntu-20.04.tar --version 1</code></p>
-<h2 id="_8">启动子系统<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
-<p><code>wsl -d Ubuntu-20.04</code></p>
-<h2 id="wsl_1">查看wsl内核版本<a class="headerlink" href="#wsl_1" title="Permanent link">&para;</a></h2>
-<p><code>wsl --status</code></p>
+<h1 id="docker">Docker教程<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h1>
+<h2 id="docker_1">Docker的应用场景<a class="headerlink" href="#docker_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Web 应用的自动化打包和发布。</li>
+<li>自动化测试和持续集成、发布。</li>
+<li>在服务型环境中部署和调整数据库或其他的后台应用。</li>
+<li>从头编译或者扩展现有的 OpenShift 或 Cloud Foundry 平台来搭建自己的 PaaS 环境。</li>
+</ul>
+<h2 id="docker_2">Docker 架构<a class="headerlink" href="#docker_2" title="Permanent link">&para;</a></h2>
+<h3 id="docker_3">Docker 包括三个基本概念:<a class="headerlink" href="#docker_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>镜像（Image）：Docker 镜像（Image），就相当于是一个 root 文件系统。比如官方镜像 ubuntu:16.04 就包含了完整的一套 Ubuntu16.04 最小系统的 root 文件系统。</li>
+<li>容器（Container）：镜像（Image）和容器（Container）的关系，就像是面向对象程序设计中的类和实例一样，镜像是静态的定义，容器是镜像运行时的实体。容器可以被创建、启动、停止、删除、暂停等。</li>
+<li>仓库（Repository）：仓库可看成一个代码控制中心，用来保存镜像。</li>
+</ul>
+<h2 id="docker_4">图解docker<a class="headerlink" href="#docker_4" title="Permanent link">&para;</a></h2>
+<p><img alt="docker" src="https://ltq525.github.io/site/picture/docker1.png" /></p>
+<h2 id="docker_5">Docker安装教程：<a class="headerlink" href="#docker_5" title="Permanent link">&para;</a></h2>
+<p><a href="https://docs.docker.com/engine/install/ubuntu/">docker安装官网</a>  <br />
+Install Docker Engine on Ubuntu | Docker Documentation  </p>
+<h2 id="docker-sudo">docker命令组 加sudo权限：<a class="headerlink" href="#docker-sudo" title="Permanent link">&para;</a></h2>
+<p><code>sudo usermod -aG docker username</code>    </p>
+<h2 id="id">更改容器id<a class="headerlink" href="#id" title="Permanent link">&para;</a></h2>
+<p>`docker rename 容器原来id 更改id``    </p>
+<h2 id="docker-pull">拉取镜像(docker pull)<a class="headerlink" href="#docker-pull" title="Permanent link">&para;</a></h2>
+<p><code>docker image pull</code> 镜像id 或 <code>docker pull</code> 镜像id  <br />
+<code>docker pull ubuntu:20.04</code> 拉取ubuntu:20.04版本的镜像  <br />
+<code>docker pull django</code> 没设定tag版本号 默认下载先前版laster    </p>
+<h2 id="docker-rmi">删除镜像(docker rmi)<a class="headerlink" href="#docker-rmi" title="Permanent link">&para;</a></h2>
+<p><code>docker image rm 镜像名或镜像ID</code> 或 <code>docker rmi 镜像名或镜像ID</code><br />
+例：  <br />
+<code>docker image rm hello-world</code><br />
+<code>docker rmi 9e64176cd8a2</code>  </p>
+<h2 id="docker-run">加载镜像(docker run)<a class="headerlink" href="#docker-run" title="Permanent link">&para;</a></h2>
+<p>即创建容器  </p>
+<blockquote>
+<p>docker run [可选参数] 镜像名 [向启动容器中传入的命令]  </p>
+</blockquote>
+<p><img alt="docker" src="https://ltq525.github.io/site/picture/docker2.png" /></p>
+<p>例：<br />
+docker run -p 20000:22 --name xxx -idt ubuntu:20.04  #创建主机端口20000  </p>
+<h2 id="_1">使用交互式容器<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p><code>docker ps</code> #查看正在运行的容器<br />
+<code>docker ps -a</code> #查看所有容器  </p>
+<h3 id="_2">启动容器<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p><code>docker start 容器名</code>  </p>
+<h3 id="_3">进入容器<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p><code>docker attach 容器名</code>  </p>
+<h3 id="_4">关闭容器<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p><code>docker stop 容器名</code><br />
+<code>docker kill 容器名</code> #强制关闭  </p>
+<h3 id="_5">删除容器<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p><code>docker rm 容器名</code>  </p>
+<h3 id="_6">将容器打包成镜像<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<ol>
+<li><code>docker commit 容器名 新起镜像名称</code>  </li>
+<li>镜像打包成.tar(打包备份的文件会自动存放在当前命令行的路径下,如果想让保存的文件可以打开,可以加.tar后缀)   <br />
+<code>docker save -o 保存的文件名 镜像名</code> <br />
+save -o 可换成 export两区别在于数据的完整性前者更详细    </li>
+<li><code>docker save -o django.tar django_lesson:1.0</code>    </li>
+<li>镜像解压   </li>
+<li><code>docker load -i 文件路径/备份文件</code>    <br />
+load -i 可换成 import 区别同上  </li>
+<li><code>docker import xxx.tar imageName:tag</code>  </li>
+</ol>
+<h2 id="_7">远程连接<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>docker login</code>远程登陆  </li>
+<li><code>docker logout</code>退出  </li>
+</ul>
 
 
 
