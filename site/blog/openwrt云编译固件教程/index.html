@@ -956,24 +956,29 @@
 <h1 id="openwrt-github-action">openwrt 搭建github action云编译固件<a class="headerlink" href="#openwrt-github-action" title="Permanent link">&para;</a></h1>
 <h2 id="_1">配置编译环境<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <h3 id="_2">更新安装包<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p><code>sudo apt-get update &amp;&amp; sudo apt-get upgrade</code>  </p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo apt-get update &amp;&amp; sudo apt-get upgrade
+</span></code></pre></div>
 <h3 id="_3">下载依赖包<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p><code>sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch python3 python2.7 unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler g++-multilib antlr3 gperf wget curl swig rsync</code></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch python3 python2.7 unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler g++-multilib antlr3 gperf wget curl swig rsync
+</span></code></pre></div>
 <h2 id="lede">拉取Lede源码<a class="headerlink" href="#lede" title="Permanent link">&para;</a></h2>
-<p><code>git clone https://github.com/coolsnowwolf/lede &amp;&amp; cd lede</code>  </p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git clone https://github.com/coolsnowwolf/lede &amp;&amp; cd lede
+</span></code></pre></div>
 <h2 id="ua2frkp-ipid">加入UA2F与RKP-IPID<a class="headerlink" href="#ua2frkp-ipid" title="Permanent link">&para;</a></h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git clone https://github.com/EOYOHOO/UA2F.git package/UA2F  
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>git clone https://github.com/EOYOHOO/rkp-ipid.git package/rkp-ipid  
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>git clone https://github.com/EOYOHOO/UA2F.git package/UA2F  
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>git clone https://github.com/EOYOHOO/rkp-ipid.git package/rkp-ipid  
 </span></code></pre></div>
 <h2 id="_4">缝合插件<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>添加下面代码复制到 lede源码根目录 feeds.conf.default 文件<br />
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>src-git kenzo https://github.com/kenzok8/openwrt-packages  
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>src-git small https://github.com/kenzok8/small  
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>src-git kenzo https://github.com/kenzok8/openwrt-packages  
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>src-git small https://github.com/kenzok8/small  
 </span></code></pre></div></p>
 <h2 id="feed">更新feed模块<a class="headerlink" href="#feed" title="Permanent link">&para;</a></h2>
-<p><code>./scripts/feeds update -a &amp;&amp; ./scripts/feeds install -a</code></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>./scripts/feeds update -a &amp;&amp; ./scripts/feeds install -a
+</span></code></pre></div>
 <h2 id="_5">编译<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p><code>make menuconfig</code></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>make menuconfig
+</span></code></pre></div>
 <ol>
 <li>
 <p>前三项选择需要刷取的固件型号(<strong>重点</strong>)</p>
@@ -983,18 +988,18 @@
 </li>
 <li>
 <p>加入UA2F与RKP-IPID配置
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a># 勾选上ipid
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a># kernel-modules-&gt;Other modules-&gt;kmod-rkp-ipid
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a># 选上模块
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a># kernel modules-&gt;Netfilter Extensions-&gt;kmod-ipt-u32
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a># kernel modules-&gt;Netfilter Extensions-&gt;kmod-ipt-ipopt
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a># 勾选上ua2f
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a># network-&gt;Routing and Redirection-&gt;ua2f
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a># 选上模块
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a># network-&gt;firewall-&gt;iptables-mod-filter
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a># network-&gt;firewall-&gt;iptables-mod-ipopt
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a># network-&gt;firewall-&gt;iptables-mod-u32
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a># network-&gt;firewall-&gt;iptables-mod-conntrack-extra
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a># 勾选上ipid
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a># kernel-modules-&gt;Other modules-&gt;kmod-rkp-ipid
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a># 选上模块
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a># kernel modules-&gt;Netfilter Extensions-&gt;kmod-ipt-u32
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a># kernel modules-&gt;Netfilter Extensions-&gt;kmod-ipt-ipopt
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a># 勾选上ua2f
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a># network-&gt;Routing and Redirection-&gt;ua2f
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a># 选上模块
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a># network-&gt;firewall-&gt;iptables-mod-filter
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a># network-&gt;firewall-&gt;iptables-mod-ipopt
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a># network-&gt;firewall-&gt;iptables-mod-u32
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a># network-&gt;firewall-&gt;iptables-mod-conntrack-extra
 </span></code></pre></div></p>
 </li>
 <li>

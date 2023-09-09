@@ -3,13 +3,19 @@
 ## 配置编译环境
 
 ### 更新安装包  
-`sudo apt-get update && sudo apt-get upgrade`  
+```
+sudo apt-get update && sudo apt-get upgrade
+```
 
 ### 下载依赖包
-`sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch python3 python2.7 unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler g++-multilib antlr3 gperf wget curl swig rsync`
+```
+sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch python3 python2.7 unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint device-tree-compiler g++-multilib antlr3 gperf wget curl swig rsync
+```
 
 ## 拉取Lede源码
-`git clone https://github.com/coolsnowwolf/lede && cd lede`  
+```
+git clone https://github.com/coolsnowwolf/lede && cd lede
+```  
 
 ## 加入UA2F与RKP-IPID
 ```
@@ -25,10 +31,14 @@ src-git small https://github.com/kenzok8/small
 ```
 
 ## 更新feed模块
-`./scripts/feeds update -a && ./scripts/feeds install -a`
+```
+./scripts/feeds update -a && ./scripts/feeds install -a
+```
 
 ## 编译
-`make menuconfig`
+```
+make menuconfig
+```
 
 1. 前三项选择需要刷取的固件型号(**重点**)
 
