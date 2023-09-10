@@ -52,9 +52,3 @@ scp start destination: 起始地 -> 目的地
 
 `scp . mysever`: 本地传送到服务器
 `scp mysever`: . 服务器传送到本地
-
-## 进入提示语
-进入欢迎提示在文件夹/etc/update-motd.d/
-
-## 编辑下载源
-路径: /etc/apt/sources.list

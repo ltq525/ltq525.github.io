@@ -12,7 +12,7 @@
         <link rel="prev" href="../Docker%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80/">
       
       
-        <link rel="next" href="../ubuntu%E4%B8%AD%E7%9A%84ufw%E9%98%B2%E7%81%AB%E5%A2%99%E6%89%8B%E5%86%8C/">
+        <link rel="next" href="../Ubuntu%E4%B8%AD%E7%9A%84ufw%E9%98%B2%E7%81%AB%E5%A2%99%E6%89%8B%E5%86%8C/">
       
       
       <link rel="icon" href="../../logo/xianzi.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>wsl子系统使用 - Quann</title>
+        <title>WSL子系统使用 - Quann</title>
       
     
     
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              wsl子系统使用
+              WSL子系统使用
             
           </span>
         </div>
@@ -614,7 +614,7 @@
           
   
   <span class="md-ellipsis">
-    wsl子系统使用
+    WSL子系统使用
   </span>
   
 
@@ -625,7 +625,7 @@
         
   
   <span class="md-ellipsis">
-    wsl子系统使用
+    WSL子系统使用
   </span>
   
 
@@ -709,6 +709,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#wslclash" class="md-nav__link">
+    wsl加入clash代理
+  </a>
+  
+    <nav class="md-nav" aria-label="wsl加入clash代理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    科学上网
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -724,11 +744,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../ubuntu%E4%B8%AD%E7%9A%84ufw%E9%98%B2%E7%81%AB%E5%A2%99%E6%89%8B%E5%86%8C/" class="md-nav__link">
+      <a href="../Ubuntu%E4%B8%AD%E7%9A%84ufw%E9%98%B2%E7%81%AB%E5%A2%99%E6%89%8B%E5%86%8C/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    ubuntu中的ufw防火墙手册
+    Ubuntu中的ufw防火墙手册
   </span>
   
 
@@ -744,11 +764,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../openwrt%E4%BA%91%E7%BC%96%E8%AF%91%E5%9B%BA%E4%BB%B6%E6%95%99%E7%A8%8B/" class="md-nav__link">
+      <a href="../Openwrt%E4%BA%91%E7%BC%96%E8%AF%91%E5%9B%BA%E4%BB%B6%E6%95%99%E7%A8%8B/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    openwrt云编译固件教程
+    Openwrt云编译固件教程
   </span>
   
 
@@ -764,11 +784,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../openwrt_luci%E6%8F%92%E4%BB%B6%E8%A7%A3%E6%9E%90/" class="md-nav__link">
+      <a href="../Openwrt_Luci%E6%8F%92%E4%BB%B6%E8%A7%A3%E6%9E%90/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    openwrt_luci插件解析
+    Openwrt_Luci插件解析
   </span>
   
 
@@ -937,6 +957,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#wslclash" class="md-nav__link">
+    wsl加入clash代理
+  </a>
+  
+    <nav class="md-nav" aria-label="wsl加入clash代理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    科学上网
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -977,6 +1017,25 @@
 <p><code>wsl -d Ubuntu-20.04</code></p>
 <h2 id="wsl_1">查看wsl内核版本<a class="headerlink" href="#wsl_1" title="Permanent link">&para;</a></h2>
 <p><code>wsl --status</code></p>
+<h2 id="wslclash">wsl加入clash代理<a class="headerlink" href="#wslclash" title="Permanent link">&para;</a></h2>
+<h3 id="_9">科学上网<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<ol>
+<li>在clash中开启ALLOW LAN开关  </li>
+<li>将下列代码加入.bashrc中<br />
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>export HOSTIP=$(cat /etc/resolv.conf | grep &quot;nameserver&quot; | cut -f 2 -d &quot; &quot;)
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>export http_proxy=&quot;http://$HOSTIP:7890&quot;
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>export https_proxy=&quot;http://$HOSTIP:7890&quot;
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>export all_proxy=&quot;socks5://$HOSTIP:7890&quot;
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>export ALL_PROXY=&quot;socks5://$HOSTIP:7890&quot;
+</span></code></pre></div></li>
+<li>运行.bashrc
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>source .bashrc
+</span></code></pre></div></li>
+</ol>
 
 
 

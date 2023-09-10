@@ -20,10 +20,10 @@ nav:
     - Git基础使用命令: blog/Git基础命令.md
     - Thrift微服务RPC框架: blog/Thrift微服务RPC框架.md
     - Docker入门教程: blog/Docker入门基础.md
-    - wsl子系统使用: blog/wsl子系统使用.md
-    - ubuntu中的ufw防火墙手册: blog/ubuntu中的ufw防火墙手册.md
-    - openwrt云编译固件教程: blog/openwrt云编译固件教程.md
-    - openwrt_luci插件解析: blog/openwrt_luci插件解析.md
+    - WSL子系统使用: blog/WSL子系统使用.md
+    - Ubuntu中的ufw防火墙手册: blog/Ubuntu中的ufw防火墙手册.md
+    - Openwrt云编译固件教程: blog/Openwrt云编译固件教程.md
+    - Openwrt_Luci插件解析: blog/Openwrt_Luci插件解析.md
   - 项目:
     - 球球作战小游戏: project/球球作战小游戏.md
 

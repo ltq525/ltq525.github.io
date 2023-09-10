@@ -29,6 +29,28 @@
 ## 查看wsl内核版本  
 `wsl --status`
 
+## wsl加入clash代理
+### 科学上网
+
+1. 在clash中开启ALLOW LAN开关  
+2. 将下列代码加入.bashrc中  
+```
+export HOSTIP=$(cat /etc/resolv.conf | grep "nameserver" | cut -f 2 -d " ")
+
+export http_proxy="http://$HOSTIP:7890"
+
+export https_proxy="http://$HOSTIP:7890"
+
+export all_proxy="socks5://$HOSTIP:7890"
+
+export ALL_PROXY="socks5://$HOSTIP:7890"
+```
+3. 运行.bashrc
+```
+source .bashrc
+```
+
+
 
 
 

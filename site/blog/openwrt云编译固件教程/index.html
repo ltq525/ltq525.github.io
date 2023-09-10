@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../ubuntu%E4%B8%AD%E7%9A%84ufw%E9%98%B2%E7%81%AB%E5%A2%99%E6%89%8B%E5%86%8C/">
+        <link rel="prev" href="../Ubuntu%E4%B8%AD%E7%9A%84ufw%E9%98%B2%E7%81%AB%E5%A2%99%E6%89%8B%E5%86%8C/">
       
       
-        <link rel="next" href="../openwrt_luci%E6%8F%92%E4%BB%B6%E8%A7%A3%E6%9E%90/">
+        <link rel="next" href="../Openwrt_Luci%E6%8F%92%E4%BB%B6%E8%A7%A3%E6%9E%90/">
       
       
       <link rel="icon" href="../../logo/xianzi.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>openwrt云编译固件教程 - Quann</title>
+        <title>Openwrt云编译固件教程 - Quann</title>
       
     
     
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              openwrt云编译固件教程
+              Openwrt云编译固件教程
             
           </span>
         </div>
@@ -601,11 +601,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../wsl%E5%AD%90%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8/" class="md-nav__link">
+      <a href="../WSL%E5%AD%90%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    wsl子系统使用
+    WSL子系统使用
   </span>
   
 
@@ -621,11 +621,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../ubuntu%E4%B8%AD%E7%9A%84ufw%E9%98%B2%E7%81%AB%E5%A2%99%E6%89%8B%E5%86%8C/" class="md-nav__link">
+      <a href="../Ubuntu%E4%B8%AD%E7%9A%84ufw%E9%98%B2%E7%81%AB%E5%A2%99%E6%89%8B%E5%86%8C/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    ubuntu中的ufw防火墙手册
+    Ubuntu中的ufw防火墙手册
   </span>
   
 
@@ -654,7 +654,7 @@
           
   
   <span class="md-ellipsis">
-    openwrt云编译固件教程
+    Openwrt云编译固件教程
   </span>
   
 
@@ -665,7 +665,7 @@
         
   
   <span class="md-ellipsis">
-    openwrt云编译固件教程
+    Openwrt云编译固件教程
   </span>
   
 
@@ -748,6 +748,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#github" class="md-nav__link">
+    github云编译
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -763,11 +770,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../openwrt_luci%E6%8F%92%E4%BB%B6%E8%A7%A3%E6%9E%90/" class="md-nav__link">
+      <a href="../Openwrt_Luci%E6%8F%92%E4%BB%B6%E8%A7%A3%E6%9E%90/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    openwrt_luci插件解析
+    Openwrt_Luci插件解析
   </span>
   
 
@@ -935,6 +942,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#github" class="md-nav__link">
+    github云编译
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -965,19 +979,25 @@
 <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git clone https://github.com/coolsnowwolf/lede &amp;&amp; cd lede
 </span></code></pre></div>
 <h2 id="ua2frkp-ipid">加入UA2F与RKP-IPID<a class="headerlink" href="#ua2frkp-ipid" title="Permanent link">&para;</a></h2>
+<p>git 拉取源代码
 <div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>git clone https://github.com/EOYOHOO/UA2F.git package/UA2F  
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>git clone https://github.com/EOYOHOO/rkp-ipid.git package/rkp-ipid  
 </span></code></pre></div>
+如果https拉取较慢可以换成这个
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>git clone git@github.com:EOYOHOO/UA2F.git package/UA2F
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>git clone git@github.com:EOYOHOO/rkp-ipid.git package/rkp-ipid 
+</span></code></pre></div></p>
 <h2 id="_4">缝合插件<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>添加下面代码复制到 lede源码根目录 feeds.conf.default 文件<br />
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>src-git kenzo https://github.com/kenzok8/openwrt-packages  
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>src-git small https://github.com/kenzok8/small  
+<p>添加下面代码复制到 lede源码根目录 <strong>feeds.conf.default</strong> 文件<br />
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>src-git kenzo https://github.com/kenzok8/openwrt-packages  
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>src-git small https://github.com/kenzok8/small  
 </span></code></pre></div></p>
 <h2 id="feed">更新feed模块<a class="headerlink" href="#feed" title="Permanent link">&para;</a></h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>./scripts/feeds update -a &amp;&amp; ./scripts/feeds install -a
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>./scripts/feeds update -a &amp;&amp; ./scripts/feeds install -a
 </span></code></pre></div>
+多运行几次 观察是否都准备完毕</p>
 <h2 id="_5">编译<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>make menuconfig
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>make menuconfig
 </span></code></pre></div>
 <ol>
 <li>
@@ -988,24 +1008,34 @@
 </li>
 <li>
 <p>加入UA2F与RKP-IPID配置
-<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a># 勾选上ipid
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a># kernel-modules-&gt;Other modules-&gt;kmod-rkp-ipid
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a># 选上模块
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a># kernel modules-&gt;Netfilter Extensions-&gt;kmod-ipt-u32
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a># kernel modules-&gt;Netfilter Extensions-&gt;kmod-ipt-ipopt
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a># 勾选上ua2f
-</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a># network-&gt;Routing and Redirection-&gt;ua2f
-</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a># 选上模块
-</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a># network-&gt;firewall-&gt;iptables-mod-filter
-</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a># network-&gt;firewall-&gt;iptables-mod-ipopt
-</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a># network-&gt;firewall-&gt;iptables-mod-u32
-</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a># network-&gt;firewall-&gt;iptables-mod-conntrack-extra
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a># 勾选上ipid
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a># kernel-modules-&gt;Other modules-&gt;kmod-rkp-ipid
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a># 选上模块
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a># kernel modules-&gt;Netfilter Extensions-&gt;kmod-ipt-u32
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a># kernel modules-&gt;Netfilter Extensions-&gt;kmod-ipt-ipopt
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a># 勾选上ua2f
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a># network-&gt;Routing and Redirection-&gt;ua2f
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a># 选上模块
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a># network-&gt;firewall-&gt;iptables-mod-filter
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a># network-&gt;firewall-&gt;iptables-mod-ipopt
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a># network-&gt;firewall-&gt;iptables-mod-u32
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a># network-&gt;firewall-&gt;iptables-mod-conntrack-extra
 </span></code></pre></div></p>
 </li>
 <li>
 <p>Luci插件配置 (可不用填)<br />
 <a href="https://ltq525.github.io/site/blog/openwrt_luci插件解析/">openwrt_luci插件解析</a></p>
 </li>
+</ol>
+<h2 id="github">github云编译<a class="headerlink" href="#github" title="Permanent link">&para;</a></h2>
+<ol>
+<li>进入网站 <a href="https://github.com/P3TERX/Actions-OpenWrt">https://github.com/P3TERX/Actions-OpenWrt</a></li>
+<li>Use this template -&gt; Create a new repository</li>
+<li>将刚编译的lede文件夹中的.config和feeds.conf.default文件上传到刚创建的profile中</li>
+<li>Actions -&gt; Build OpenWrt -&gt; Run workflow<br />
+<strong>等待编译完成 时间大概两个小时</strong><br />
+<strong>End...</strong> <br />
+<strong>结束撒花</strong></li>
 </ol>
 
 
