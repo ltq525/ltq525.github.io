@@ -2,4 +2,4 @@
 
 read name
 
-mkdocs git add . && git commit -m "$name" && git push
+git add . && git commit -m "$name" && git push
