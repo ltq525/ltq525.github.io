@@ -47,7 +47,7 @@ export ALL_PROXY="socks5://$HOSTIP:7890"
 ```
 3. 运行.bashrc
 ```
-source .bashrc
+source .bashrc 
 ```
 
 
