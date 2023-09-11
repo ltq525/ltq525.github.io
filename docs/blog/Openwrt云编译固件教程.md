@@ -78,8 +78,13 @@ make menuconfig
 
 1. 进入网站 <https://github.com/P3TERX/Actions-OpenWrt>  
 2. Use this template -> Create a new repository  
-3. 将刚编译的lede文件夹中的.config和feeds.conf.default文件上传到刚创建的profile中  
-4. Actions -> Build OpenWrt -> Run workflow   
+3. diy-part2.sh 加入两行代码
+```
+git clone https://github.com/EOYOHOO/UA2F.git package/UA2F
+git clone https://github.com/EOYOHOO/rkp-ipid.git package/rkp-ipid
+```
+4. 将刚编译的lede文件夹中的.config和feeds.conf.default文件上传到刚创建的profile中  
+5. Actions -> Build OpenWrt -> Run workflow   
 
 **等待编译完成 时间大概两个小时**  
 **End...**   
