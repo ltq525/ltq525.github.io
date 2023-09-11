@@ -1,4 +1,4 @@
-# openwrt 搭建github action云编译固件
+# Openwrt 搭建github action云编译固件
 
 ## 配置编译环境
 

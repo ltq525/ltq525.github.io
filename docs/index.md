@@ -47,9 +47,9 @@
 ### 创建网页文件夹
 `mkdocs new dir`  
 
-### 生成静态站点
-`mkdocs build`  
-`mkdocs build -clean`: 生成并清除旧的(推荐用这个)
+### 生成静态站点  
+`mkdocs build`    
+`mkdocs build -clean`: 生成并清除旧的(推荐用这个)  
 
 ### 启动mkdocs服务  
 `mkdocs serve `  
@@ -59,22 +59,3 @@
 * `使用git上传build生成的site文件夹`  
 * `通过github pages挂载静态站点`  
 
-
-
-# Welcome to MkDocs
-
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
-
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.

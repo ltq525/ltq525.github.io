@@ -1,4 +1,4 @@
-# openwrt_luci插件解析
+# Openwrt_luci插件解析
 ```
 LuCI ---> Applications ---> luci-app-accesscontrol  #访问时间控制
 LuCI ---> Applications ---> luci-app-acme  #ACME自动化证书管理环境（丢弃）
