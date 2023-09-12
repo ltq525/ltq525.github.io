@@ -83,8 +83,12 @@ make menuconfig
 git clone https://github.com/EOYOHOO/UA2F.git package/UA2F
 git clone https://github.com/EOYOHOO/rkp-ipid.git package/rkp-ipid
 ```
-4. 将刚编译的lede文件夹中的.config和feeds.conf.default文件上传到刚创建的profile中  
-5. Actions -> Build OpenWrt -> Run workflow   
+4. 将刚编译的lede文件夹中的.config和feeds.conf.default文件上传到刚创建的profile中 
+5. 修改.config文件 在Netfilter Extensions下第二行后添加代码(大概在第2492行)
+```
+CONFIG_NETFILTER_NETLINK_GLUE_CT=y
+```
+6. Actions -> Build OpenWrt -> Run workflow   
 
 **等待编译完成 时间大概两个小时**  
 **End...**   

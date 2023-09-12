@@ -1059,7 +1059,10 @@
 <div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>git clone https://github.com/EOYOHOO/UA2F.git package/UA2F
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>git clone https://github.com/EOYOHOO/rkp-ipid.git package/rkp-ipid
 </span></code></pre></div></li>
-<li>将刚编译的lede文件夹中的.config和feeds.conf.default文件上传到刚创建的profile中  </li>
+<li>将刚编译的lede文件夹中的.config和feeds.conf.default文件上传到刚创建的profile中 </li>
+<li>修改.config文件 在Netfilter Extensions下第二行后添加代码(大概在第2492行)
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>CONFIG_NETFILTER_NETLINK_GLUE_CT=y
+</span></code></pre></div></li>
 <li>Actions -&gt; Build OpenWrt -&gt; Run workflow   </li>
 </ol>
 <p><strong>等待编译完成 时间大概两个小时</strong><br />
