@@ -1,5 +1,6 @@
 # Openwrt 搭建github action云编译固件
 
+## 推荐Linux Ubuntu-20.04及以上系统使用
 ## 配置编译环境
 
 ### 更新安装包  
@@ -72,8 +73,8 @@ make menuconfig
 ```
 
 4. Luci插件配置 (可不用填)  
-[openwrt_luci插件解析](https://ltq525.github.io/site/blog/openwrt_luci插件解析/)
-
+ **[Openwrt_Luci插件解析](https://ltq525.github.io/site/blog/Openwrt_Luci插件解析/)**  
+主题推荐: Luci -> theme -> Argone   
 ## Github Action云编译
 
 1. 进入网站 <https://github.com/P3TERX/Actions-OpenWrt>  
@@ -84,13 +85,13 @@ git clone https://github.com/EOYOHOO/UA2F.git package/UA2F
 git clone https://github.com/EOYOHOO/rkp-ipid.git package/rkp-ipid
 ```
 4. 将刚编译的lede文件夹中的.config和feeds.conf.default文件上传到刚创建的profile中 
-5. 修改.config文件 在Netfilter Extensions下第二行后添加代码(大概在第2492行)
+5. 修改.config文件 在Netfilter Extensions下第二行后添加代码(大概在第2450行)
 ```
 CONFIG_NETFILTER_NETLINK_GLUE_CT=y
 ```
 6. Actions -> Build OpenWrt -> Run workflow   
 
-**等待编译完成 时间大概两个小时**  
+**等待编译完成 时间大概两个小时** (如果时间不在两小时左右请多检查一下哪个步骤少了)  
 **End...**   
 **结束撒花**
 
