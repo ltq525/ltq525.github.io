@@ -4,6 +4,11 @@
 ## 配置编译环境
 
 ### 更新安装包  
+使用apt下载
+```
+sudo apt update && sudo apt upgrade
+```
+使用apt-get下载
 ```
 sudo apt-get update && sudo apt-get upgrade
 ```
