@@ -4,9 +4,8 @@ site_name: Quann
 
 
 repo_url: https://github.com/ltq525/blog_site
-repo_name: ltq525/blog_site
-copyright: Copyright &copy; hello world - 2023 Quann
-
+repo_name: github_code
+copyright: Copyright &copy; Hello World - 2023 Quann
 nav:
   - 简介:
     - blog/项目搭建.md
@@ -27,7 +26,12 @@ nav:
     - Openwrt_Luci插件解析: blog/Openwrt_Luci插件解析.md
   - 项目:
     - 球球作战小游戏: project/球球作战小游戏.md
-
+  - 算法:
+    - 三分查找: algorithm/三分查找.md
+    - 平衡查找树: algorithm/平衡查找树.md
+    - 七大排序: algorithm/七大排序.md
+    - 树链剥分: algorithm/树链剥分.md
+    - KMP字符串匹配: algorithm/KMP字符串匹配.md
 
 theme:
   name: material
@@ -65,7 +69,7 @@ theme:
     # 日间模式
     - scheme: default
       primary: white # 头部菜单栏颜色
-      accent: purple # 交互文件高亮颜色
+      accent: indigo # 交互文件高亮颜色
       toggle:
         icon: material/brightness-7
         name: 切换至夜间模式
