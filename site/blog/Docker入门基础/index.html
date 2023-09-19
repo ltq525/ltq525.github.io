@@ -686,6 +686,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#docker_6" class="md-nav__link">
+    启动docker服务
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#docker-sudo" class="md-nav__link">
     docker命令组 加sudo权限：
   </a>
@@ -1165,6 +1172,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#docker_6" class="md-nav__link">
+    启动docker服务
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#docker-sudo" class="md-nav__link">
     docker命令组 加sudo权限：
   </a>
@@ -1292,19 +1306,37 @@
 <h2 id="docker_5">Docker安装教程：<a class="headerlink" href="#docker_5" title="Permanent link">&para;</a></h2>
 <p><a href="https://docs.docker.com/engine/install/ubuntu/">docker安装官网</a>  <br />
 Install Docker Engine on Ubuntu | Docker Documentation  </p>
+<h2 id="docker_6">启动docker服务<a class="headerlink" href="#docker_6" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo service docker start
+</span></code></pre></div>
 <h2 id="docker-sudo">docker命令组 加sudo权限：<a class="headerlink" href="#docker-sudo" title="Permanent link">&para;</a></h2>
-<p><code>sudo usermod -aG docker username</code>    </p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo usermod -aG docker [username]
+</span></code></pre></div>
+username改成当前用户名      </p>
 <h2 id="id">更改容器id<a class="headerlink" href="#id" title="Permanent link">&para;</a></h2>
-<p>`docker rename 容器原来id 更改id``    </p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker rename [容器原来id] [更改id]
+</span></code></pre></div>
 <h2 id="docker-pull">拉取镜像(docker pull)<a class="headerlink" href="#docker-pull" title="Permanent link">&para;</a></h2>
-<p><code>docker image pull</code> 镜像id 或 <code>docker pull</code> 镜像id  <br />
-<code>docker pull ubuntu:20.04</code> 拉取ubuntu:20.04版本的镜像  <br />
-<code>docker pull django</code> 没设定tag版本号 默认下载先前版laster    </p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker image pull [镜像id]` 或 `docker pull [镜像id]
+</span></code></pre></div>
+例：<br />
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker pull ubuntu:20.04
+</span></code></pre></div>
+拉取ubuntu:20.04版本的镜像    <br />
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker pull django
+</span></code></pre></div>
+没设定tag版本号 默认下载先前版laster    </p>
 <h2 id="docker-rmi">删除镜像(docker rmi)<a class="headerlink" href="#docker-rmi" title="Permanent link">&para;</a></h2>
-<p><code>docker image rm 镜像名或镜像ID</code> 或 <code>docker rmi 镜像名或镜像ID</code><br />
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>docker image rm [镜像名或镜像ID]
+</span></code></pre></div>
+或 
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>docker rmi [镜像名或镜像ID]
+</span></code></pre></div>
 例：  <br />
-<code>docker image rm hello-world</code><br />
-<code>docker rmi 9e64176cd8a2</code>  </p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>docker image rm hello-world
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>docker rmi 9e64176cd8a2
+</span></code></pre></div></p>
 <h2 id="docker-run">加载镜像(docker run)<a class="headerlink" href="#docker-run" title="Permanent link">&para;</a></h2>
 <p>即创建容器  </p>
 <blockquote>
@@ -1314,33 +1346,50 @@ Install Docker Engine on Ubuntu | Docker Documentation  </p>
 <p>例：<br />
 docker run -p 20000:22 --name xxx -idt ubuntu:20.04  #创建主机端口20000  </p>
 <h2 id="_1">使用交互式容器<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p><code>docker ps</code> #查看正在运行的容器<br />
-<code>docker ps -a</code> #查看所有容器  </p>
+<p>查看正在运行的容器<br />
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>docker ps
+</span></code></pre></div>
+查看所有容器<br />
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>docker ps -a
+</span></code></pre></div></p>
 <h3 id="_2">启动容器<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p><code>docker start 容器名</code>  </p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>docker start [容器名]
+</span></code></pre></div>
 <h3 id="_3">进入容器<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p><code>docker attach 容器名</code>  </p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>docker attach [容器名]
+</span></code></pre></div>
 <h3 id="_4">关闭容器<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p><code>docker stop 容器名</code><br />
-<code>docker kill 容器名</code> #强制关闭  </p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>docker stop [容器名]
+</span></code></pre></div>
+强制关闭 <br />
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>docker kill [容器名]
+</span></code></pre></div></p>
 <h3 id="_5">删除容器<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p><code>docker rm 容器名</code>  </p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>docker rm [容器名]
+</span></code></pre></div>
 <h3 id="_6">将容器打包成镜像<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <ol>
-<li><code>docker commit 容器名 新起镜像名称</code>  </li>
-<li>镜像打包成.tar(打包备份的文件会自动存放在当前命令行的路径下,如果想让保存的文件可以打开,可以加.tar后缀)   <br />
-<code>docker save -o 保存的文件名 镜像名</code> <br />
-save -o 可换成 export两区别在于数据的完整性前者更详细    </li>
-<li><code>docker save -o django.tar django_lesson:1.0</code>    </li>
-<li>镜像解压   </li>
-<li><code>docker load -i 文件路径/备份文件</code>    <br />
-load -i 可换成 import 区别同上  </li>
-<li><code>docker import xxx.tar imageName:tag</code>  </li>
+<li><div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>docker commit [容器名] [新起镜像名称]
+</span></code></pre></div></li>
+<li>
+<p>镜像打包成.tar(打包备份的文件会自动存放在当前命令行的路径下,如果想让保存的文件可以打开,可以加.tar后缀)   <br />
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>docker save -o [保存的文件名] [镜像名]
+</span></code></pre></div>
+save -o 可换成 export两区别在于数据的完整性前者更详细    </p>
+</li>
+<li>
+<p>镜像解压 <br />
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>docker load -i [xxx.tar] [imageName:tag]
+</span></code></pre></div>
+load -i 可换成 import 区别同上  </p>
+</li>
 </ol>
 <h2 id="_7">远程连接<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>docker login</code>远程登陆  </li>
-<li><code>docker logout</code>退出  </li>
+<li>远程登陆<br />
+<code>docker login</code>  </li>
+<li>退出<br />
+<code>docker logout</code>  </li>
 </ul>
 
 

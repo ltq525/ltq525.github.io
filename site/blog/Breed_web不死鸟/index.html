@@ -1153,28 +1153,28 @@
 <h3 id="1">1. 连接路由器以太网<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
-<p>获取local_token (注意刷新页面会改变)
-进入<a href="http://192.168.199.1/local-ssh/">http://192.168.199.1/local-ssh/</a></p>
+<p>获取local_token (注意刷新页面会改变)<br />
+进入<a href="http://192.168.199.1/local-ssh/">http://192.168.199.1/local-ssh/</a>  </p>
 </li>
 <li>
-<p>获取uuid(固定)
-进入<a href="http://192.168.199.1/cgi-bin/turbo/proxy/router_info">http://192.168.199.1/cgi-bin/turbo/proxy/router_info</a></p>
+<p>获取uuid(固定)<br />
+进入<a href="http://192.168.199.1/cgi-bin/turbo/proxy/router_info">http://192.168.199.1/cgi-bin/turbo/proxy/router_info</a>  </p>
 </li>
 </ul>
 <h3 id="2">2. 连接网络<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
-<p>获取cloud_token
-进入<a href="http://www.hiwifi.wtf/">http://www.hiwifi.wtf/</a></p>
+<p>获取cloud_token<br />
+进入<a href="http://www.hiwifi.wtf/">http://www.hiwifi.wtf/</a>  </p>
 <h3 id="3">3. 断开网络连接路由器以太网<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
-<p>进入<a href="http://192.168.199.1/local-ssh/">http://192.168.199.1/local-ssh/</a>
-将获取的cloud_token填入并提交
-提示： Success: ssh port is 22 则成功 
-否则原因可能是来回切换网络导致页面刷新了token码 请再次重复以上操作</p>
+<p>进入<a href="http://192.168.199.1/local-ssh/">http://192.168.199.1/local-ssh/</a><br />
+将获取的cloud_token填入并提交<br />
+提示： Success: ssh port is 22 则成功 <br />
+否则原因可能是来回切换网络导致页面刷新了token码 请再次重复以上操作  </p>
 <h3 id="4-ssh">4. 使用终端ssh登陆<a class="headerlink" href="#4-ssh" title="Permanent link">&para;</a></h3>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ssh root@192.168.199.1
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ssh root@192.168.199.1  
 </span></code></pre></div>
-密码：admin
-执行此命令 使22端口永久生效
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>/etc/init.d/dropbear enable &amp;&amp; /etc/init.d/dropbear start
+密码：admin  <br />
+执行此命令 使22端口永久生效<br />
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>/etc/init.d/dropbear enable &amp;&amp; /etc/init.d/dropbear start  
 </span></code></pre></div></p>
 <h3 id="5-breed">5. 下载breed文件<a class="headerlink" href="#5-breed" title="Permanent link">&para;</a></h3>
 <p>进入<a href="https://breed.hackpascal.net/">https://breed.hackpascal.net/</a><br />
@@ -1185,11 +1185,11 @@
 </span></code></pre></div>
 将breed文件传入根目录</p>
 <h3 id="7-breed">7. 刷入breed<a class="headerlink" href="#7-breed" title="Permanent link">&para;</a></h3>
-<p>在breed文件目录下运行命令 刷入breed
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>mtd write breed-mt7621-hiwifi-hc5962.bin u-boot
+<p>在breed文件目录下运行命令 刷入breed<br />
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>mtd write breed-mt7621-hiwifi-hc5962.bin u-boot  
 </span></code></pre></div></p>
 <h3 id="8-breed">8. 启动breed<a class="headerlink" href="#8-breed" title="Permanent link">&para;</a></h3>
-<p>拔电源 按住reset按钮，再插入电源，按住5秒左右进入breed</p>
+<p>拔电源 按住reset按钮，再插入电源，按住5秒左右进入breed  </p>
 
 
 
