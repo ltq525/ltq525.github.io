@@ -24,6 +24,7 @@ nav:
     - Breed_web不死鸟: blog/Breed_web不死鸟.md
     - Openwrt云编译固件教程: blog/Openwrt云编译固件教程.md
     - Openwrt_Luci插件解析: blog/Openwrt_Luci插件解析.md
+    - Nginx部署: blog/Nginx部署.md
   - 项目:
     - 球球作战小游戏: project/球球作战小游戏.md
   - 算法:
