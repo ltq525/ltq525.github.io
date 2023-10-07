@@ -52,3 +52,21 @@ scp start destination: 起始地 -> 目的地
 
 `scp . mysever`: 本地传送到服务器
 `scp mysever`: . 服务器传送到本地
+
+## 解决ssh未响应断连问题
+### 配置`~/.ssh/config`文件，增加以下内容即可：
+```
+Host *         
+         # 断开时重试连接的次数         
+         ServerAliveCountMax 5          
+         # 每隔60秒自动发送一个空的请求以保持连接         
+         ServerAliveInterval 60
+```
+添加在/etc/ssh/ssh_config也是可以  
+
+* 方法一：如果您有多台服务器，不想在每台服务器上设置，只需在客户端的 ~/.ssh/ 文件夹中添加 config 文件，并添加下面的配置：  
+`ServerAliveInterval 60`  
+
+* 方法二：如果您有多个人管理服务器，不想在每个客户端进行设置，只需在服务器的 /etc/ssh/sshd_config 中添加如下的配置：  
+`ClientAliveInterval 60`  
+ 
