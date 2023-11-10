@@ -26,6 +26,7 @@ nav:
     - Openwrt_Luci插件解析: blog/Openwrt_Luci插件解析.md
     - Nginx部署: blog/Nginx部署.md
     - Tailscale内网穿透: blog/Tailscale实现内网穿透.md
+    - Frp内网穿透: blog/Frp内网穿透.md
   - 项目:
     - 球球作战小游戏: project/球球作战小游戏.md
   - 算法:
