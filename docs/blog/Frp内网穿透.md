@@ -14,11 +14,11 @@ dashboard_user = admin
 dashboard_pwd = admin
 token = xxxx
 ```
-`bind_port`: 为`frps`服务端口
+`bind_port`: 为`frps`服务端口  
 `dashboard_port`: 为`frps`仪页表管理端口   
 `dashboard_user`: 与 `dashboard_pwd` 为仪页表用户与密码  
 `token`: 为连接密码与后面`frpc`客户端连接时需一致  
-端口号可自行定义 但注意需要配置相应的防火墙设置
+**端口号可自行定义 但注意还需要配置相应的防火墙设置**
 
 ### 启动frps
 执行

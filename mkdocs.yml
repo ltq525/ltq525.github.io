@@ -36,7 +36,6 @@ nav:
     - 树链剥分: algorithm/树链剥分.md
     - KMP字符串匹配: algorithm/KMP字符串匹配.md
   - 设计模式: 
-    - 设计原则: design_patterns/设计原则.md
     - 设计模式: design_patterns/设计模式.md
     
     
