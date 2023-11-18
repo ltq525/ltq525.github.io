@@ -2,14 +2,13 @@ site_name: Quann
 # site_url: https://github.com/ltq525/blog_site
 # site_author: 权
 
-
 repo_url: https://github.com/ltq525/blog_site
 repo_name: Github_Code
 copyright: Copyright &copy; Hello World - 2023 Quann
 nav:
-  - 简介:
-    - blog/项目搭建.md
+  - 简介: index.md
   - 博客:
+    - Mkdocs网站搭建: blog/Mkdocs网站搭建.md
     - Markdown基础教程: blog/Markdown基础教程.md
     - Linux入门命令: blog/Linux入门命令.md
     - Tmux使用方法: blog/Tmux使用方法.md
@@ -37,8 +36,7 @@ nav:
     - KMP字符串匹配: algorithm/KMP字符串匹配.md
   - 设计模式: 
     - 设计模式: design_patterns/设计模式.md
-    
-    
+
 
 theme:
   name: material
