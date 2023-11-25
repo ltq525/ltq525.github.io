@@ -35,6 +35,7 @@ nav:
     - 树链剥分: algorithm/树链剥分.md
     - KMP字符串匹配: algorithm/KMP字符串匹配.md
     - 最短路径问题: algorithm/最短路径问题.md
+    - 并查集: algorithm/并查集.md
   - 设计模式: 
     - 设计模式: design_patterns/设计模式.md
 
