@@ -10,6 +10,7 @@ nav:
   - 博客:
     - Mkdocs网站搭建: blog/Mkdocs网站搭建.md
     - Markdown基础教程: blog/Markdown基础教程.md
+    - Html基础语法: blog/Html基础语法.md
     - Linux入门命令: blog/Linux入门命令.md
     - Tmux使用方法: blog/Tmux使用方法.md
     - Vim基本命令: blog/Vim基本命令.md
