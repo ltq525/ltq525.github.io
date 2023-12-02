@@ -9,10 +9,6 @@
       
       
       
-        <link rel="prev" href="../WSL%E5%AD%90%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8/">
-      
-      
-        <link rel="next" href="../Breed_web%E4%B8%8D%E6%AD%BB%E9%B8%9F/">
       
       
       <link rel="icon" href="../../logo/xianzi.png">
@@ -20,7 +16,7 @@
     
     
       
-        <title>Ubuntu中的ufw防火墙手册 - Quann</title>
+        <title>Javascript基础语法 - Quann</title>
       
     
     
@@ -76,11 +72,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#ubuntuufw" class="md-skip">
-          跳转至
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -110,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Ubuntu中的ufw防火墙手册
+              Javascript基础语法
             
           </span>
         </div>
@@ -236,12 +227,10 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
+      <li class="md-tabs__item">
         <a href="../Mkdocs%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/" class="md-tabs__link">
           
   
@@ -375,8 +364,6 @@
       
   
   
-    
-  
   
   
     
@@ -387,12 +374,14 @@
       
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -406,7 +395,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             博客
@@ -669,30 +658,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Ubuntu中的ufw防火墙手册
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Ubuntu%E4%B8%AD%E7%9A%84ufw%E9%98%B2%E7%81%AB%E5%A2%99%E6%89%8B%E5%86%8C/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -701,35 +670,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#ufw" class="md-nav__link">
-    <span class="md-ellipsis">
-      ufw
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1242,25 +1182,6 @@
   
   
   
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#ufw" class="md-nav__link">
-    <span class="md-ellipsis">
-      ufw
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -1278,91 +1199,9 @@
   
 
 
-<h1 id="ubuntuufw">ubuntu中的ufw防火墙手册<a class="headerlink" href="#ubuntuufw" title="Permanent link">&para;</a></h1>
-<h2 id="ufw">ufw<a class="headerlink" href="#ufw" title="Permanent link">&para;</a></h2>
-<p><strong>默认的策略定义在/etc/default/ufw文件中，并且可以通过使用sudo ufw default <policy> <chain>命令来修改</strong></p>
-<ol>
-<li>
-<p>列举出你系统上所有的应用配置，输入：<br />
-<code>sudo ufw app list</code></p>
-</li>
-<li>
-<p>如果因为某些原因，它没有被安装，可以通过输入下面的命令安装它：<br />
-<code>sudo apt update</code><br />
-<code>sudo apt install ufw</code>  </p>
-</li>
-<li>
-<p>安装过程不会自动激活防火墙，以避免服务器被锁住。可以检查 UFW 的状态，输入：<br />
-<code>sudo ufw status verbose</code><br />
-<code>sudo ufw status numbered</code>  </p>
-</li>
-<li>
-<p>启动ufw：<br />
-<code>sudo ufw enable</code>  </p>
-</li>
-<li>
-<p>wsl2-ubuntu-20.04 bug修复：<br />
-<code>sudo vim /usr/lib/python3/dist-packages/ufw/util.py</code>  </p>
-</li>
-<li>
-<p>关闭ufw：<br />
-<code>sudo ufw disable</code>  </p>
-</li>
-<li>
-<p>通用的打开端口的语法如下：<br />
-<code>ufw allow port_number/protocol</code><br />
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>http -&gt; 80 
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>https -&gt; 443 
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>ssh -&gt; 22
-</span></code></pre></div></p>
-</li>
-<li>
-<p>打开端口：<br />
-<code>sudo ufw allow 8000/tcp</code></p>
-</li>
-<li>
-<p>打开端口范围8000到8100：<br />
-<code>sudo ufw allow 8000:8100/tcp</code></p>
-</li>
-<li>
-<p>关闭端口：<br />
-<code>sudo ufw deny 8000/tcp</code></p>
-<p><strong>当没有给出协议的时候，UFW 同时创建tcp和udp的规则。</strong></p>
-</li>
-<li>
-<p>允许指定 IP 地址访问指定端口:  </p>
-<ul>
-<li>添加IP 地址白名单：<br />
-<code>sudo ufw allow from 64.63.62.61</code></li>
-<li>指定端口：<br />
-<code>sudo ufw allow from 64.63.62.61 to any port 22</code></li>
-</ul>
-</li>
-<li>
-<p>显示如何允许 IP 地址(192.168.1.1 到 192.168.1.254)，通过 3360(MySQL) 的命令：<br />
-<code>sudo ufw allow from 192.168.1.0/24 to any port 3306</code></p>
-</li>
-<li>
-<p>禁止访问：<br />
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo ufw deny from 23.24.25.0/24
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>sudo ufw deny proto tcp from 23.24.25.0/24 to any port 80,443
-</span></code></pre></div></p>
-</li>
-<li>
-<p>删除规则：  </p>
-<ul>
-<li>查询：
-<code>sudo ufw status numbered</code></li>
-<li>删除编号3端口：
-<code>sudo ufw delete 3</code></li>
-</ul>
-</li>
-<li>
-<p>重置ufw：
-<code>sudo ufw reset</code></p>
-</li>
-</ol>
-<p>参考教程：<a href="https://zhuanlan.zhihu.com/p/139381645">https://zhuanlan.zhihu.com/p/139381645</a>  </p>
+  <h1>Javascript基础语法</h1>
+
+
 
 
 
