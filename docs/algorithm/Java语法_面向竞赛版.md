@@ -1,0 +1,371 @@
+# Java语法
+此篇短文仅面向算法竞赛的Java基本编程语言
+
+## 基本模板
+``` java
+import java.io.*; // 输入输出流数据包
+import java.util.*; // Collection: Queue, List, Map, Stack, Set容器数据包
+import java.lang.*;
+import java.math.*; // 数学函数数据包
+
+public class Main {
+
+    Scanner sin = new Scanner(System.in);
+    BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+    StreamTokenizer cin = new StreamTokenizer(in);
+    PrintWriter cout = new PrintWriter(new OutputStreamWriter(System.out));
+
+    final static int N = 100010, mod = (int)(1e9+7), inf = 0x3f3f3f3f;
+    
+    int n;
+
+    void solve() throws Exception {
+    
+        cin.nextToken();
+        n = (int)cin.nval;
+        
+    }
+
+    public static void main(String[] args) throws Exception {
+        
+        Main cmd = new Main();
+        cmd.solve();
+        cmd.cout.close();
+    }
+}
+```
+
+## 三种输入方式
+1. `Scanner sin = new Scanner(System.in);`  
+`System.in `为字节流输入  
+`Scanner` 和 `System.out.print`在处理大数据输入时效率较低
+
+2. `BufferedReader in = new BufferedReader(new InputStreamReader(System.in));`  
+
+    * `System.in` 字节输入流
+    * `new InputStreamReader` 将 字节流 转换为 字符流
+    * `new BufferedReader` 将字符流放入字符流缓冲区之中
+
+`in.read()` ：读取单个字符 Integer.parseInt(in.readLine()) 配合强转使用  
+`in.readLine()` ：读取一行字符包括空格Integer.parseInt(in.readLine())
+效率较高
+
+3. `StreamTokenizer cin = new StreamTokenizer(in);`
+
+cin.sval 读取String类型字母与跟随字母后的数字，空格隔断，无法读取符号与开头数字。
+cin.nval 读取Double类型数字 (type)cin.nval进行类型转换
+
+## 输出方式
+1. `System.out.println()`
+2. `PrintWriter cout = new PrintWriter(new OutputStreamWriter(System.out));`  
+三种输出方式，用法与Java标准输出一致： 
+    * cout.print()  
+    * cout.println()  
+    * cout.printf()  
+
+## BigInteger
+### 初始化
+1. 
+``` java
+BigInteger a = new BigInteger("12345678910"); // 默认十进制
+cout.print(a)   // 12345678910
+```
+2. 
+```java
+BigInteger b = new BigInteger("1E", 16); // 16进制
+cout.print(b)   // 30
+```
+
+### API
+BigInteger a = new BigInteger(in.readLine());
+基本运算  
+
+1. `abs()`:	返回 `this` 的绝对值  
+* `negate()`:	返回 `-this`  
+* `add(BigInteger val)`:	返回 `this + val`  
+* `subtract(BigInteger val)`:	返回 `this - val`  
+* `multiply(BigInteger val)`:	返回 `this * val`  
+* `divide(BigInteger val)`:	返回 `this / val`  
+* `remainder(BigInteger val)`:	返回 `this % val`  
+* `mod(BigInteger val)`:	返回 `this mod val`  
+* `pow(int e)`:	返回 `this^e`  
+* `and(BigInteger val)`:	返回 `this & val`  
+* `or(BigInteger val)`:	返回 `this | val`  
+* `not()`:	返回 `~this`  
+* `xor(BigInteger val)`:	返回 `this ^ val`  
+* `shiftLeft(int n)`:	返回 `this << n` 
+* `shiftRight(int n)`:	返回 `this >> n`   
+* `max(BigInteger val)`:	返回 `this` 与 `val` 的较大值  
+* `min(BigInteger val)`:	返回 `this` 与 `val` 的较小值  
+* `bitCount()`:	返回 `this` 的二进制中不包括符号位的 1 的个数  
+* `bitLength()	`:返回 `this` 的二进制中不包括符号位的长度  
+* `getLowestSetBit()`:	返回 `this` 的二进制中最右边的位置  
+* `compareTo(BigInteger val)`:	比较 `this` 和 `val` 值大小  
+* `toString()`:	返回 `this` 的 `10` 进制的字符串  
+* `toString(int radix)`:	返回 `this` 的 `raidx` 进制的字符串  
+
+数学运算  
+
+1. `gcd(BigInteger val)`	返回 `this` 的绝对值与 `val` 的绝对值的最大公约数  
+* `isProbablePrime(int val)`	返回一个表示 `this` 是否是素数的布尔值  
+* `nextProbablePrime()`	返回第一个大于 `this` 的素数  
+* `modPow(BigInteger b, BigInteger p)`	返回 `this ^ b mod p  `
+* `modInverse(BigInteger p)`	返回 `a mod p` 的乘法逆元  
+
+## 基本数据类型与包装数据类型
+
+基本数据类型|包装数据类型|
+:-: | :-: |
+byte	|Byte|
+short	|Short|
+boolean	|Boolean|
+char	|Character|
+int|	Integer|
+long|	Long|
+float|	Float|
+double|	Double|
+
+## lambda表达式
+> -> 是一个推导符号，表示前面的括号接收到参数，推导后面的返回值
+
+* 常用形式
+```
+// 1. 不需要参数，返回值为 5
+() -> 5
+
+// 2. 接收一个参数（数字类型），返回其 2 倍的值
+x -> 2 * x
+
+// 3. 接受 2 个参数（数字）并返回他们的差值
+(x, y) -> x – y
+
+// 4. 接收 2 个 int 类型整数并返回他们的和
+(int x, int y) -> x + y
+
+// 5. 接受一个 String 对象并在控制台打印，不返回任何值（看起来像是返回 void）
+(String s) -> System.out.print(s)
+```
+
+**比较机制 x - y 为升序，y - x 为降序**
+
+* 自定义sort
+``` java
+Arrays.sort(a, 1, 1 + n, (x, y) -> {
+    if(x.a != y.a)
+        return x.a - y.a;
+    else 
+        return x.b - y.b;
+});
+```
+
+* 自定义priority
+``` java
+Queue<Integer> q2 = new PriorityQueue<>((x, y) -> {return y - x;}); // 大根堆
+```
+
+
+## Collection
+
+### 1. List  
+推荐使用ArrayList  
+
+* **ArrayList**  
+动态生长的数组, 如果超出当前长度便扩容 $\dfrac{3}{2}$。
+``` java
+List<Integer> list1 = new ArrayList<>();  // 创建一个名字为 list1 的可自增数组，初始长度为默认值（10）
+List<Integer> list2 = new ArrayList<>(30);  // 创建一个名字为list2的可自增数组，初始长度为 30
+List<Integer> list3 = new ArrayList<>(list2);  // 创建一个名字为 list3 的可自增数组，使用 list2 里的元素和 size 作为自己的初始值
+```
+* **LinkedList**  
+双链表
+``` java
+List<Integer> list1 = new LinkedList<>();  // 创建一个名字为 list1 的双链表 
+List<Integer> list2 = new LinkedList<>(list1);  // 创建一个名字为 list2 的双链表，将 list1 内所有元素加入进来
+```
+* **API**    
+`size()` 返回 `this` 的长度  
+`add(Integer val)`	在 `this` 尾部插入一个元素  
+`add(int idx, Integer e)`	在 `this` 指定位置插入一个元素  
+`get(int idx)`	返回 `this` 中第 `idx` 位置的值，若越界则抛出异常  
+`set(int idx, Integer e)`	修改 `this` 中第 `idx` 位置的值  
+
+
+### 2. Queue
+队列容器接口，推荐使用ArrayDeque  
+
+* **ArrayDeque**  
+使用 `ArrayDeque` 实现普通队列，底层是数组模拟队列。  
+``` java
+Queue<Integer> q = new ArrayDeque<>();
+```
+* **LinkerList**  
+使用 `LinkedList` 实现普通队列，底层是链表模拟队列  
+``` java
+Queue<Integer> q = new LinkedList<>();
+```
+* **PriorityQueue**  
+`PriorityQueue` 是优先队列，默认是小根堆。  与C++相反
+``` java
+Queue<Integer> q1 = new PriorityQueue<>();  // 小根堆
+Queue<Integer> q2 = new PriorityQueue<>((x, y) -> {return y - x;});  // 大根堆
+
+class cmp implements Comparator<Integer>{
+        public int compare(Integer x, Integer y){
+            return - x.a + y.a;
+        }
+    }
+Queue<Integer> q = new PriorityQueue<>(new cmp()); // 大根堆
+```
+* **API**  
+`size()`	返回 `this` 的长度  
+`add(Integer val)`	入队  
+`isEmpty()`	判断队列是否为空，为空则返回 `true ` 
+`peek()`	返回队头元素  
+`poll()`	返回队头元素并删除  
+
+### 3. Stack
+
+``` java
+Stack<Integer> st = new Stack<Integer>();
+```
+
+**API**    
+`size()`	返回 `this` 的长度    
+`empty()` 判断堆栈是否为空，为空则返回 `true ` 
+`peek()` 返回堆栈顶部的对象，但不从堆栈中移除它。  
+`pop()` 移除堆栈顶部的对象，并作为此函数的值返回该对象。  
+`push()` 压入堆栈顶部。  
+
+### 4. Map  
+Map 是维护键值对 `<Key, Value>` 的一种数据结构，其中 `Key` 唯一
+
+* **HashMap**  
+随机位置插入的 `Map`  
+``` java
+Map<Integer, Integer> map1 = new HashMap<>();
+```
+* **LinkedHashMap**  
+保持插入顺序的 `Map`
+``` java
+Map<Integer, Integer> map2 = new LinkedHashMap<>();
+```
+* **TreeMap**  
+保持 `key` 有序的 `Map`，默认升序
+``` java
+Map<Integer, Integer> map3 = new TreeMap<>();
+Map<Integer, Integer> map4 = new TreeMap<>((x, y) -> {return y - x;});  // 降序
+```
+* **API**  
+`put(Integer key, Integer value)`	插入一个元素进 `this ` 
+`size()`	返回 `this` 的长度  
+`get(Integer key)`	将 this 中对应的 `key` 的 `value` 返回 **空时返回null，注意不是0**  
+`keySet()`	将 this 中所有元素的 `key` 作为集合返回 可搭配`foreach`使用  
+
+### 5. Set  
+`Set` 是保持容器中的元素不重复的一种数据结构  
+这里还是推荐使用Map来代替Set, 减少记忆  
+
+* **HashSet**  
+随机位置插入的 `Set`。  
+``` java
+Set<Integer> s1 = new HashSet<>();
+```
+* **LinkedHashSet**  
+保持插入顺序的 `Set`。  
+``` java
+Set<Integer> s2 = new LinkedHashSet<>();
+```
+* **TreeSet**  
+保持容器中元素有序的 `Set`，默认为升序。
+``` java
+Set<Integer> s3 = new TreeSet<>();
+Set<Integer> s4 = new TreeSet<>((x, y) -> {return y - x;});  // 降序 
+```
+* **API**
+`size()`	返回 `this` 的长度  
+`add(Integer val)`	插入一个元素进 `this`  
+`contains(Integer val)`	判断 `this` 中是否有元素 `val ` 
+`addAll(Collection e)`	将一个容器里的所有元素添加进 `this ` 
+`retainAll(Collection e)`	将 `this` 改为两个容器内相同的元素  
+`removeAll(Collection e)`	将 `this` 中与 `e` 相同的元素删除  
+
+## Arrays
+1. `Arrays.sort()` 
+排序数组默认升序  
+
+**排序规则机制, x - y 为升序, y - x 为降序**  
+
+* `interface`接口`Comparator`自定义排序  
+``` java
+class node{
+    int a, b, c;
+    node(int a, int b, int c){
+        this.a = a;
+        this.b = b;
+        this.c = c;
+    }
+}
+
+class cmp implements Comparator<node>{
+    public int compare(node x, node y){
+        if(x.a != y.a)
+            return x.a - y.a;
+        else 
+        {
+            if(x.b != y.b)
+                return x.b - y.b;
+            else return x.c - y.c;
+        }
+    }
+}
+
+Arrays.sort(a, 1, 1 + n, new cmp());
+```
+
+* lambda表达式自定义排序  
+``` java
+Arrays.sort(a, 1, 1 + n, (x, y) -> {
+    if(x.a != y.a)
+            return x.a - y.a;
+    else 
+    {
+        if(x.b != y.b)
+            return x.b - y.b;
+        else return x.c - y.c;
+    }
+});
+```
+
+## String
+
+1. `String`: 不可变字符串  
+```
+string x;
+```
+2. `StringBuilder`: 可变字符串、效率高、线程不安全(单线程)  
+``` 
+StringBuilder s = new StringBuilder();  
+```
+
+3. `StringBuffer`: 可变字符串、效率低、线程安全(多线程)  
+```
+StringBuffer s = new StringBuffer();  
+```
+
+**String API**   
+`length(): int` 返回长度  
+`CharAt(int index): char` 返回index索引的字符  
+`x.compareTo(y): int` x > y 返回1, x == y 返回0, x < y 返回-1, 按字典序比较  
+`equals(): boolean` 比较两个字符串是否相等 相等返回true, 不相等返回false  
+`substring(): string` 返回区间内的字符串, 左闭右开  
+`toCharArray(): char[]` 转换成char[]数组  
+
+**StringBuilder API**  
+`length(): int` 返回长度  
+`append()` 末尾添加字符  
+`reverse()` 反转字符串  
+`insert(int index, string value)` 在index索引处插入value字符  
+`delete(int start, int end)` 删除区间内的字符串  
+`substring()` 返回区间内的字符串, 左闭右开  
+`replace(int start, int end, String str)` 将区间内字符串替换成str, 也可理解为删除区间内的字符串然后再start索引添加str字符串  
+

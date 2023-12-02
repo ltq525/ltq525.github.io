@@ -30,6 +30,7 @@ nav:
   - 项目:
     - 球球作战小游戏: project/球球作战小游戏.md
   - 算法:
+    - Java语法_面向竞赛版: algorithm/Java语法_面向竞赛版.md
     - 三分查找: algorithm/三分查找.md
     - 平衡查找树: algorithm/平衡查找树.md
     - 七大排序: algorithm/七大排序.md
