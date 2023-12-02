@@ -1577,7 +1577,7 @@
 <h2 id="_1">基本模板<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.*</span><span class="p">;</span><span class="w"> </span><span class="c1">// 输入输出流数据包</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.*</span><span class="p">;</span><span class="w"> </span><span class="c1">// Collection: Queue, List, Map, Stack, Set容器数据包</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.lang.*</span><span class="p">;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.lang.*</span><span class="p">;</span><span class="w"> </span><span class="c1">// Integer包装数据类型数据包</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.math.*</span><span class="p">;</span><span class="w"> </span><span class="c1">// 数学函数数据包</span>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
@@ -1609,84 +1609,194 @@
 <h2 id="_2">三种输入方式<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
-<p><code>Scanner sin = new Scanner(System.in);</code><br />
-<code>System.in</code>为字节流输入<br />
-<code>Scanner</code> 和 <code>System.out.print</code>在处理大数据输入时效率较低</p>
+<p><code>Scanner sin = new Scanner(System.in);</code>  </p>
+<ul>
+<li><code>System.in</code>为字节流输入  </li>
+<li><code>Scanner</code> 和 <code>System.out.print</code>在处理大数据输入时效率较低</li>
+</ul>
 </li>
 <li>
 <p><code>BufferedReader in = new BufferedReader(new InputStreamReader(System.in));</code>  </p>
 <ul>
 <li><code>System.in</code> 字节输入流</li>
 <li><code>new InputStreamReader</code> 将 字节流 转换为 字符流</li>
-<li><code>new BufferedReader</code> 将字符流放入字符流缓冲区之中</li>
+<li>
+<p><code>new BufferedReader</code> 将字符流放入字符流缓冲区之中</p>
+</li>
+<li>
+<p><code>in.read()</code> ：读取单个字符 Integer.parseInt(in.readLine()) 配合强转使用  </p>
+</li>
+<li><code>in.readLine()</code> ：读取一行字符包括空格Integer.parseInt(in.readLine())</li>
+</ul>
+</li>
+<li>
+<p><code>StreamTokenizer cin = new StreamTokenizer(in);</code></p>
+<ul>
+<li><code>cin.sval</code> 读取<code>String</code>类型字母与跟随字母后的数字，空格隔断，无法读取符号与开头数字。</li>
+<li><code>cin.nval</code> 读取<code>Double</code>类型数字 <code>(type)cin.nval</code>进行类型转换</li>
 </ul>
 </li>
 </ol>
-<p><code>in.read()</code> ：读取单个字符 Integer.parseInt(in.readLine()) 配合强转使用<br />
-<code>in.readLine()</code> ：读取一行字符包括空格Integer.parseInt(in.readLine())
-效率较高</p>
-<ol>
-<li><code>StreamTokenizer cin = new StreamTokenizer(in);</code></li>
-</ol>
-<p>cin.sval 读取String类型字母与跟随字母后的数字，空格隔断，无法读取符号与开头数字。
-cin.nval 读取Double类型数字 (type)cin.nval进行类型转换</p>
+<p><strong>2与3适合大量读入数据, 效率较高, 但不能2和3同时在程序中使用</strong></p>
 <h2 id="_3">输出方式<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ol>
 <li><code>System.out.println()</code></li>
-<li><code>PrintWriter cout = new PrintWriter(new OutputStreamWriter(System.out));</code><br />
-三种输出方式，用法与Java标准输出一致： <ul>
+<li>
+<p><code>PrintWriter cout = new PrintWriter(new OutputStreamWriter(System.out));</code>  </p>
+<ul>
 <li>cout.print()  </li>
 <li>cout.println()  </li>
-<li>cout.printf()  </li>
+<li>cout.printf()<br />
+<strong>三种输出方式，用法与Java标准输出一致</strong></li>
 </ul>
 </li>
 </ol>
 <h2 id="biginteger">BigInteger<a class="headerlink" href="#biginteger" title="Permanent link">&para;</a></h2>
 <h3 id="_4">初始化<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <ol>
-<li><div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">BigInteger</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BigInteger</span><span class="p">(</span><span class="s">&quot;12345678910&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// 默认十进制</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">cout</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w">   </span><span class="c1">// 12345678910</span>
+<li><div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">BigInteger</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BigInteger</span><span class="p">(</span><span class="n">in</span><span class="p">.</span><span class="na">readLine</span><span class="p">());</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">BigInteger</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BigInteger</span><span class="p">(</span><span class="s">&quot;12345678910&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// 默认十进制</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">cout</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="w">   </span><span class="c1">// 12345678910</span>
 </span></code></pre></div></li>
 <li><div class="language-java highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">BigInteger</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BigInteger</span><span class="p">(</span><span class="s">&quot;1E&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">16</span><span class="p">);</span><span class="w"> </span><span class="c1">// 16进制</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">cout</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="w">   </span><span class="c1">// 30</span>
 </span></code></pre></div></li>
 </ol>
 <h3 id="api">API<a class="headerlink" href="#api" title="Permanent link">&para;</a></h3>
-<p>BigInteger a = new BigInteger(in.readLine());
-基本运算  </p>
-<ol>
-<li><code>abs()</code>: 返回 <code>this</code> 的绝对值  </li>
-<li><code>negate()</code>:   返回 <code>-this</code>  </li>
-<li><code>add(BigInteger val)</code>:    返回 <code>this + val</code>  </li>
-<li><code>subtract(BigInteger val)</code>:   返回 <code>this - val</code>  </li>
-<li><code>multiply(BigInteger val)</code>:   返回 <code>this * val</code>  </li>
-<li><code>divide(BigInteger val)</code>: 返回 <code>this / val</code>  </li>
-<li><code>remainder(BigInteger val)</code>:  返回 <code>this % val</code>  </li>
-<li><code>mod(BigInteger val)</code>:    返回 <code>this mod val</code>  </li>
-<li><code>pow(int e)</code>: 返回 <code>this^e</code>  </li>
-<li><code>and(BigInteger val)</code>:    返回 <code>this &amp; val</code>  </li>
-<li><code>or(BigInteger val)</code>: 返回 <code>this | val</code>  </li>
-<li><code>not()</code>:  返回 <code>~this</code>  </li>
-<li><code>xor(BigInteger val)</code>:    返回 <code>this ^ val</code>  </li>
-<li><code>shiftLeft(int n)</code>:   返回 <code>this &lt;&lt; n</code> </li>
-<li><code>shiftRight(int n)</code>:  返回 <code>this &gt;&gt; n</code>   </li>
-<li><code>max(BigInteger val)</code>:    返回 <code>this</code> 与 <code>val</code> 的较大值  </li>
-<li><code>min(BigInteger val)</code>:    返回 <code>this</code> 与 <code>val</code> 的较小值  </li>
-<li><code>bitCount()</code>: 返回 <code>this</code> 的二进制中不包括符号位的 1 的个数  </li>
-<li><code>bitLength()</code>:返回 <code>this</code> 的二进制中不包括符号位的长度  </li>
-<li><code>getLowestSetBit()</code>:  返回 <code>this</code> 的二进制中最右边的位置  </li>
-<li><code>compareTo(BigInteger val)</code>:  比较 <code>this</code> 和 <code>val</code> 值大小  </li>
-<li><code>toString()</code>: 返回 <code>this</code> 的 <code>10</code> 进制的字符串  </li>
-<li><code>toString(int radix)</code>:    返回 <code>this</code> 的 <code>raidx</code> 进制的字符串  </li>
-</ol>
-<p>数学运算  </p>
-<ol>
-<li><code>gcd(BigInteger val)</code>    返回 <code>this</code> 的绝对值与 <code>val</code> 的绝对值的最大公约数  </li>
-<li><code>isProbablePrime(int val)</code>    返回一个表示 <code>this</code> 是否是素数的布尔值  </li>
-<li><code>nextProbablePrime()</code> 返回第一个大于 <code>this</code> 的素数  </li>
-<li><code>modPow(BigInteger b, BigInteger p)</code>  返回 <code>this ^ b mod p</code></li>
-<li><code>modInverse(BigInteger p)</code>    返回 <code>a mod p</code> 的乘法逆元  </li>
-</ol>
+<p><strong>基本运算</strong>  </p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">函数</th>
+<th style="text-align: center;">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>abs()</code></td>
+<td style="text-align: center;">返回 <code>this</code> 的绝对值</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>negate()</code></td>
+<td style="text-align: center;">返回 <code>-this</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>add(BigInteger val)</code></td>
+<td style="text-align: center;">返回 <code>this + val</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>subtract(BigInteger val)</code></td>
+<td style="text-align: center;">返回 <code>this - val</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>multiply(BigInteger val)</code></td>
+<td style="text-align: center;">返回 <code>this * val</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>divide(BigInteger val)</code></td>
+<td style="text-align: center;">返回 <code>this / val</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>remainder(BigInteger val)</code></td>
+<td style="text-align: center;">返回 <code>this % val</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>mod(BigInteger val)</code></td>
+<td style="text-align: center;">返回 <code>this mod val</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>pow(int e)</code></td>
+<td style="text-align: center;">返回 <code>this^e</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>and(BigInteger val)</code></td>
+<td style="text-align: center;">返回 <code>this &amp; val</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>or(BigInteger val)</code></td>
+<td style="text-align: center;">返回 <code>this | val</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>not()</code></td>
+<td style="text-align: center;">返回 <code>~this</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>xor(BigInteger val)</code></td>
+<td style="text-align: center;">返回 <code>this ^ val</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>shiftLeft(int n)</code></td>
+<td style="text-align: center;">返回 <code>this &lt;&lt; n</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>shiftRight(int n)</code></td>
+<td style="text-align: center;">返回 <code>this &gt;&gt; n</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>max(BigInteger val)</code></td>
+<td style="text-align: center;">返回 <code>this</code> 与 <code>val</code> 的较大值</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>min(BigInteger val)</code></td>
+<td style="text-align: center;">返回 <code>this</code> 与 <code>val</code> 的较小值</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>bitCount()</code></td>
+<td style="text-align: center;">返回 <code>this</code> 的二进制中不包括符号位的 1 的个数</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>bitLength()</code></td>
+<td style="text-align: center;">返回 <code>this</code> 的二进制中不包括符号位的长度</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>getLowestSetBit()</code></td>
+<td style="text-align: center;">返回 <code>this</code> 的二进制中最右边的位置</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>compareTo(BigInteger val)</code></td>
+<td style="text-align: center;">比较 <code>this</code> 和 <code>val</code> 值大小</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>toString()</code></td>
+<td style="text-align: center;">返回 <code>this</code> 的 <code>10</code> 进制的字符串</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>toString(int radix)</code></td>
+<td style="text-align: center;">返回 <code>this</code> 的 <code>raidx</code> 进制的字符串</td>
+</tr>
+</tbody>
+</table>
+<p><strong>数学运算</strong>    </p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">函数</th>
+<th style="text-align: center;">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>gcd(BigInteger val)</code></td>
+<td style="text-align: center;">返回 <code>this</code> 的绝对值与 <code>val</code> 的绝对值的最大公约数</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>isProbablePrime(int val)</code></td>
+<td style="text-align: center;">返回一个表示 <code>this</code> 是否是素数的布尔值</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>nextProbablePrime()</code></td>
+<td style="text-align: center;">返回第一个大于 <code>this</code> 的素数</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>modPow(BigInteger b, BigInteger p)</code></td>
+<td style="text-align: center;">返回 <code>this ^ b mod p</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>modInverse(BigInteger p)</code></td>
+<td style="text-align: center;">返回 <code>a mod p</code> 的乘法逆元</td>
+</tr>
+</tbody>
+</table>
 <h2 id="_5">基本数据类型与包装数据类型<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -1732,10 +1842,10 @@ cin.nval 读取Double类型数字 (type)cin.nval进行类型转换</p>
 </table>
 <h2 id="lambda">lambda表达式<a class="headerlink" href="#lambda" title="Permanent link">&para;</a></h2>
 <blockquote>
-<p>-&gt; 是一个推导符号，表示前面的括号接收到参数，推导后面的返回值</p>
+<p><strong><code>-&gt;</code></strong> 是一个推导符号，表示前面的括号接收到参数，推导后面的返回值</p>
 </blockquote>
 <ul>
-<li>常用形式
+<li><strong>常用形式</strong>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>// 1. 不需要参数，返回值为 5
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>() -&gt; 5
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
@@ -1752,10 +1862,10 @@ cin.nval 读取Double类型数字 (type)cin.nval进行类型转换</p>
 </span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>(String s) -&gt; System.out.print(s)
 </span></code></pre></div></li>
 </ul>
-<p><strong>比较机制 x - y 为升序，y - x 为降序</strong></p>
+<p><strong>比较规则机制 x - y 为升序，y - x 为降序</strong></p>
 <ul>
 <li>
-<p>自定义sort
+<p><strong>自定义<code>sort</code></strong>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">Arrays</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="na">a</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">y</span><span class="p">.</span><span class="na">a</span><span class="p">)</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="na">a</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">y</span><span class="p">.</span><span class="na">a</span><span class="p">;</span>
@@ -1765,7 +1875,7 @@ cin.nval 读取Double类型数字 (type)cin.nval进行类型转换</p>
 </span></code></pre></div></p>
 </li>
 <li>
-<p>自定义priority
+<p><strong>自定义<code>priority</code></strong>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">q2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PriorityQueue</span><span class="o">&lt;&gt;</span><span class="p">((</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span><span class="k">return</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">x</span><span class="p">;});</span><span class="w"> </span><span class="c1">// 大根堆</span>
 </span></code></pre></div></p>
 </li>
@@ -1785,15 +1895,40 @@ cin.nval 读取Double类型数字 (type)cin.nval进行类型转换</p>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w">  </span><span class="c1">// 创建一个名字为 list1 的双链表 </span>
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">list1</span><span class="p">);</span><span class="w">  </span><span class="c1">// 创建一个名字为 list2 的双链表，将 list1 内所有元素加入进来</span>
 </span></code></pre></div></li>
-<li><strong>API</strong>  <br />
-<code>size()</code> 返回 <code>this</code> 的长度<br />
-<code>add(Integer val)</code>  在 <code>this</code> 尾部插入一个元素<br />
-<code>add(int idx, Integer e)</code>   在 <code>this</code> 指定位置插入一个元素<br />
-<code>get(int idx)</code>  返回 <code>this</code> 中第 <code>idx</code> 位置的值，若越界则抛出异常<br />
-<code>set(int idx, Integer e)</code>   修改 <code>this</code> 中第 <code>idx</code> 位置的值  </li>
+<li><strong>API</strong>  </li>
 </ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">函数</th>
+<th style="text-align: center;">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>size()</code></td>
+<td style="text-align: center;">返回 <code>this</code> 的长度</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>add(Integer val)</code></td>
+<td style="text-align: center;">在 <code>this</code> 尾部插入一个元素</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>add(int idx, Integer e)</code></td>
+<td style="text-align: center;">在 <code>this</code> 指定位置插入一个元素</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>get(int idx)</code></td>
+<td style="text-align: center;">返回 <code>this</code> 中第 <code>idx</code> 位置的值，若越界则抛出异常</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>set(int idx, Integer e)</code></td>
+<td style="text-align: center;">修改 <code>this</code> 中第 <code>idx</code> 位置的值</td>
+</tr>
+</tbody>
+</table>
 <h3 id="2-queue">2. Queue<a class="headerlink" href="#2-queue" title="Permanent link">&para;</a></h3>
-<p>队列容器接口，推荐使用ArrayDeque  </p>
+<p>队列容器接口，推荐使用<code>ArrayDeque</code>  </p>
 <ul>
 <li><strong>ArrayDeque</strong><br />
 使用 <code>ArrayDeque</code> 实现普通队列，底层是数组模拟队列。<br />
@@ -1804,7 +1939,7 @@ cin.nval 读取Double类型数字 (type)cin.nval进行类型转换</p>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 </span></code></pre></div></li>
 <li><strong>PriorityQueue</strong><br />
-<code>PriorityQueue</code> 是优先队列，默认是小根堆。  与C++相反
+<code>PriorityQueue</code> 是优先队列，默认是小根堆。  与<code>C++</code>相反
 <div class="language-java highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">q1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PriorityQueue</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w">  </span><span class="c1">// 小根堆</span>
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">q2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PriorityQueue</span><span class="o">&lt;&gt;</span><span class="p">((</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span><span class="k">return</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">x</span><span class="p">;});</span><span class="w">  </span><span class="c1">// 大根堆</span>
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
@@ -1815,22 +1950,72 @@ cin.nval 读取Double类型数字 (type)cin.nval进行类型转换</p>
 </span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PriorityQueue</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">cmp</span><span class="p">());</span><span class="w"> </span><span class="c1">// 大根堆</span>
 </span></code></pre></div></li>
-<li><strong>API</strong><br />
-<code>size()</code>    返回 <code>this</code> 的长度<br />
-<code>add(Integer val)</code>  入队<br />
-<code>isEmpty()</code> 判断队列是否为空，为空则返回 <code>true</code> 
-<code>peek()</code>    返回队头元素<br />
-<code>poll()</code>    返回队头元素并删除  </li>
+<li><strong>API</strong>  </li>
 </ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">函数</th>
+<th style="text-align: center;">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>size()</code></td>
+<td style="text-align: center;">返回 <code>this</code> 的长度</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>add(Integer val)</code></td>
+<td style="text-align: center;">入队</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>isEmpty()</code></td>
+<td style="text-align: center;">判断队列是否为空，为空则返回 <code>true</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>peek()</code></td>
+<td style="text-align: center;">返回队头元素</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>poll()</code></td>
+<td style="text-align: center;">返回队头元素并删除</td>
+</tr>
+</tbody>
+</table>
 <h3 id="3-stack">3. Stack<a class="headerlink" href="#3-stack" title="Permanent link">&para;</a></h3>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">Stack</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">st</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Stack</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="p">();</span>
 </span></code></pre></div>
-<p><strong>API</strong>  <br />
-<code>size()</code>    返回 <code>this</code> 的长度  <br />
-<code>empty()</code> 判断堆栈是否为空，为空则返回 <code>true</code> 
-<code>peek()</code> 返回堆栈顶部的对象，但不从堆栈中移除它。<br />
-<code>pop()</code> 移除堆栈顶部的对象，并作为此函数的值返回该对象。<br />
-<code>push()</code> 压入堆栈顶部。  </p>
+<p><strong>API</strong>   </p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">函数</th>
+<th style="text-align: center;">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>size()</code></td>
+<td style="text-align: center;">返回 <code>this</code> 的长度</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>empty()</code></td>
+<td style="text-align: center;">判断堆栈是否为空，为空则返回 <code>true</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>peek()</code></td>
+<td style="text-align: center;">返回堆栈顶部的对象，但不从堆栈中移除它。</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>pop()</code></td>
+<td style="text-align: center;">移除堆栈顶部的对象，并作为此函数的值返回该对象。</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>push()</code></td>
+<td style="text-align: center;">压入堆栈顶部。</td>
+</tr>
+</tbody>
+</table>
 <h3 id="4-map">4. Map<a class="headerlink" href="#4-map" title="Permanent link">&para;</a></h3>
 <p>Map 是维护键值对 <code>&lt;Key, Value&gt;</code> 的一种数据结构，其中 <code>Key</code> 唯一</p>
 <ul>
@@ -1847,15 +2032,37 @@ cin.nval 读取Double类型数字 (type)cin.nval进行类型转换</p>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">Map</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">map3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TreeMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 </span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="n">Map</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">map4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TreeMap</span><span class="o">&lt;&gt;</span><span class="p">((</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span><span class="k">return</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">x</span><span class="p">;});</span><span class="w">  </span><span class="c1">// 降序</span>
 </span></code></pre></div></li>
-<li><strong>API</strong><br />
-<code>put(Integer key, Integer value)</code>   插入一个元素进 <code>this</code> 
-<code>size()</code>    返回 <code>this</code> 的长度<br />
-<code>get(Integer key)</code>  将 this 中对应的 <code>key</code> 的 <code>value</code> 返回 <strong>空时返回null，注意不是0</strong><br />
-<code>keySet()</code>  将 this 中所有元素的 <code>key</code> 作为集合返回 可搭配<code>foreach</code>使用  </li>
+<li><strong>API</strong>  </li>
 </ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">函数</th>
+<th style="text-align: center;">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>put(Integer key, Integer value)</code></td>
+<td style="text-align: center;">插入一个元素进 <code>this</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>size()</code></td>
+<td style="text-align: center;">返回 <code>this</code> 的长度</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>get(Integer key)</code></td>
+<td style="text-align: center;">将 this 中对应的 <code>key</code> 的 <code>value</code> 返回 **空时返回</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>keySet()</code></td>
+<td style="text-align: center;">将 this 中所有元素的 <code>key</code> 作为集合返回 可搭配<code>foreach</code>使用</td>
+</tr>
+</tbody>
+</table>
 <h3 id="5-set">5. Set<a class="headerlink" href="#5-set" title="Permanent link">&para;</a></h3>
 <p><code>Set</code> 是保持容器中的元素不重复的一种数据结构<br />
-这里还是推荐使用Map来代替Set, 减少记忆  </p>
+<strong>这里还是推荐使用<code>Map</code>来代替<code>Set</code>, 减少记忆</strong>  </p>
 <ul>
 <li><strong>HashSet</strong><br />
 随机位置插入的 <code>Set</code>。<br />
@@ -1870,14 +2077,42 @@ cin.nval 读取Double类型数字 (type)cin.nval进行类型转换</p>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">Set</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">s3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TreeSet</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 </span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="n">Set</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">s4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TreeSet</span><span class="o">&lt;&gt;</span><span class="p">((</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span><span class="k">return</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">x</span><span class="p">;});</span><span class="w">  </span><span class="c1">// 降序 </span>
 </span></code></pre></div></li>
-<li><strong>API</strong>
-<code>size()</code>    返回 <code>this</code> 的长度<br />
-<code>add(Integer val)</code>  插入一个元素进 <code>this</code><br />
-<code>contains(Integer val)</code> 判断 <code>this</code> 中是否有元素 <code>val</code> 
-<code>addAll(Collection e)</code>  将一个容器里的所有元素添加进 <code>this</code> 
-<code>retainAll(Collection e)</code>   将 <code>this</code> 改为两个容器内相同的元素<br />
-<code>removeAll(Collection e)</code>   将 <code>this</code> 中与 <code>e</code> 相同的元素删除  </li>
+<li><strong>API</strong></li>
 </ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">函数</th>
+<th style="text-align: center;">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>size()</code></td>
+<td style="text-align: center;">返回 <code>this</code> 的长度</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>add(Integer val)</code></td>
+<td style="text-align: center;">插入一个元素进 <code>this</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>contains(Integer val)</code></td>
+<td style="text-align: center;">判断 <code>this</code> 中是否有元素 <code>val</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>addAll(Collection e)</code></td>
+<td style="text-align: center;">将一个容器里的所有元素添加进 <code>this</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>retainAll(Collection e)</code></td>
+<td style="text-align: center;">将 <code>this</code> 改为两个容器内相同的元素</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>removeAll(Collection e)</code></td>
+<td style="text-align: center;">将 <code>this</code> 中与 <code>e</code> 相同的元素删除</td>
+</tr>
+</tbody>
+</table>
 <h2 id="arrays">Arrays<a class="headerlink" href="#arrays" title="Permanent link">&para;</a></h2>
 <ol>
 <li><code>Arrays.sort()</code> 
@@ -1913,7 +2148,7 @@ cin.nval 读取Double类型数字 (type)cin.nval进行类型转换</p>
 </span></code></pre></div></p>
 </li>
 <li>
-<p>lambda表达式自定义排序<br />
+<p><code>lambda</code>表达式自定义排序<br />
 <div class="language-java highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">Arrays</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="na">a</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">y</span><span class="p">.</span><span class="na">a</span><span class="p">)</span>
 </span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="na">a</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">y</span><span class="p">.</span><span class="na">a</span><span class="p">;</span>
@@ -1943,21 +2178,80 @@ cin.nval 读取Double类型数字 (type)cin.nval进行类型转换</p>
 </span></code></pre></div></p>
 </li>
 </ol>
-<p><strong>String API</strong> <br />
-<code>length(): int</code> 返回长度<br />
-<code>CharAt(int index): char</code> 返回index索引的字符<br />
-<code>x.compareTo(y): int</code> x &gt; y 返回1, x == y 返回0, x &lt; y 返回-1, 按字典序比较<br />
-<code>equals(): boolean</code> 比较两个字符串是否相等 相等返回true, 不相等返回false<br />
-<code>substring(): string</code> 返回区间内的字符串, 左闭右开<br />
-<code>toCharArray(): char[]</code> 转换成char[]数组  </p>
-<p><strong>StringBuilder API</strong><br />
-<code>length(): int</code> 返回长度<br />
-<code>append()</code> 末尾添加字符<br />
-<code>reverse()</code> 反转字符串<br />
-<code>insert(int index, string value)</code> 在index索引处插入value字符<br />
-<code>delete(int start, int end)</code> 删除区间内的字符串<br />
-<code>substring()</code> 返回区间内的字符串, 左闭右开<br />
-<code>replace(int start, int end, String str)</code> 将区间内字符串替换成str, 也可理解为删除区间内的字符串然后再start索引添加str字符串  </p>
+<p><strong>String API</strong>   </p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">函数</th>
+<th style="text-align: center;">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>length(): int</code></td>
+<td style="text-align: center;">返回长度</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>CharAt(int index): char</code></td>
+<td style="text-align: center;">返回index索引的字符</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>x.compareTo(y): int</code></td>
+<td style="text-align: center;"><code>x &gt; y</code> 返回1, <code>x == y</code> 返回0, <code>x &lt; y</code> 返回-1, 按字典序比较</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>equals(): boolean</code></td>
+<td style="text-align: center;">比较两个字符串是否相等 相等返回<code>true</code>, 不相等返回<code>false</code></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>substring(): string</code></td>
+<td style="text-align: center;">返回区间内的字符串, 左闭右开</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>toCharArray(): char[]</code></td>
+<td style="text-align: center;">转换成<code>char[]</code>数组</td>
+</tr>
+</tbody>
+</table>
+<p><strong>StringBuilder API</strong>  </p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">函数</th>
+<th style="text-align: center;">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>length(): int</code></td>
+<td style="text-align: center;">返回长度</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>append()</code></td>
+<td style="text-align: center;">末尾添加字符</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>reverse()</code></td>
+<td style="text-align: center;">反转字符串</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>insert(int index, string value)</code></td>
+<td style="text-align: center;">在<code>index</code>索引处插入<code>value</code>字符</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>delete(int start, int end)</code></td>
+<td style="text-align: center;">删除区间内的字符串</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>substring()</code></td>
+<td style="text-align: center;">返回区间内的字符串, 左闭右开</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>replace(int start, int end, String str)</code></td>
+<td style="text-align: center;">将区间内字符串替换成<code>str</code>, 也可理解为删除区间内的字符串然后再<code>start</code>索引添加<code>str</code>字符串</td>
+</tr>
+</tbody>
+</table>
 
 
 

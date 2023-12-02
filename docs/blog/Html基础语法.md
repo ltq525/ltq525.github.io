@@ -39,7 +39,7 @@ HTML `<meta>` 元素表示那些不能由其它 HTML 元相关`meta-related`元�
 * `name`：name 和 content 属性可以一起使用，以名 - 值对的方式给文档提供元数据，其中 name 作为元数据的名称，content 作为元数据的值。  
 
 ### icon
-<link rel="icon" href="images/icon.png"> 标题图标
+`<link rel="icon" href="images/icon.png">` 标题图标  
 
 ## 文本标签
 
