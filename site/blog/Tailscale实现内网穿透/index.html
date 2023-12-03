@@ -672,11 +672,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Ubuntu%E4%B8%AD%E7%9A%84ufw%E9%98%B2%E7%81%AB%E5%A2%99%E6%89%8B%E5%86%8C/" class="md-nav__link">
+      <a href="../Linux%E9%98%B2%E7%81%AB%E5%A2%99%E6%89%8B%E5%86%8C/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Ubuntu中的ufw防火墙手册
+    Linux防火墙手册
   </span>
   
 
@@ -829,20 +829,18 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Tailscale安装链接">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#1-linux" class="md-nav__link">
     <span class="md-ellipsis">
       1. Linux系统一键安装
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="1. Linux系统一键安装">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#tailscale_2" class="md-nav__link">
     <span class="md-ellipsis">
       启动tailscale
@@ -850,23 +848,22 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#tailscale-up-flags" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      tailscale up [flags]
+      其他设备使用
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#openwrt" class="md-nav__link">
+    <span class="md-ellipsis">
+      openwrt
+    </span>
+  </a>
   
 </li>
       
@@ -1297,20 +1294,18 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Tailscale安装链接">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#1-linux" class="md-nav__link">
     <span class="md-ellipsis">
       1. Linux系统一键安装
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="1. Linux系统一键安装">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#tailscale_2" class="md-nav__link">
     <span class="md-ellipsis">
       启动tailscale
@@ -1318,23 +1313,22 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#tailscale-up-flags" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      tailscale up [flags]
+      其他设备使用
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#openwrt" class="md-nav__link">
+    <span class="md-ellipsis">
+      openwrt
+    </span>
+  </a>
   
 </li>
       
@@ -1359,21 +1353,37 @@
 <h1 id="tailscale">Tailscale<a class="headerlink" href="#tailscale" title="Permanent link">&para;</a></h1>
 <h2 id="tailscale_1">Tailscale安装链接<a class="headerlink" href="#tailscale_1" title="Permanent link">&para;</a></h2>
 <p><a href="https://tailscale.com/download">https://tailscale.com/download</a>  </p>
-<h3 id="1-linux">1. Linux系统一键安装<a class="headerlink" href="#1-linux" title="Permanent link">&para;</a></h3>
+<h2 id="1-linux">1. Linux系统一键安装<a class="headerlink" href="#1-linux" title="Permanent link">&para;</a></h2>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl -fsSL https://tailscale.com/install.sh | sh
 </span></code></pre></div>
-<h4 id="tailscale_2">启动tailscale<a class="headerlink" href="#tailscale_2" title="Permanent link">&para;</a></h4>
+<h2 id="tailscale_2">启动tailscale<a class="headerlink" href="#tailscale_2" title="Permanent link">&para;</a></h2>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>/etc/init.d/tailscale start
 </span></code></pre></div>
-<h4 id="tailscale-up-flags">tailscale up [flags]<a class="headerlink" href="#tailscale-up-flags" title="Permanent link">&para;</a></h4>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>tailscale up --advertise-exit-node=true --accept-dns=false --netfilter-mode=off --advertise-routes=192.168.1.0/24 
-</span></code></pre></div>
-<p><code>tailscale status</code> 查询tailscale状态  </p>
+<p><strong>tailscale up [flags]</strong>
+启动服务，带参数</p>
 <p><code>--advertise-routes=192.168.1.0/24,192.168.1.0/24</code> 设置Subnet routes 公开子网路由  </p>
 <p><code>--advertise-exit-node=true</code> 设置Exit node 提供出口节点  </p>
-<p><code>--exit-node=&lt;ip|name&gt;</code> 设置Exit node 选择出口节点   </p>
+<p><code>--exit-node=&lt;ip|name&gt;</code> 启用Exit node 某个出口节点   </p>
 <p><code>--accept-dns=false</code> 关闭dns设置  </p>
 <p><code>--netfilter-mode=off</code>  关闭默认防火墙规则  </p>
+<p><code>--accept-routes</code></p>
+<p><strong>tailscale status</strong> 
+查询tailscale状态  </p>
+<p><strong>tailscale logout</strong>
+退出</p>
+<p><strong>sudo apt-get remove tailscale</strong>
+删除</p>
+<p><strong>启用IP转发</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>echo &#39;net.ipv4.ip_forward = 1&#39; | sudo tee -a /etc/sysctl.d/99-tailscale.conf
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>echo &#39;net.ipv6.conf.all.forwarding = 1&#39; | sudo tee -a /etc/sysctl.d/99-tailscale.conf
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>sudo sysctl -p /etc/sysctl.d/99-tailscale.conf
+</span></code></pre></div></p>
+<h2 id="_1">其他设备使用<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>tailscale up --advertise-exit-node=true
+</span></code></pre></div>
+<h2 id="openwrt">openwrt<a class="headerlink" href="#openwrt" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>tailscale up --advertise-exit-node=true  --advertise-routes=192.168.1.0/24  
+</span></code></pre></div>
 
 
 

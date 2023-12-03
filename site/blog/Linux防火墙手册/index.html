@@ -20,7 +20,7 @@
     
     
       
-        <title>Ubuntu中的ufw防火墙手册 - Quann</title>
+        <title>Linux防火墙手册 - Quann</title>
       
     
     
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ubuntuufw" class="md-skip">
+        <a href="#linux" class="md-skip">
           跳转至
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Ubuntu中的ufw防火墙手册
+              Linux防火墙手册
             
           </span>
         </div>
@@ -685,7 +685,7 @@
           
   
   <span class="md-ellipsis">
-    Ubuntu中的ufw防火墙手册
+    Linux防火墙手册
   </span>
   
 
@@ -696,7 +696,7 @@
         
   
   <span class="md-ellipsis">
-    Ubuntu中的ufw防火墙手册
+    Linux防火墙手册
   </span>
   
 
@@ -721,6 +721,24 @@
   <a href="#ufw" class="md-nav__link">
     <span class="md-ellipsis">
       ufw
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#systemctl" class="md-nav__link">
+    <span class="md-ellipsis">
+      systemctl
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#firewalld-cmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      firewalld-cmd
     </span>
   </a>
   
@@ -1260,6 +1278,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#systemctl" class="md-nav__link">
+    <span class="md-ellipsis">
+      systemctl
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#firewalld-cmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      firewalld-cmd
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1278,7 +1314,7 @@
   
 
 
-<h1 id="ubuntuufw">ubuntu中的ufw防火墙手册<a class="headerlink" href="#ubuntuufw" title="Permanent link">&para;</a></h1>
+<h1 id="linux">Linux防火墙手册<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h1>
 <h2 id="ufw">ufw<a class="headerlink" href="#ufw" title="Permanent link">&para;</a></h2>
 <p><strong>默认的策略定义在/etc/default/ufw文件中，并且可以通过使用sudo ufw default <policy> <chain>命令来修改</strong></p>
 <ol>
@@ -1363,6 +1399,45 @@
 </li>
 </ol>
 <p>参考教程：<a href="https://zhuanlan.zhihu.com/p/139381645">https://zhuanlan.zhihu.com/p/139381645</a>  </p>
+<h2 id="systemctl">systemctl<a class="headerlink" href="#systemctl" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>查看防火状态
+systemctl status firewalld</p>
+</li>
+<li>
+<p>暂时关闭防火墙
+systemctl stop firewalld</p>
+</li>
+<li>
+<p>永久关闭防火墙
+systemctl disable firewalld</p>
+</li>
+<li>
+<p>重启防火墙
+systemctl enable firewalld</p>
+</li>
+</ol>
+<p>启动一个服务：systemctl start firewalld.service
+关闭一个服务：systemctl stop firewalld.service
+重启一个服务：systemctl restart firewalld.service
+显示一个服务的状态：systemctl status firewalld.service
+在开机时启用一个服务：systemctl enable firewalld.service
+在开机时禁用一个服务：systemctl disable firewalld.service
+查看服务是否开机启动：systemctl is-enabled firewalld.service
+查看已启动的服务列表：systemctl list-unit-files|grep enabled
+查看启动失败的服务列表：systemctl --failed</p>
+<h2 id="firewalld-cmd">firewalld-cmd<a class="headerlink" href="#firewalld-cmd" title="Permanent link">&para;</a></h2>
+<p>查看版本： firewall-cmd --version</p>
+<p>查看帮助： firewall-cmd --help</p>
+<p>显示状态： firewall-cmd --state</p>
+<p>查看所有打开的端口： firewall-cmd --zone=public --list-ports</p>
+<p>更新防火墙规则： firewall-cmd --reload</p>
+<p>查看区域信息:  firewall-cmd --get-active-zones</p>
+<p>查看指定接口所属区域： firewall-cmd --get-zone-of-interface=eth0</p>
+<p>拒绝所有包：firewall-cmd --panic-on</p>
+<p>取消拒绝状态： firewall-cmd --panic-off</p>
+<p>查看是否拒绝： firewall-cmd --query-panic</p>
 
 
 
