@@ -20,7 +20,7 @@ nav:
     - Thrift微服务RPC框架: blog/Thrift微服务RPC框架.md
     - Docker入门教程: blog/Docker入门基础.md
     - WSL子系统使用: blog/WSL子系统使用.md
-    - Ubuntu中的ufw防火墙手册: blog/Ubuntu中的ufw防火墙手册.md
+    - Linux防火墙手册: blog/Linux防火墙手册.md
     - Breed_web不死鸟: blog/Breed_web不死鸟.md
     - Openwrt云编译固件教程: blog/Openwrt云编译固件教程.md
     - Openwrt_Luci插件解析: blog/Openwrt_Luci插件解析.md

@@ -1,4 +1,4 @@
-# ubuntu中的ufw防火墙手册
+# Linux防火墙手册
 
 ## ufw
 
@@ -71,6 +71,53 @@ sudo ufw deny proto tcp from 23.24.25.0/24 to any port 80,443
 
 
 参考教程：<https://zhuanlan.zhihu.com/p/139381645>  
+
+## systemctl
+1. 查看防火状态
+systemctl status firewalld
+
+2. 暂时关闭防火墙
+systemctl stop firewalld
+
+3. 永久关闭防火墙
+systemctl disable firewalld
+
+4. 重启防火墙
+systemctl enable firewalld
+
+
+启动一个服务：systemctl start firewalld.service
+关闭一个服务：systemctl stop firewalld.service
+重启一个服务：systemctl restart firewalld.service
+显示一个服务的状态：systemctl status firewalld.service
+在开机时启用一个服务：systemctl enable firewalld.service
+在开机时禁用一个服务：systemctl disable firewalld.service
+查看服务是否开机启动：systemctl is-enabled firewalld.service
+查看已启动的服务列表：systemctl list-unit-files|grep enabled
+查看启动失败的服务列表：systemctl --failed
+
+
+## firewalld-cmd
+查看版本： firewall-cmd --version
+
+查看帮助： firewall-cmd --help
+
+显示状态： firewall-cmd --state
+
+查看所有打开的端口： firewall-cmd --zone=public --list-ports
+
+更新防火墙规则： firewall-cmd --reload
+
+查看区域信息:  firewall-cmd --get-active-zones
+
+查看指定接口所属区域： firewall-cmd --get-zone-of-interface=eth0
+
+拒绝所有包：firewall-cmd --panic-on
+
+取消拒绝状态： firewall-cmd --panic-off
+
+查看是否拒绝： firewall-cmd --query-panic
+
 
 
 

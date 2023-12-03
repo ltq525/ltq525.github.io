@@ -1,5 +1,8 @@
 # Linux入门命令教程
 
+## 修改主机名
+`sudo hostnamectl set-hostname <newhostname>`
+
 ## 用户切换  
 `su`: 进入根用户  
 `adduser`: 新用户名: 添加新用户  
