@@ -825,6 +825,57 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#miwifi" class="md-nav__link">
+    <span class="md-ellipsis">
+      小米miwifi
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="小米miwifi">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 降级开发版
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-ssh-22" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 获取ssh工具包, 开启22端口
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-breed" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 刷入breed
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-breed" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 启动breed
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -862,11 +913,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../Openwrt_Luci%E6%8F%92%E4%BB%B6%E8%A7%A3%E6%9E%90/" class="md-nav__link">
+      <a href="../Openwrt_luci%E6%8F%92%E4%BB%B6%E8%A7%A3%E6%9E%90/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Openwrt_Luci插件解析
+    Openwrt_luci插件解析
   </span>
   
 
@@ -1416,6 +1467,57 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#miwifi" class="md-nav__link">
+    <span class="md-ellipsis">
+      小米miwifi
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="小米miwifi">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 降级开发版
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-ssh-22" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 获取ssh工具包, 开启22端口
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-breed" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 刷入breed
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-breed" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 启动breed
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1475,6 +1577,32 @@
 <div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>mtd write breed-mt7621-hiwifi-hc5962.bin u-boot  
 </span></code></pre></div></p>
 <h3 id="8-breed">8. 启动breed<a class="headerlink" href="#8-breed" title="Permanent link">&para;</a></h3>
+<p>拔电源 按住reset按钮，再插入电源，按住5秒左右进入breed  </p>
+<h2 id="miwifi">小米miwifi<a class="headerlink" href="#miwifi" title="Permanent link">&para;</a></h2>
+<p>所需设备FAT32 U盘</p>
+<h3 id="1_1">1. 降级开发版<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<p>由于稳定版无法开启ssh，所以需要降级</p>
+<h3 id="2-ssh-22">2. 获取ssh工具包, 开启22端口<a class="headerlink" href="#2-ssh-22" title="Permanent link">&para;</a></h3>
+<p>需要先绑定小米路由器，具体方法请自行百度。<br />
+下载工具包, 工具包必须是此路由器的  </p>
+<ul>
+<li>请\将下载的工具包bin文件复制到U盘（FAT/FAT32格式）的根目录下，保证文件名为miwifi_ssh.bin；</li>
+<li>断开小米路由器的电源，将U盘插入USB接口；</li>
+<li>按住reset按钮之后重新接入电源，指示灯变为黄色闪烁状态即可松开reset键；</li>
+<li>等待3-5秒后安装完成之后，小米路由器会自动重启</li>
+</ul>
+<h3 id="3-breed">3. 刷入breed<a class="headerlink" href="#3-breed" title="Permanent link">&para;</a></h3>
+<ol>
+<li>使用WinSCP上传breed文件</li>
+<li>拷入U盘接上路由器<ul>
+<li>进入ssh</li>
+<li>输入<code>df -h</code> 查看分区, U盘一般在 /dev/sd*</li>
+<li><code>mount /dev/sda /mnt</code> ，把 U盘挂载到 /mnt 文件夹</li>
+<li><code>mtd -r write /mnt/breed-mt7620-xiaomi-mini.bin Bootloader</code> 刷入 Breed(这里breed文件修改成需要刷入的文件名)</li>
+</ul>
+</li>
+</ol>
+<h3 id="4-breed">4. 启动breed<a class="headerlink" href="#4-breed" title="Permanent link">&para;</a></h3>
 <p>拔电源 按住reset按钮，再插入电源，按住5秒左右进入breed  </p>
 
 

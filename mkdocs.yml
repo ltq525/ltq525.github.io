@@ -23,7 +23,7 @@ nav:
     - Linux防火墙手册: blog/Linux防火墙手册.md
     - Breed_web不死鸟: blog/Breed_web不死鸟.md
     - Openwrt云编译固件教程: blog/Openwrt云编译固件教程.md
-    - Openwrt_Luci插件解析: blog/Openwrt_Luci插件解析.md
+    - Openwrt_luci插件解析: blog/Openwrt_luci插件解析.md
     - Nginx部署: blog/Nginx部署.md
     - Tailscale内网穿透: blog/Tailscale实现内网穿透.md
     - Frp内网穿透: blog/Frp内网穿透.md
