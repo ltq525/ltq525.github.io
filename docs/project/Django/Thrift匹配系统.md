@@ -3,7 +3,7 @@
 
 ## 创建thrift文件
 ```
-mkdir match.thrift
+touch match.thrift
 ```
 编辑文件
 ``` cpp
