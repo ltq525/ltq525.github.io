@@ -19,10 +19,11 @@
 `git commit -m "命名"`：将暂存区的内容提交到当前分支  
 
 ## 版本回退：
+`git log`: 查看所有提交的版本
 `git restore XX`：将工作区的文件恢复回暂存区的版本，git checkout 与此作用相同  
 `git restore --staged xx`：将HEAD所指版本库恢复到暂存区，即恢复到上一个版本库的文件  
 `git reset --hard HEAD~100`：往上回滚100个版本  
-`git reset --hard 版本号`：回滚到某一特定版本  
+`git reset --hard 版本号前六位`：回滚到某一特定版本  
 
 
 ## 远程连接：  
