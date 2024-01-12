@@ -8,32 +8,46 @@ import java.util.*; // Collection: Queue, List, Map, Stack, Set容器数据包
 import java.lang.*; // Integer包装数据类型数据包
 import java.math.*; // 数学函数数据包
 
-public class Main {
-
-    Scanner sin = new Scanner(System.in);
-    BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-    StreamTokenizer cin = new StreamTokenizer(in);
-    PrintWriter cout = new PrintWriter(new OutputStreamWriter(System.out));
-
-    final static int N = 100010, mod = (int)(1e9+7), inf = 0x3f3f3f3f;
+class Solve {
     
+    Scanner sc = new Scanner(System.in);
+    BufferedReader rb = new BufferedReader(new InputStreamReader(System.in));
+    StreamTokenizer in = new StreamTokenizer(rb);
+    PrintWriter out = new PrintWriter(new OutputStreamWriter(System.out));
+
+    final int N = 100010, mod = (int) (1e9 + 7), inf = 0x3f3f3f3f;
+
     int n;
 
     void solve() throws Exception {
-    
-        cin.nextToken();
-        n = (int)cin.nval;
-        
-    }
 
+        in.nextToken();
+        n = (int)in.nval;
+
+    }
+}
+
+public class Main {
     public static void main(String[] args) throws Exception {
-        
-        Main cmd = new Main();
-        cmd.solve();
-        cmd.cout.close();
+
+        Solve res = new Solve();
+        res.solve();
+        res.out.close();
     }
 }
 ```
+
+## `static`值与`非static`值之间的关系
+在`static`里不能直接调用`非static`的值，若要调用非`static`的值只能通过某个实例对象来调用  
+
+**理解**：`static`类似于**公交车**，`非static`表示**个人自行车**   
+**个人自行车**只能某个人来使用   
+在**公交车**里不能骑**自行车**，而有**自行车**的可以乘**公交车**   
+
+**总结**:   
+`非static` —> `static`、`非static`  
+`static` !-> `非static` 但 `static` -> `static`  
+
 
 ## 三种输入方式
 1. `Scanner sin = new Scanner(System.in);`  
@@ -134,7 +148,7 @@ float|	Float|
 double|	Double|
 
 ## lambda表达式
-> **`->`** 是一个推导符号，表示前面的括号接收到参数，推导后面的返回值
+> **`->`** 是一个推导符号，表示前面的括号接收到参数，推导后面的返回值，一般只能用于包装数据类型
 
 * **常用形式**
 ```
@@ -170,6 +184,94 @@ Arrays.sort(a, 1, 1 + n, (x, y) -> {
 ``` java
 Queue<Integer> q2 = new PriorityQueue<>((x, y) -> {return y - x;}); // 大根堆
 ```
+
+## Arrays
+1. `Arrays.sort()` 
+排序数组默认升序  
+
+**排序规则机制, x - y 为升序, y - x 为降序**  
+
+* `interface`接口`Comparator`自定义排序  
+``` java
+class node{
+    int a, b, c;
+    node(int a, int b, int c){
+        this.a = a;
+        this.b = b;
+        this.c = c;
+    }
+}
+
+class cmp implements Comparator<node>{
+    public int compare(node x, node y){
+        if(x.a != y.a)
+            return x.a - y.a;
+        else 
+        {
+            if(x.b != y.b)
+                return x.b - y.b;
+            else return x.c - y.c;
+        }
+    }
+}
+
+Arrays.sort(a, 1, 1 + n, new cmp());
+```
+
+* `lambda`表达式自定义排序  
+``` java
+Arrays.sort(a, 1, 1 + n, (x, y) -> {
+    if(x.a != y.a)
+            return x.a - y.a;
+    else 
+    {
+        if(x.b != y.b)
+            return x.b - y.b;
+        else return x.c - y.c;
+    }
+});
+```
+
+## String
+
+1. `String`: 不可变字符串  
+```
+string x;
+```
+2. `StringBuilder`: 可变字符串、效率高、线程不安全(单线程)  
+``` 
+StringBuilder s = new StringBuilder();  
+```
+
+3. `StringBuffer`: 可变字符串、效率低、线程安全(多线程)  
+```
+StringBuffer s = new StringBuffer();  
+```
+
+**String API**   
+
+函数|功能|
+:-:|:-:|
+`length(): int` |返回长度  |
+`CharAt(int index): char` |返回index索引的字符  |
+`x.compareTo(y): int` |`x > y` 返回1, `x == y` 返回0, `x < y` 返回-1, 按字典序比较  |
+`equals(): boolean` |比较两个字符串是否相等 相等返回`true`, 不相等返回`false  `|
+`substring(): string` |返回区间内的字符串, 左闭右开  |
+`toCharArray(): char[]` |转换成`char[]`数组  |
+
+**StringBuilder API**  
+
+函数|功能|
+:-:|:-:|
+`length(): int` |返回长度  |
+`append()` |末尾添加字符  |
+`reverse()` |反转字符串  |
+`insert(int index, string value)` |在`index`索引处插入`value`字符  |
+`delete(int start, int end)`| 删除区间内的字符串  |
+`substring()` |返回区间内的字符串, 左闭右开  |
+`setCharAt(int index, char c)` | 将`index`索引处的字符替换成`c`字符|
+`replace(int start, int end, String str)`| 将区间内字符串替换成`str`, 也可理解为删除区间内的字符串然后再`start`索引添加`str`字符串  |
+
 
 ## Collection
 
@@ -279,6 +381,8 @@ Map<Integer, Integer> map4 = new TreeMap<>((x, y) -> {return y - x;});  // 降�
 `size()`|	返回 `this` 的长度  |
 `get(Integer key)`	|将 this 中对应的 `key` 的 `value` 返回 **空时返回|null，注意不是0**  
 `keySet()`	|将 this 中所有元素的 `key` 作为集合返回 可搭配`foreach`使用 | 
+`entrySet()`	|将 this 中所有元素的 `key`和`value` 作为集合返回 可搭配 `foreach`使用 其中`getKey()`获取`key`元素， `getValue()`获取对应的`value`元素 | 
+
 
 ### 5. Set  
 `Set` 是保持容器中的元素不重复的一种数据结构  
@@ -311,89 +415,4 @@ Set<Integer> s4 = new TreeSet<>((x, y) -> {return y - x;});  // 降序
 `retainAll(Collection e)`	|将 `this` 改为两个容器内相同的元素  |
 `removeAll(Collection e)`	|将 `this` 中与 `e` 相同的元素删除  |
 
-## Arrays
-1. `Arrays.sort()` 
-排序数组默认升序  
-
-**排序规则机制, x - y 为升序, y - x 为降序**  
-
-* `interface`接口`Comparator`自定义排序  
-``` java
-class node{
-    int a, b, c;
-    node(int a, int b, int c){
-        this.a = a;
-        this.b = b;
-        this.c = c;
-    }
-}
-
-class cmp implements Comparator<node>{
-    public int compare(node x, node y){
-        if(x.a != y.a)
-            return x.a - y.a;
-        else 
-        {
-            if(x.b != y.b)
-                return x.b - y.b;
-            else return x.c - y.c;
-        }
-    }
-}
-
-Arrays.sort(a, 1, 1 + n, new cmp());
-```
-
-* `lambda`表达式自定义排序  
-``` java
-Arrays.sort(a, 1, 1 + n, (x, y) -> {
-    if(x.a != y.a)
-            return x.a - y.a;
-    else 
-    {
-        if(x.b != y.b)
-            return x.b - y.b;
-        else return x.c - y.c;
-    }
-});
-```
-
-## String
-
-1. `String`: 不可变字符串  
-```
-string x;
-```
-2. `StringBuilder`: 可变字符串、效率高、线程不安全(单线程)  
-``` 
-StringBuilder s = new StringBuilder();  
-```
-
-3. `StringBuffer`: 可变字符串、效率低、线程安全(多线程)  
-```
-StringBuffer s = new StringBuffer();  
-```
-
-**String API**   
-
-函数|功能|
-:-:|:-:|
-`length(): int` |返回长度  |
-`CharAt(int index): char` |返回index索引的字符  |
-`x.compareTo(y): int` |`x > y` 返回1, `x == y` 返回0, `x < y` 返回-1, 按字典序比较  |
-`equals(): boolean` |比较两个字符串是否相等 相等返回`true`, 不相等返回`false  `|
-`substring(): string` |返回区间内的字符串, 左闭右开  |
-`toCharArray(): char[]` |转换成`char[]`数组  |
-
-**StringBuilder API**  
-
-函数|功能|
-:-:|:-:|
-`length(): int` |返回长度  |
-`append()` |末尾添加字符  |
-`reverse()` |反转字符串  |
-`insert(int index, string value)` |在`index`索引处插入`value`字符  |
-`delete(int start, int end)`| 删除区间内的字符串  |
-`substring()` |返回区间内的字符串, 左闭右开  |
-`replace(int start, int end, String str)`| 将区间内字符串替换成`str`, 也可理解为删除区间内的字符串然后再`start`索引添加`str`字符串  |
 
