@@ -27,6 +27,7 @@ nav:
     - Nginx部署: blog/Nginx部署.md
     - Tailscale内网穿透: blog/Tailscale实现内网穿透.md
     - Frp内网穿透: blog/Frp内网穿透.md
+    - Design_patterns设计模式: blog/design_patterns/设计模式.md
   - 项目:
     - Django项目:
       - 球球作战小游戏: project/Django/球球作战小游戏.md
@@ -43,9 +44,6 @@ nav:
     - KMP字符串匹配: algorithm/KMP字符串匹配.md
     - 最短路径问题: algorithm/最短路径问题.md
     - 并查集: algorithm/并查集.md
-  - 设计模式: 
-    - 设计模式: design_patterns/设计模式.md
-
 
 theme:
   name: material
