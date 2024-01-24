@@ -16,8 +16,8 @@ goto :break
 
 :start
 
-mkdocs build -c
 set /p name=请输入commit的名称:
+mkdocs build -c
 git.exe add .
 git.exe commit -m "%name%"
 git.exe push
