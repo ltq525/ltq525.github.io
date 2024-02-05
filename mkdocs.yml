@@ -8,41 +8,41 @@ copyright: Copyright &copy; Hello World - 2024 Quann
 nav:
   - 简介: index.md
   - 博客:
-    - Mkdocs网站搭建: blog/Mkdocs网站搭建.md
-    - Markdown基础教程: blog/Markdown基础教程.md
-    - Html基础语法: blog/Html基础语法.md
-    - Linux入门命令: blog/Linux入门命令.md
-    - Tmux使用方法: blog/Tmux使用方法.md
-    - Vim基本命令: blog/Vim基本命令.md
-    - Shell语法: blog/Shell语法.md
-    - SSH远程登录: blog/SSH远程登录.md
-    - Git基础使用命令: blog/Git基础命令.md
-    - Thrift微服务RPC框架: blog/Thrift微服务RPC框架.md
-    - Docker入门教程: blog/Docker入门基础.md
-    - WSL子系统使用: blog/WSL子系统使用.md
-    - Linux防火墙手册: blog/Linux防火墙手册.md
     - Breed_web不死鸟: blog/Breed_web不死鸟.md
+    - Design_patterns设计模式: blog/design_patterns/设计模式.md
+    - Docker入门教程: blog/Docker入门基础.md
+    - Frp内网穿透: blog/Frp内网穿透.md
+    - Git基础使用命令: blog/Git基础命令.md
+    - Html基础语法: blog/Html基础语法.md
+    - Linux防火墙手册: blog/Linux防火墙手册.md
+    - Linux入门命令: blog/Linux入门命令.md
+    - Markdown基础教程: blog/Markdown基础教程.md
+    - Mkdocs网站搭建: blog/Mkdocs网站搭建.md
+    - Mysql基本用法: blog/Mysql基本用法.md
+    - Nginx部署: blog/Nginx部署.md
     - Openwrt云编译固件教程: blog/Openwrt云编译固件教程.md
     - Openwrt_luci插件解析: blog/Openwrt_luci插件解析.md
-    - Nginx部署: blog/Nginx部署.md
+    - Shell语法: blog/Shell语法.md
+    - SSH远程登录: blog/SSH远程登录.md
     - Tailscale内网穿透: blog/Tailscale实现内网穿透.md
-    - Frp内网穿透: blog/Frp内网穿透.md
-    - Design_patterns设计模式: blog/design_patterns/设计模式.md
-    - Mysql基本用法: blog/Mysql基本用法.md
+    - Thrift微服务RPC框架: blog/Thrift微服务RPC框架.md
+    - Tmux使用方法: blog/Tmux使用方法.md
+    - Vim基本命令: blog/Vim基本命令.md
+    - WSL子系统使用: blog/WSL子系统使用.md
   - 项目:
     - Django项目:
       - 球球大战: project/Django/球球大战.md
-      - Nginx_uwsgi部署: project/Django/Nginx_uwsgi部署.md
-      - Socket通信机制: project/Django/Socket通信机制.md
       - Thrift匹配系统: project/Django/Thrift匹配系统.md
       - JWT身份验证: project/Django/JWT身份验证.md
+      - Nginx_uwsgi部署: project/Django/Nginx_uwsgi部署.md
+      - Socket通信机制: project/Django/Socket通信机制.md
     - Spring项目:
       - 机器蛇对战: project/Spring/机器蛇对战.md
-      - Springboot浅层解析: project/Spring/Springboot浅层解析.md
-      - Mybatis_plus数据库配置: project/Spring/Mybatis_plus数据库配置.md
       - JWT身份验证: project/Spring/JWT身份验证.md
+      - Mybatis_plus数据库配置: project/Spring/Mybatis_plus数据库配置.md
       - Nginx配置: project/Spring/Nginx配置.md
       - OAuth2授权: project/Spring/OAuth2授权.md
+      - Springboot浅层解析: project/Spring/Springboot浅层解析.md
   - 算法:
     - Java语法_面向竞赛版: algorithm/Java语法_面向竞赛版.md
     - C++ 语法_面向竞赛版: algorithm/C++语法_面向竞赛版.md
