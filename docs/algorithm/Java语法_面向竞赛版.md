@@ -7,32 +7,31 @@ import java.io.*; // 输入输出流数据包
 import java.util.*; // Collection: Queue, List, Map, Stack, Set容器数据包
 import java.lang.*; // Integer包装数据类型数据包
 import java.math.*; // 数学函数数据包
-
-class Solve {
     
-    Scanner sc = new Scanner(System.in);
-    BufferedReader rb = new BufferedReader(new InputStreamReader(System.in));
-    StreamTokenizer in = new StreamTokenizer(rb);
-    PrintWriter out = new PrintWriter(new OutputStreamWriter(System.out));
-
-    final int N = 100010, mod = (int) (1e9 + 7), inf = 0x3f3f3f3f;
-
-    int n;
-
-    void solve() throws Exception {
-
-        in.nextToken();
-        n = (int)in.nval;
-
-    }
-}
-
 public class Main {
-    public static void main(String[] args) throws Exception {
 
-        Solve res = new Solve();
-        res.solve();
-        res.out.close();
+    Scanner sin = new Scanner(System.in);
+    BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+    StreamTokenizer cin = new StreamTokenizer(in);
+    PrintWriter cout = new PrintWriter(new OutputStreamWriter(System.out));
+    
+    final int N = 100010, mod = (int)(1e9+7), inf = 0x3f3f3f3f;
+    
+    int nextInt() throws Exception {
+        cin.nextToken();
+        return (int) cin.nval;
+    }
+    
+    void solve() throws Exception {
+        
+        
+        
+    }
+
+    public static void main(String[] args) throws Exception {
+        Main cmd = new Main();
+        cmd.solve();
+        cmd.cout.close();
     }
 }
 ```

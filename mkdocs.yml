@@ -36,6 +36,10 @@ nav:
       - Socket通信机制: project/Django/Socket通信机制.md
       - Thrift匹配系统: project/Django/Thrift匹配系统.md
       - JWT身份验证: project/Django/JWT身份验证.md
+    - Springboot项目:
+      - Springboot浅层解析: project/Springboot/Springboot浅层解析.md
+      - Mybatis_plus数据库配置: project/Springboot/Mybatis_plus数据库配置.md
+      - JWT身份验证: project/Springboot/JWT身份验证.md
   - 算法:
     - Java语法_面向竞赛版: algorithm/Java语法_面向竞赛版.md
     - C++ 语法_面向竞赛版: algorithm/C++语法_面向竞赛版.md
@@ -49,8 +53,8 @@ nav:
 
 theme:
   name: material
-  logo: logo/xianzi.png
-  favicon: logo/xianzi.png
+  logo: logo/鳄鱼.png
+  favicon: logo/logo.png
   language: zh
   icon:
     repo: fontawesome/brands/github
