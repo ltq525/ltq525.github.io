@@ -20,8 +20,8 @@ nav:
     - Mkdocs网站搭建: blog/Mkdocs网站搭建.md
     - Mysql基本用法: blog/Mysql基本用法.md
     - Nginx部署: blog/Nginx部署.md
-    - Openwrt云编译固件教程: blog/Openwrt云编译固件教程.md
     - Openwrt_luci插件解析: blog/Openwrt_luci插件解析.md
+    - Openwrt云编译固件教程: blog/Openwrt云编译固件教程.md
     - Shell语法: blog/Shell语法.md
     - SSH远程登录: blog/SSH远程登录.md
     - Tailscale内网穿透: blog/Tailscale实现内网穿透.md
@@ -32,10 +32,10 @@ nav:
   - 项目:
     - Django项目:
       - 球球大战: project/Django/球球大战.md
-      - Thrift匹配系统: project/Django/Thrift匹配系统.md
       - JWT身份验证: project/Django/JWT身份验证.md
       - Nginx_uwsgi部署: project/Django/Nginx_uwsgi部署.md
       - Socket通信机制: project/Django/Socket通信机制.md
+      - Thrift匹配系统: project/Django/Thrift匹配系统.md
     - Spring项目:
       - 机器蛇对战: project/Spring/机器蛇对战.md
       - JWT身份验证: project/Spring/JWT身份验证.md
@@ -53,6 +53,15 @@ nav:
     - KMP字符串匹配: algorithm/KMP字符串匹配.md
     - 最短路径问题: algorithm/最短路径问题.md
     - 并查集: algorithm/并查集.md
+  - 其他:
+    - 408: 
+      - 计算机网络: 408/计算机网络.md
+    - English: 
+      - Write: English/Write.md
+    - Math:
+      - 高等数学: Math/高等数学.md
+      - 线性代数:  Math/线性代数.md
+
 
 theme:
   name: material
