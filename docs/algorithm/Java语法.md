@@ -1,5 +1,4 @@
 # Java 语法
-此篇短文仅面向算法竞赛的Java基本编程语言
 
 ## 基本模板
 ``` java
@@ -36,7 +35,7 @@ public class Main {
 }
 ```
 
-## `static`值与`非static`值之间的关系
+### `static`值与`非static`值之间的关系
 在`static`里不能直接调用`非static`的值，若要调用非`static`的值只能通过某个实例对象来调用  
 
 **理解**：`static`类似于**公交车**，`非static`表示**个人自行车**   
@@ -414,4 +413,54 @@ Set<Integer> s4 = new TreeSet<>((x, y) -> {return y - x;});  // 降序
 `retainAll(Collection e)`	|将 `this` 改为两个容器内相同的元素  |
 `removeAll(Collection e)`	|将 `this` 中与 `e` 相同的元素删除  |
 
+## 异常处理
 
+**异常继承关系图**  
+![java异常处理](https://ltq525.github.io/site/picture/java异常处理.png)
+
+
+### 内置异常方法
+方法|说明|
+:-:|:-:|
+`public String getMessage()`	|返回关于发生的异常的详细信息。这个消息在`Throwable` 类的构造函数中初始化了。|
+`public Throwable getCause()`	|返回一个 `Throwable` 对象代表异常原因。|
+`public String toString()`	|返回此 `Throwable` 的简短描述。|
+`public void printStackTrace()`	|将此 `Throwable` 及其回溯打印到标准错误流|
+`public StackTraceElement [] getStackTrace()`	|返回一个包含堆栈层次的数组。下标为0的元素代表栈顶，最后一个元素代表方法调用堆栈的栈底。|
+`public Throwable fillInStackTrace()`	|用当前的调用栈层次填充`Throwable` 对象栈层次，添加到栈层次任何先前信息中。|
+
+### 捕获异常
+``` java
+try {
+    // 存在异常的语句 如 by zero
+} catch (Exception e) {
+    e.printStackTarce();
+} finally {
+    // 是否遇到异常都会执行的语句
+}
+```
+**try-with-resources**  
+`JDK7` 之后，`Java` 新增的 `try-with-resource` 语法来打开资源，并且可以在语句执行完毕后确保每个资源都被自动关闭 。
+`try` 用于声明和实例化资源，`catch` 用于处理关闭资源时可能引发的所有异常。
+``` java
+String line;
+try (
+        BufferedReader br = new BufferedReader(new FileReader("input.txt"));
+        BufferedWriter bw = new BufferedWriter(new FileWriter("output.txt"));
+) {
+    while ((line = br.readLine()) != null) {
+        System.out.println("Line => " + line);
+        bw.write("copy: " + line + "\n");
+    }
+    bw.flush();
+} catch (IOException e) {
+    System.out.println("IOException in try block =>" + e.getMessage());
+}
+```
+
+### 抛出异常
+1. `throw`: 在函数内抛出一个异常。  
+例: `if (x == 0) throw new IOException();`  
+
+2. `throws`: 在函数定义时抛出一些可能的异常。  
+例: `public static void main(String[] args) throwns Exception {}`  

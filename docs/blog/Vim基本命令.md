@@ -1,5 +1,8 @@
 # Vim使用说明
 
+## 配置祖传代码 
+`.vimrc .tmux.conf .bashrc:` [Github链接](https://github.com/ltq525/my_settings)
+
 ## 功能：
     (1) 命令行模式下的文本编辑器。
     (2) 根据文件扩展名自动判别编程语言。支持代码缩进、代码高亮等功能。
