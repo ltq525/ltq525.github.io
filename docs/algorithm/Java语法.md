@@ -79,7 +79,7 @@ public class Main {
     **三种输出方式，用法与Java标准输出一致**
 
 ## BigInteger
-### 初始化
+### 1. 初始化
 1. 
 ``` java
 BigInteger a = new BigInteger(in.readLine());
@@ -87,12 +87,12 @@ BigInteger a = new BigInteger("12345678910"); // 默认十进制
 cout.print(a)   // 12345678910
 ```
 2. 
-```java
+``` java
 BigInteger b = new BigInteger("1E", 16); // 16进制
 cout.print(b)   // 30
 ```
 
-### API
+### 2. API
 
 **基本运算**  
 
@@ -419,7 +419,7 @@ Set<Integer> s4 = new TreeSet<>((x, y) -> {return y - x;});  // 降序
 ![java异常处理](https://ltq525.github.io/site/picture/java异常处理.png)
 
 
-### 内置异常方法
+### 1. 内置异常方法
 方法|说明|
 :-:|:-:|
 `public String getMessage()`	|返回关于发生的异常的详细信息。这个消息在`Throwable` 类的构造函数中初始化了。|
@@ -429,7 +429,7 @@ Set<Integer> s4 = new TreeSet<>((x, y) -> {return y - x;});  // 降序
 `public StackTraceElement [] getStackTrace()`	|返回一个包含堆栈层次的数组。下标为0的元素代表栈顶，最后一个元素代表方法调用堆栈的栈底。|
 `public Throwable fillInStackTrace()`	|用当前的调用栈层次填充`Throwable` 对象栈层次，添加到栈层次任何先前信息中。|
 
-### 捕获异常
+### 2. 捕获异常
 ``` java
 try {
     // 存在异常的语句 如 by zero
@@ -458,9 +458,448 @@ try (
 }
 ```
 
-### 抛出异常
+### 3. 抛出异常
 1. `throw`: 在函数内抛出一个异常。  
 例: `if (x == 0) throw new IOException();`  
 
 2. `throws`: 在函数定义时抛出一些可能的异常。  
-例: `public static void main(String[] args) throwns Exception {}`  
+例: `public static void main(String[] args) throwns Exception {}` 
+
+
+## 注解  
+(1) 注解（`Annotation`）也被称为元数据（`Metadata`），用于修饰包、方法、属性、构造器、局部变量等数据信息。  
+(2) 注解不影响程序逻辑，但注解可以被编译或运行。  
+(3) 在`JavaSE`中，注解的使用目的比较简单，例如标记过时的功能，忽略警告等。在`JavaEE`中注解占据了更重要的角色，例如用来配置应用程序的任何切面，代替`JavaEE`旧版中所遗留的繁冗代码和`XML`配置等。  
+
+###  1. 常用注解  
+
+* `@Override`: 限定某个函数必须重写其他函数，该注解只能用于函数。函数名和参数列表必须相同。  
+* `@Overload`: 限定某个函数必须重载其他函数，该注解只能用于函数。函数名必须相同，参数列表必须不同。  
+* `@Deprecated`：用于表示某个程序元素（类、函数）已过时  
+* `@SuppressWarnings`：抑制编译器警告  
+
+### 2. 元注解  
+修饰其他注解的注解，就被称为元注解。
+
+*  `Retention`：指定注解的作用范围  
+* `Target`：指定注解可以用在哪些地方  
+* `Document`：注定注解是否出出现在javadoc中  
+* `Inherited`：子类会继承父类的注解  
+
+
+## 反射
+反射：动态引入类、动态调用实例的成员函数、成员变量等。
+
+### 1. 优缺点
+优点：可以动态创建和使用对象，使用灵活
+缺点：执行速度慢
+
+### 2. 常用`API`  
+``` java
+(1) java.lang.Class  
+(2) java.lang.reflect.Method  
+(3) java.lang.reflect.Field  
+(4) java.lang.reflect.Constructor  
+```
+
+### 3. 代码演示
+3. `Calculator`类
+``` java
+package com.quann;
+
+public class Calculator {
+	public String name;
+	
+	Calculator() {}
+	
+	public Calculator(String param) {
+		this.name = param;
+	}
+	
+	public int add(int x, int y) {
+		return x + y;
+	}
+	
+	public String toString() {
+		return name;
+	}
+	
+}
+```
+4. `Main`主类
+``` java
+package com.quann;
+
+import java.lang.reflect.*;
+
+public class Main {
+
+    void solve() throws Exception {
+
+    	// 反射 动态创建、动态使用对象
+    	Class<?> cls = Class.forName("com.quann.Calculator");
+    	Object o = cls.newInstance();
+    	Method method = cls.getMethod("add", int.class, int.class);
+    	System.out.println(method.invoke(o, 1, 2));
+    	
+    	Field field = cls.getField("name");
+    	field.set(o, "Hello World!");
+    	System.out.println(field.get(o));
+    	
+    	Constructor<?> constructor = cls.getConstructor(String.class);
+    	Object newObject = constructor.newInstance("Happly New Year!");
+    	System.out.println(newObject);
+    	
+    	// 常用静态写法
+    	Calculator cal = new Calculator();
+    	
+    	System.out.println(cal.add(1, 2));
+    	
+    	cal.name = "Hello World!";
+    	System.out.println(cal.name);
+    	
+    	Calculator newcal = new Calculator("Happly New Year!");
+    	System.out.println(newcal);
+    
+    }
+
+    public static void main(String[] args) throws Exception {
+        Main cmd = new Main();
+        cmd.solve();
+    }
+}
+```
+
+## 多线程
+
+### 1.  常用API  
+* start()：开启一个线程
+* Thread.sleep(): 休眠一个线程
+* join()：等待线程执行结束
+* interrupt()：从休眠中中断线程
+* setDaemon()：将线程设置为守护线程。当只剩下守护线程时，程序自动退出
+
+### 2. 代码演示
+``` java
+package com.quann;
+
+import java.lang.Thread;
+
+class Worker extends Thread {
+    @Override
+    public void run() {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("Hello! " + i + " " + this.getName());
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+                break;
+            }
+        }
+    }
+}
+
+class WorkerRunnable implements Runnable {
+    @Override
+    public void run() {
+        for (int i = 1; i <= 3; i++) {
+            System.out.println("Hello! " + i + " " + "thread-3");
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+
+//    	创建线程
+//    	形式一
+        Worker worker1 = new Worker();
+        Worker worker2 = new Worker();
+
+//    	形式二
+    	WorkerRunnable worker = new WorkerRunnable();
+    	Thread thread = new Thread(worker);
+
+        worker1.setName("thread-1");
+        worker2.setName("thread-2");
+
+//      在启动前设置守护线程，当进程只剩下守护线程时，结束进程
+        worker1.setDaemon(true);
+        worker2.setDaemon(true);
+        thread.setDaemon(true);
+
+//      启动线程
+        thread.start();
+        worker1.start();
+        worker2.start();
+
+//      等待worker1线程1000ms后(空值为执行结束后)执行下一条语句，
+        worker1.join(1000);
+//      向worker1线程 发送中断异常请求 需要该线程有catch异常捕获
+        worker1.interrupt();
+        worker2.join();
+
+        System.out.println("finsh!");
+
+    }
+}
+```
+
+### 3. 锁
+由于多线程程序延伸出关于读写冲突的问题
+
+**Example**: 此程序运行结果并不是理想的`200000`  
+``` java
+package com.quann;
+
+import java.lang.Thread;
+
+class Worker extends Thread {
+	
+	public static int cnt = 0;
+	
+    @Override
+    public void run() {
+        for (int i = 1; i <= 100000; i++) {
+            cnt ++;
+        }
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+
+        Worker worker1 = new Worker();
+        Worker worker2 = new Worker();
+
+        worker1.start();
+        worker2.start();
+
+        worker1.join();
+        worker2.join();
+
+        System.out.println("finsh!");
+        System.out.println(Worker.cnt);
+
+    }
+}
+```
+
+**方法一:**   
+使用`ReentrantLock`实现   
+程序运行结果为`200000` 
+``` java
+package com.quann;
+
+import java.lang.Thread;
+import java.util.concurrent.locks.ReentrantLock;
+
+class Worker extends Thread {
+	
+	private static final ReentrantLock lock = new ReentrantLock();
+	public static int cnt = 0;
+	
+    @Override
+    public void run() {
+        for (int i = 1; i <= 100000; i++) {
+        	lock.lock();
+            try {
+            	cnt ++;
+            } finally {
+            	lock.unlock();
+            }
+        }
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+
+        Worker worker1 = new Worker();
+        Worker worker2 = new Worker();
+
+        worker1.start();
+        worker2.start();
+        
+        worker1.join();
+        worker2.join();
+
+        System.out.println("finsh!");
+        System.out.println(Worker.cnt);
+
+    }
+}
+```
+**方法二:**   
+使用`Synchronized`实现  
+程序运行结果为`400000`  
+``` java
+package com.quann;
+
+class Worker implements Runnable {
+
+	public static int cnt = 0;
+
+	public synchronized void work1() {
+		for (int i = 1; i <= 100000; i++) {
+			cnt++;
+		}
+	}
+	
+//	上面等价于下面 需确保上锁的this是相同的 否则无效
+	public void work2() {
+		synchronized (this) {
+			for (int i = 1; i <= 100000; i++) {
+				cnt++;
+			}
+		}
+	}
+
+	@Override
+	public void run() {
+		work1();
+		work2();
+	}
+}
+
+public class Main {
+
+	public static void main(String[] args) throws Exception {
+
+		Worker worker = new Worker();
+
+		Thread worker1 = new Thread(worker);
+		Thread worker2 = new Thread(worker);
+
+		worker1.start();
+		worker2.start();
+
+		worker1.join();
+		worker2.join();
+
+		System.out.println("finsh!");
+		System.out.println(Worker.cnt);
+
+	}
+}
+```
+
+### 4. 锁的等待与唤醒
+
+`ReentrantLock`之`Condition`的`await/signal`用法 和 `Synconsized`的`wait/notify`方法  
+
+**二者异同**  
+
+* 两者都是可重入锁，都是独占锁。  
+* `synchronized` 依赖于 JVM 而 `ReentrantLock` 依赖于 `API`  
+* `synchronized` 是非公平锁，而 `ReentrantLock` 既可以是公平锁，也可以是公平锁。  
+* `ReentrantLock` 是等待可中断、可选择性通知。  
+
+#### 1. ReentrantLock
+``` java
+package com.quann;
+
+import java.lang.Thread;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.ReentrantLock;
+
+class Worker extends Thread {
+
+    private static final ReentrantLock lock = new ReentrantLock();
+    private static final Condition condition = lock.newCondition();
+    public boolean needWait;
+
+    public Worker(boolean needWait) {
+        this.needWait = needWait;
+    }
+
+    @Override
+    public void run() {
+        lock.lock();
+        try {
+            if (needWait) {
+                condition.await();
+                System.out.println(this.getName() + ": 被唤醒");
+            } else {
+                condition.signalAll();
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            lock.unlock();
+        }
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+
+        for (int i = 1; i <= 10; i++) {
+        	new Worker(true).start();
+        }
+
+        Worker worker = new Worker(false);
+        worker.sleep(1000);
+        worker.start();
+        
+    }
+}
+```
+
+#### 2. synchronized
+``` java
+package com.quann;
+
+import java.lang.Thread;
+
+class Worker extends Thread {
+
+	public static final Object lock = new Object();
+    public boolean needWait;
+
+    public Worker(boolean needWait) {
+        this.needWait = needWait;
+    }
+
+    @Override
+    public void run() {
+        synchronized (lock) {
+        	try {
+                if (needWait) {
+                    lock.wait();
+                    System.out.println(this.getName() + ": 被唤醒");
+                } else {
+                    lock.notifyAll();
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+		}
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+
+        for (int i = 1; i <= 5; i++) {
+        	new Worker(true).start();
+        }
+
+        Worker worker = new Worker(false);
+        Thread.sleep(1000);
+        worker.start();
+        
+    }
+}
+```

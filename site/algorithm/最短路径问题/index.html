@@ -2148,7 +2148,7 @@
 </span><span id="__span-0-74"><a id="__codelineno-0-74" name="__codelineno-0-74" href="#__codelineno-0-74"></a><span class="p">}</span>
 </span></code></pre></div></p>
 <h4 id="spfa">SPFA算法<a class="headerlink" href="#spfa" title="Permanent link">&para;</a></h4>
-<p>基于bellman_ford算法优化
+<p>基于bellman_ford算法优化<br />
 适用范围: 存在重边、自环、边权正负、不存在负权回路   </p>
 <ul>
 <li>时间复杂度: O(nlogn)   </li>
@@ -2233,7 +2233,8 @@
 <h3 id="_5">多源最短路问题<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>求解任意两点之间的最短路径问题</p>
 <h4 id="foryd">foryd算法<a class="headerlink" href="#foryd" title="Permanent link">&para;</a></h4>
-<p>时间复杂度: O(n^3)
+<p>时间复杂度: O(n^3)<br />
+算法分析：动态规划<br />
 <div class="language-c++ highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">init</span><span class="p">()</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="p">{</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
