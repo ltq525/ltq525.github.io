@@ -849,7 +849,7 @@ public class Main {
         }
 
         Worker worker = new Worker(false);
-        worker.sleep(1000);
+        Thread.sleep(1000);
         worker.start();
         
     }
