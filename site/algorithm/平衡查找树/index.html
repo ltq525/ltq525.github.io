@@ -1417,6 +1417,15 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
+      常见的平衡树
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
       问题
     </span>
   </a>
@@ -1425,7 +1434,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       题目链接
     </span>
@@ -1439,7 +1448,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       解法一：
     </span>
@@ -1483,6 +1492,27 @@
   
   <span class="md-ellipsis">
     七大排序
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%90%AF%E5%8F%91%E5%BC%8F%E6%90%9C%E7%B4%A2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    启发式搜索
   </span>
   
 
@@ -1588,6 +1618,27 @@
   
   <span class="md-ellipsis">
     最短路径问题
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    最小生成树
   </span>
   
 
@@ -1928,6 +1979,15 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
+      常见的平衡树
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
       问题
     </span>
   </a>
@@ -1936,7 +1996,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       题目链接
     </span>
@@ -1950,7 +2010,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       解法一：
     </span>
@@ -1992,9 +2052,21 @@
 
 
 <h1 id="_1">平衡查找树<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="_2">问题<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<h3 id="_3"><a href="https://www.luogu.com.cn/problem/P3369">题目链接</a><a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<h2 id="_4">解法一：<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<ol>
+<li>满足BST (Binary Search Tree)</li>
+<li>平衡树的单旋转：右旋拎左右挂左，左旋拎右左挂右</li>
+</ol>
+<h2 id="_2">常见的平衡树<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Treap (tree + heap)<br />
+每个节点随机生成val值, 按堆进行旋转平衡  </li>
+<li>AVL树<br />
+严格平衡每个节点的高度, 两子树高度之差不能超过1  </li>
+<li>红黑树  </li>
+</ol>
+<h2 id="_3">问题<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="_4"><a href="https://www.luogu.com.cn/problem/P3369">题目链接</a><a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h2 id="_5">解法一：<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>vertor模拟查找树</p>
 <h3 id="ac-code">AC Code<a class="headerlink" href="#ac-code" title="Permanent link">&para;</a></h3>
 <div class="language-c++ highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;bits/stdc++.h&gt;</span>

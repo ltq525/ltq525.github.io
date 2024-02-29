@@ -20,6 +20,11 @@ public class Main {
         cin.nextToken();
         return (int) cin.nval;
     }
+
+    String next() throws Exception {
+        cin.nextToken();
+        return cin.sval;
+    }
     
     void solve() throws Exception {
         
@@ -35,14 +40,15 @@ public class Main {
 }
 ```
 
-### `static`值与`非static`值之间的关系
-在`static`里不能直接调用`非static`的值，若要调用非`static`的值只能通过某个实例对象来调用  
+### static值与非static值之间的关系
+在`static`里不能直接调用`非static`的值，若要调用非`static`的值只能通过某个实例对象来调用  即`static`方法可以用(对象.方法名)来调用，也可以用(类名.方法名)来调用。而非静态的方法只能创建对象后时调用
 
 **理解**：`static`类似于**公交车**，`非static`表示**个人自行车**   
 **个人自行车**只能某个人来使用   
 在**公交车**里不能骑**自行车**，而有**自行车**的可以乘**公交车**   
 
 **总结**:   
+能直接调用的关系  
 `非static` —> `static`、`非static`  
 `static` !-> `非static` 但 `static` -> `static`  
 
