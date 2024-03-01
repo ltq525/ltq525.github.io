@@ -53,10 +53,9 @@ nav:
     - 三分查找: algorithm/三分查找.md
     - 树链剥分: algorithm/树链剥分.md
     - 线段树: algorithm/线段树.md
-    - KMP字符串匹配: algorithm/KMP字符串匹配.md
+    - 字符串匹配: algorithm/字符串匹配.md
     - 最短路径问题: algorithm/最短路径问题.md
     - 最小生成树: algorithm/最小生成树.md
-    - KMP字符串匹配: algorithm/KMP字符串匹配.md
   - 其他:
     - 408: 
       - 计算机网络: 408/计算机网络.md
