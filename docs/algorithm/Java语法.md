@@ -1,7 +1,7 @@
 # Java 语法
 
 ## 基本模板
-``` java
+``` java 
 import java.io.*; // 输入输出流数据包
 import java.util.*; // Collection: Queue, List, Map, Stack, Set容器数据包
 import java.lang.*; // Integer包装数据类型数据包
