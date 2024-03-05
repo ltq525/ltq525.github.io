@@ -46,6 +46,7 @@ nav:
   - 算法:
     - Java语法: algorithm/Java语法.md
     - C++语法: algorithm/C++语法.md
+    - OI竞赛技巧: algorithm/OI竞赛技巧.md
     - 并查集: algorithm/并查集.md
     - 平衡查找树: algorithm/平衡查找树.md
     - 七大排序: algorithm/七大排序.md
