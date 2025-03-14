@@ -15,7 +15,7 @@
 `mkdocs build -clean`: 生成并清除旧的  
 
 ### 启动mkdocs服务  
-`mkdocs serve `  
+`mkdocs serve -a 0.0.0.0:80`  
 
 ---
 ### github搭建静态网页  
