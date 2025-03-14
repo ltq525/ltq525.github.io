@@ -20,7 +20,7 @@ nav:
     - Mkdocs网站搭建: blog/Mkdocs网站搭建.md
     - Mysql基本用法: blog/Mysql基本用法.md
     - Nginx部署: blog/Nginx部署.md
-    - Openwrt_luci插件解析: blog/Openwrt_luci插件解析.md
+    - Openwrt_Luci插件解析: blog/Openwrt_Luci插件解析.md
     - Openwrt云编译固件教程: blog/Openwrt云编译固件教程.md
     - Shell语法: blog/Shell语法.md
     - SSH远程登录: blog/SSH远程登录.md
