@@ -8,7 +8,7 @@ copyright: Copyright &copy; Hello World - 2024 Quann版权所有
 nav:
   - 简介: index.md
   - 博客:
-    - Breed_web不死鸟: blog/Breed_web.md
+    - Breed_web: blog/Breed_web.md
     - Design_patterns设计模式: blog/design_patterns/设计模式.md
     - Docker入门教程: blog/Docker入门基础.md
     - Frp内网穿透: blog/Frp内网穿透.md
