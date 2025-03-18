@@ -1,9 +1,11 @@
 # C++ 语法
-主要记录C + STL ≈ C++
+主要记录在算法竞赛中常用到的C + STL ≈ C++
 
-## 基本模板
+该内容由于学业繁忙还未完成，后续一定会完成
 
-先熟背这些(bushi)
+## 头文件
+
+几乎所有头文件
 ``` C++
 #pragma GCC optimize("-falign-functions")
 #pragma GCC optimize("-falign-jumps")
@@ -59,7 +61,6 @@
 #include <bits/cpp_type_traits.h>
 #include <bits/functexcept.h>
 #include <bits/move.h>
-#include <bits/stdc++.h>
 #include <bits/stdc++.h>
 #include <bits/stl_algobase.h>
 #include <bits/stl_bvector.h>
@@ -162,7 +163,7 @@ int main()
 
 ```
 
-**我的模版**
+**我的C++算法竞赛模版**
 ``` C++
 #include <bits/stdc++.h>
 #define debug(x) cout << #x << ' ' << x << '\n'
@@ -191,4 +192,4 @@ int main()
 }
 ```
 
-## 玩命加载中
+## 加载中
