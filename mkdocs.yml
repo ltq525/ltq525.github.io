@@ -57,14 +57,14 @@ nav:
     - 字符串匹配: algorithm/字符串匹配.md
     - 最短路径问题: algorithm/最短路径问题.md
     - 最小生成树: algorithm/最小生成树.md
-  - 其他:
+  #- 其他:
     # - 408: 
     #   - 计算机网络: 408/计算机网络.md
     # - English: 
     #   - Write: English/Write.md
-    - Math:
-      - 高等数学: Math/高等数学.md
-      - 线性代数:  Math/线性代数.md
+  - 数学:
+    - 高等数学: Math/高等数学.md
+    - 线性代数:  Math/线性代数.md
 
 
 theme:
