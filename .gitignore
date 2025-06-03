@@ -1,12 +1,12 @@
 # Ignore all files and folders except the site folder
-# /*
-# !site/
+/*
+!site/
 
 # Add rules to ensure excluded files are deleted from the cloud repository
-# !/.gitignore
+!/.gitignore
 # !/.gitattributes
 
-# !/readme.md
+!/readme.md
 
 # Prerequisites
 *.d
