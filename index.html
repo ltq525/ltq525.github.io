@@ -1,0 +1,64 @@
+<a href="https://ltq525.github.io/site/">
+    
+    <!DOCTYPE html>
+    <html>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <head>
+        <title>点击进入博客</title>
+    </head>
+
+    <body> <canvas id="canvas"></canvas>
+        <style type="text/css">
+            body {
+                height: 100vh;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+            }
+        </style>
+        <script type="text/javascript">
+            var canvas = document.getElementById('canvas');
+            var ctx = canvas.getContext('2d');
+
+
+            canvas.height = window.innerHeight;
+            canvas.width = window.innerWidth;
+
+            var texts = 'I LOVE U'.split(''); // 掉落字母
+
+            var fontSize = 22;
+            var columns = canvas.width / fontSize;
+            // 用于计算输出文字时坐标，所以长度即为列数
+            var drops = [];
+            //初始值
+            for (var i = 0; i < columns; i++) {
+                drops[i] = 1;
+            }
+
+            function draw() {
+                // 让背景逐渐由透明到不透明
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height); // x坐标、y坐标、width宽、height高
+                // 文字颜色
+                ctx.fillStyle = '#f584b7';
+                ctx.font = fontSize + 'px arial';
+                // 逐行输出文字
+                for (var i = 0; i < drops.length; i++) {
+                    var text = texts[Math.floor(Math.random() * texts.length)];
+                    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                    // fillText(text,x,y,maxWidth),text画布文本、开始绘制文本的 x 坐标位置、开始绘制文本的 y 坐标位置、可选。允许的最大文本宽度，以像素计
+                    if (drops[i] * fontSize > canvas.height && Math.random() > 0.85) { //85%的几率掉落
+                        drops[i] = 0;
+                    }
+
+                    drops[i]++;
+                }
+            }
+            setInterval(draw, 20); // 掉落速度
+        </script>
+    </body>
+
+    </html>
+</a>
