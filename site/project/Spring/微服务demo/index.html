@@ -318,7 +318,7 @@
         <a href="../../Django/%E6%98%9F%E7%90%83%E5%A4%A7%E6%88%98/" class="md-tabs__link">
           
   
-  项目
+  工程项目
 
         </a>
       </li>
@@ -947,7 +947,7 @@
             
   
   <span class="md-ellipsis">
-    项目
+    工程项目
   </span>
   
 
@@ -957,7 +957,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            项目
+            工程项目
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1189,6 +1189,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    微服务demo
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1198,6 +1209,70 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#spring-cloud-gateway" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spring Cloud Gateway：网关
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nacos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nacos：服务注册和配置中心
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sentinel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sentinel：熔断限流
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seata" class="md-nav__link">
+    <span class="md-ellipsis">
+      Seata：分布式事务
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rocketmq" class="md-nav__link">
+    <span class="md-ellipsis">
+      RocketMQ：消息队列，削峰填谷
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1715,6 +1790,59 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#spring-cloud-gateway" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spring Cloud Gateway：网关
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nacos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nacos：服务注册和配置中心
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sentinel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sentinel：熔断限流
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seata" class="md-nav__link">
+    <span class="md-ellipsis">
+      Seata：分布式事务
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rocketmq" class="md-nav__link">
+    <span class="md-ellipsis">
+      RocketMQ：消息队列，削峰填谷
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1733,28 +1861,18 @@
 
 <h1 id="demo">微服务demo<a class="headerlink" href="#demo" title="Permanent link">&para;</a></h1>
 <p><img src="https://cdn.jsdelivr.net/gh/ltq525/picx-images-hosting@master/spring/springcloud架构图.60uhtm1tno.webp"></p>
-<ol>
-<li>
-<p>Spring Cloud Gateway：网关
-Spring Cloud GateWay 是微服务模块的网关，整合 Nacos，实现动态路由的配置。通过监听 Nacos 配置的改变，实现服务网关路由配置动态刷新，每次路由信息变更，无需修改配置文件而后重启服务。</p>
-</li>
-<li>
-<p>Nacos：服务注册和配置中心
-Nacos 是 SCA 微服务模块的服务注册中心和配置中心。整合 Spring Cloud Gateway，所有的微服务模块都注册到 Nacos 中进行服务注册与发现。</p>
-</li>
-<li>
-<p>Sentinel：熔断限流 
-用于点赞场景的服务熔断限流。整合 Nacos 配置中心与 Spring Cloud Gateway，实现指定路由规则、熔断限流规则动态配置。</p>
-</li>
-<li>
-<p>Seata：分布式事务 
-基于 Seata 的 AT 模式，用于库存模块，账户模块，订单模块的分布式事务处理。当库存不足/账户余额不足时，进行事务回滚。</p>
-</li>
-<li>
-<p>RocketMQ：消息队列，削峰填谷 
-用于进行点赞服务流量的削峰填谷。通过将大流量的点赞请求从生产者发送到 mq，消费者模块从 mq 中拉取进行一定频率的消费，不是简单的直接服务熔断限流降级，实现 RocketMQ 针对大流量的削峰填谷能力。</p>
-</li>
-</ol>
+<h2 id="spring-cloud-gateway">Spring Cloud Gateway：网关<a class="headerlink" href="#spring-cloud-gateway" title="Permanent link">&para;</a></h2>
+<p>Spring Cloud GateWay 是微服务模块的网关，整合 Nacos，实现动态路由的配置。通过监听 Nacos 配置的改变，实现服务网关路由配置动态刷新，每次路由信息变更，无需修改配置文件而后重启服务。</p>
+<h2 id="nacos">Nacos：服务注册和配置中心<a class="headerlink" href="#nacos" title="Permanent link">&para;</a></h2>
+<p><a href="https://github.com/alibaba/nacos/releases">nacos下载地址</a></p>
+<p>Nacos 是 SCA 微服务模块的服务注册中心和配置中心。整合 Spring Cloud Gateway，所有的微服务模块都注册到 Nacos 中进行服务注册与发现。</p>
+<h2 id="sentinel">Sentinel：熔断限流<a class="headerlink" href="#sentinel" title="Permanent link">&para;</a></h2>
+<p>用于点赞场景的服务熔断限流。整合 Nacos 配置中心与 Spring Cloud Gateway，实现指定路由规则、熔断限流规则动态配置。</p>
+<h2 id="seata">Seata：分布式事务<a class="headerlink" href="#seata" title="Permanent link">&para;</a></h2>
+<p><a href="https://github.com/apache/incubator-seata/releases">seata下载地址</a></p>
+<p>基于 Seata 的 AT 模式，用于库存模块，账户模块，订单模块的分布式事务处理。当库存不足/账户余额不足时，进行事务回滚。</p>
+<h2 id="rocketmq">RocketMQ：消息队列，削峰填谷<a class="headerlink" href="#rocketmq" title="Permanent link">&para;</a></h2>
+<p>用于进行点赞服务流量的削峰填谷。通过将大流量的点赞请求从生产者发送到 mq，消费者模块从 mq 中拉取进行一定频率的消费，不是简单的直接服务熔断限流降级，实现 RocketMQ 针对大流量的削峰填谷能力。</p>
 
 
 
