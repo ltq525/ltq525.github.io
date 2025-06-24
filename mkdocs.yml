@@ -1,0 +1,228 @@
+site_name: Quann
+site_url: https://ltq525.github.io/site/
+site_author: 权
+
+repo_url: https://github.com/ltq525/
+repo_name: github
+copyright: Copyright &copy; Hello World - 2025 Quann版权所有
+nav:
+  - 简介: index.md
+  - 博客:
+    - Breed_web: blog/Breed_web.md
+    - Design_patterns设计模式: blog/design_patterns/设计模式.md
+    - Docker入门教程: blog/Docker入门基础.md
+    - Frp内网穿透: blog/Frp内网穿透.md
+    - Git常用手册: blog/Git常用手册.md
+    - Html基础语法: blog/Html基础语法.md
+    - Linux防火墙手册: blog/Linux防火墙手册.md
+    - Linux常用命令行: blog/Linux常用命令行.md
+    - Markdown基础教程: blog/Markdown基础教程.md
+    - Mkdocs网站搭建: blog/Mkdocs网站搭建.md
+    - Mysql基本用法: blog/Mysql基本用法.md
+    - Nginx部署: blog/Nginx部署.md
+    - Openwrt_Luci插件解析: blog/Openwrt_Luci插件解析.md
+    - Openwrt云编译固件教程: blog/Openwrt云编译固件教程.md
+    - Shell语法: blog/Shell语法.md
+    - SSH远程登录: blog/SSH远程登录.md
+    - Tailscale内网穿透: blog/Tailscale实现内网穿透.md
+    - Thrift微服务RPC框架: blog/Thrift微服务RPC框架.md
+    - Tmux使用方法: blog/Tmux使用方法.md
+    - Vim基本命令: blog/Vim基本命令.md
+    - WSL子系统使用: blog/WSL子系统使用.md
+  - 工程项目:
+    - Django项目:
+      - 星球大战: project/Django/星球大战.md
+      - JWT身份验证: project/Django/JWT身份验证.md
+      - Nginx_uwsgi部署: project/Django/Nginx_uwsgi部署.md
+      - Socket通信机制: project/Django/Socket通信机制.md
+      - Thrift匹配系统: project/Django/Thrift匹配系统.md
+    - Spring项目:
+      - 机器蛇对战: project/Spring/机器蛇对战.md
+      - 微服务demo: project/Spring/微服务demo.md
+      - Druid连接池: project/Spring/Druid连接池.md
+      - JWT身份验证: project/Spring/JWT身份验证.md
+      - Mybatis_plus组件: project/Spring/Mybatis_plus组件.md
+      - Nginx配置: project/Spring/Nginx配置.md
+      # - OAuth2授权: project/Spring/OAuth2授权.md
+      - Spring框架概述: project/Spring/Spring框架概述
+      # - Springboot浅层解析: project/Spring/Springboot浅层解析.md
+  - 计算机科学:
+    - Java语法: algorithm/Java语法.md
+    - C++语法: algorithm/C++语法.md
+    - OI竞赛技巧: algorithm/OI竞赛技巧.md
+    - 并查集: algorithm/并查集.md
+    - 平衡查找树: algorithm/平衡查找树.md
+    - 七大排序: algorithm/七大排序.md
+    - 启发式搜索: algorithm/启发式搜索.md
+    - 三分查找: algorithm/三分查找.md
+    - 树链剥分: algorithm/树链剥分.md
+    - 线段树: algorithm/线段树.md
+    - 字符串匹配: algorithm/字符串匹配.md
+    - 最短路径问题: algorithm/最短路径问题.md
+    - 最小生成树: algorithm/最小生成树.md
+  #- 其他:
+    # - 408: 
+    #   - 计算机网络: 408/计算机网络.md
+    # - English: 
+    #   - Write: English/Write.md
+  - 数学:
+    # - 高等数学: Math/高等数学.md
+    - 线性代数:  Math/线性代数.md
+
+
+theme:
+  name: material
+  logo: logo/鳄鱼.png
+  favicon: logo/logo.png
+  language: zh
+  icon:
+    repo: fontawesome/brands/github
+    edit: material/pencil
+    view: material/eye
+    admonition:
+      note: octicons/tag-16
+      abstract: octicons/checklist-16
+      info: octicons/info-16
+      tip: octicons/squirrel-16
+      success: octicons/check-16
+      question: octicons/question-16
+      warning: octicons/alert-16
+      failure: octicons/x-circle-16
+      danger: octicons/zap-16
+      bug: octicons/bug-16
+      example: octicons/beaker-16
+      quote: octicons/quote-16
+  font:
+    text: Microsoft YaHei
+    code: Roboto Mono
+
+  features:
+    - navigation.instant 
+    - header.autohide  # 自动隐藏
+    #- announce.dismiss # 呈现可标记为由用户读取的临时公告，可以包含一个用于取消当前公告的按钮
+    - navigation.tracking # 地址栏中的 URL 将自动更新为在目录中突出显示的活动锚点
+    - navigation.tabs # 顶级部分将呈现在上面视口标题下方的菜单层中，但在移动设备上保持原样
+    #- navigation.tabs.sticky  #启用粘性选项卡后，导航选项卡将锁定在标题下方，并在向下滚动时始终保持可见
+    #- navigation.sections #启用部分后，顶级部分在边栏中呈现为1220px以上视口的组，但在移动设备上保持原样
+    - navigation.top # 返回顶部的按钮 在上滑时出现
+    - search.suggest # 搜索输入一些字母时推荐补全整个单词
+    - search.highlight # 搜索出的文章关键词加入高亮
+    - navigation.expand # 打开Tab时左侧目录全部展开
+    #- navigation.indexes #启用节索引页后，可以将文档直接附加到节
+    - search.share # 搜索分享按钮
+    - content.tabs.link
+    - content.code.annotate
+    - content.code.copy # 文本复制
+    - content.code.select # 代码行突出显示
+    - toc.follow
+    #- toc.integrate # 屏蔽右边导航栏
+
+
+  palette:
+
+    # 日间模式
+    - scheme: default
+      primary: white # 头部菜单栏颜色
+      accent: indigo # 交互文件高亮颜色
+      toggle:
+        icon: material/brightness-7
+        name: 切换至夜间模式
+
+    # 夜间模式
+    - scheme: slate 
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: 切换至夜间模式
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - md_in_html
+  - meta # 支持Markdown文件上方自定义标题标签等
+  #- pymdownx.betterem
+  
+  # 显示文本并定义上下标
+  - pymdownx.caret 
+  - pymdownx.mark
+  - pymdownx.tilde
+
+  - pymdownx.betterem
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.smartsymbols # 智能符号
+  - pymdownx.snippets
+  - pymdownx.superfences 
+    # 代码块高亮插件 可支持各类图
+#  - pymdownx.superfences:
+#      custom_fences:
+#        - name: mermaid
+#          class: mermaid
+#          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.keys # 键盘符号
+  - tables
+
+  - pymdownx.critic:
+      mode: view
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.arithmatex:  # latex支持 数学排版库
+      generic: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: true # 固定标题位置为当前位置
+
+  - pymdownx.highlight: # 代码块高亮
+      anchor_linenums: true
+      use_pygments: true # JavaScript 语法突出显示
+      pygments_lang_class: true # CSS 类识别代码块
+      #linenums: true # 显示行号
+      linenums_style: pymdownx-inline
+      line_spans: __span
+      #auto_title: true # 显示编程语言名称
+
+
+#  - pymdownx.emoji:
+#      emoji_index: !!python/name:materialx.emoji.twemoji
+#      emoji_generator: !!python/name:materialx.emoji.to_svg
+#      options:
+#        custom_icons:
+#          - overrides/.icons
+
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/
+    - icon: fontawesome/brands/chrome
+      link: https://chrome.com/
+    - icon: fontawesome/brands/zhihu
+      link: https://zhihu.com/
+    - icon: fontawesome/brands/docker
+      link: https://docker.com/
+    - icon: fontawesome/brands/bilibili
+      link: https://bilibili.com/
+  homepage: https://ltq525.github.io/site/
+  # 隐藏下栏商标
+  generator: false
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - javascripts/katex.js
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
+
+extra_css:
+  - stylesheets/extra.css
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
+
+  
+
+  

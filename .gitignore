@@ -1,6 +1,11 @@
 # Ignore all files and folders except the site folder
-/*
-!site/
-!/.gitignore
-!/readme.md
-!/index.html
+
+# /*
+# !site/
+# !/.gitignore
+# !/readme.md
+# !/index.html
+
+
+site/
+.vs
