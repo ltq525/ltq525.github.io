@@ -1,0 +1,11 @@
+.giscus {
+    margin-top: 2rem;
+    padding: 1rem;
+    border-top: 1px solid #ddd;
+  }
+  
+  .giscus-frame {
+    width: 100% !important;
+    border: none !important;
+  }
+  
