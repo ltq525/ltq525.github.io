@@ -1933,7 +1933,7 @@
 <p><code>--advertise-routes=192.168.1.0/24,192.168.1.0/24</code> 设置Subnet routes 公开子网路由  </p>
 <p><code>--advertise-exit-node=true</code> 设置Exit node 提供出口节点  </p>
 <p><code>--exit-node=&lt;ip|name&gt;</code> 启用Exit node 某个出口节点   </p>
-<p><code>--accept-dns=false</code> 关闭dns设置  </p>
+<p><code>--accept-dns=true</code> 开启MagicDNS设置  </p>
 <p><code>--netfilter-mode=off</code>  关闭默认防火墙规则  </p>
 <p><code>--accept-routes</code></p>
 <p><strong>tailscale status</strong> 
@@ -1951,7 +1951,7 @@
 <div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>tailscale up --advertise-exit-node=true
 </span></code></pre></div>
 <h2 id="openwrt">openwrt<a class="headerlink" href="#openwrt" title="Permanent link">&para;</a></h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>tailscale up --advertise-exit-node=true  --advertise-routes=192.168.1.0/24  
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>tailscale set --accept-routes --advertise-exit-node --ssh --accept-dns --advertise-routes=192.168.1.0/24,10.0.0.0/24/24
 </span></code></pre></div>
 
 
