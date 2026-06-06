@@ -8,14 +8,14 @@
 `pip install mkdocs-material`  
 
 ### 创建网页文件夹  
-`mkdocs new xxx`  
+`mkdocs new site`  
 
 ### 生成静态站点  
 `mkdocs build`  
 `mkdocs build -clean`: 生成并清除旧的  
 
 ### 启动mkdocs服务  
-`mkdocs serve -a 0.0.0.0:80`  
+`mkdocs serve -a 0.0.0.0:8000`  
 
 ---
 ### github搭建静态网页  
